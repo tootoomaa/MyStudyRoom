@@ -6,7 +6,7 @@
 
 - Login 화면을 만들고 이미지 회전 시 자동으로 UI 재 조정
 
-![200430_loginVC_UI](../image/200430/200430_loginVC_UI.png)
+![200430_loginVC_UI](../image/200430_loginVC_UI.png)
 
 
 
@@ -155,7 +155,7 @@ stackVeiw.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right:
 
 
 
-![200430_stackveiw](../image/200430/200430_stackveiw.png)
+![200430_stackveiw](../image/200430_stackveiw.png)
 
 
 
