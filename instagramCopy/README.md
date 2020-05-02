@@ -19,6 +19,6 @@ Self Study with Udemy
 
 ### Index
 
-1. [LoginPage with NSLayoutAnchor, StackView](https://github.com/tootoomaa/MyStudyRoom/instagramCopy/blob/master/1_loginPage.md)
-2. [SingUp Page with navigationController, NSAttributedString](https://github.com/tootoomaa/MyStudyRoom/instagramCopy/blob/master/2_Addlogo&bottomButton.md)
+1. [LoginPage with NSLayoutAnchor, StackView](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/1_loginPage.md)
+2. [SingUp Page with navigationController, NSAttributedString](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/2_Addlogo%26bottomButton.md)
 
