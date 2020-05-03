@@ -21,4 +21,6 @@ Self Study with Udemy
 
 1. [LoginPage with NSLayoutAnchor, StackView](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/1_loginPage.md)
 2. [SingUp Page with navigationController, NSAttributedString](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/2_Addlogo%26bottomButton.md)
+3. [Profile Image Add in SignUp Page](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/3_ImageAdd.md)
+4. [Firebase Setting](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/4_FireabaseDB.md)
 
