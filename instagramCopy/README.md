@@ -23,4 +23,5 @@ Self Study with Udemy
 2. [SingUp Page with navigationController, NSAttributedString](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/2_Addlogo%26bottomButton.md)
 3. [Profile Image Add in SignUp Page](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/3_ImageAdd.md)
 4. [Firebase Setting](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/4_FireabaseDB.md)
+5. [SignUp with Firebase](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/5_SingUpwithFirebase.md)
 

@@ -86,7 +86,7 @@
 
 ### Firebase 업로드 & 다운로드
 
-- 업로드
+- **업로드**
 
   - Cloud Storage에서 파일을 업로드할 위치를 가리키는 [Cloud Storage 참조를 만듬
 
@@ -151,7 +151,7 @@
        
     
 
-- 다운로드
+- **다운로드**
 
   - 파일을 다운로드 하기 위해서 우선 다운로드를 할 파일을 가리키는 Cloud Storage 참조를 만듬
 
@@ -215,8 +215,37 @@
        }    
        ```
 
-       
+- 사용자 인증 관련
 
+  - 사용자 비밀번호 기반 계정 생성
+
+    - ```swift
+      Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+        // ...
+      }
+      ```
+
+  - 이메일 주소와 비밀번호로 사용자 로그인 처리
+
+    - ```swift
+      Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+        guard let strongSelf = self else { return }
+        // ...
+      }
+      ```
+
+  - 사용자 로그아웃 처리
+
+    - ```swift
+      let firebaseAuth = Auth.auth()
+      do {
+        try firebaseAuth.signOut()
+      } catch let signOutError as NSError {
+        print ("Error signing out: %@", signOutError)
+      }  
+      ```
+
+      
 
 ## Reference
 
@@ -225,3 +254,5 @@
   - [iOS에서 저장소 참조 만들기](https://firebase.google.com/docs/storage/ios/create-reference?authuser=0)
   - [iOS에서 파일 다운로드](https://firebase.google.com/docs/storage/ios/download-files?authuser=0)
   - [iOS에서 파일 업로드](https://firebase.google.com/docs/storage/ios/upload-files?authuser=0)
+  - [iOS에서 비밀번호 기반 계정으로 Firebase에 인증하기](https://firebase.google.com/docs/auth/ios/password-auth)
+
