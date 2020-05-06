@@ -24,4 +24,6 @@ Self Study with Udemy
 3. [Profile Image Add in SignUp Page](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/3_ImageAdd.md)
 4. [Firebase Setting](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/4_FireabaseDB.md)
 5. [SignUp with Firebase](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/5_SingUpwithFirebase.md)
+6. [SignIn with Firebase](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/6_SignInPage.md)
+7. [Logout & User validation](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/7_Logout&UserValidation.md)
 
