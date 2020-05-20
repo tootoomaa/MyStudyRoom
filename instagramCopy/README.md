@@ -9,7 +9,7 @@ Self Study with Udemy
 
 ### Process
 
- Listen Lecture -> Practice -> Summry Important things :man_student:
+- Listen Lecture -> Practice -> Summry Important things :man_student:
 
 ### About Lecture 
 

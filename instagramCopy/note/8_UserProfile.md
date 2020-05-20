@@ -259,7 +259,8 @@ class UserProfileHeader: UICollectionReusableView {
 ```swift
 func fetchCurrentUserData() {
   //get user data
-  guard let currentUid = Auth.auth().currentUser?.uid else { return }          Database.database().reference().child("users").child(currentUid).observeSingleEvent(of: .value) { (snapshot) in
+  guard let currentUid = Auth.auth().currentUser?.uid else { return } 
+ Database.database().reference().child("users").child(currentUid).observeSingleEvent(of: .value) { (snapshot) in
             
   print(snapshot)
   //기존 코드
@@ -275,4 +276,4 @@ func fetchCurrentUserData() {
 
 - Xcode를 통해 불러온 데이터 확인
 
-![200512_ GetDataFromFirebase](../image/200512_%20GetDataFromFirebase.png?lastModify=1589357998)****
+![200512_ GetDataFromFirebase](../image/200512_%20GetDataFromFirebase.png?lastModify=1589357998)

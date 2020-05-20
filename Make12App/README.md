@@ -9,7 +9,7 @@ Self Study with Inflearn Lecture
 
 ### Process
 
- Listen Lecture -> Practice -> Summry Important things :man_student:
+- Listen Lecture -> Practice -> Summry Important things :man_student:
 
 ### About Lecture 
 
@@ -19,5 +19,5 @@ Self Study with Inflearn Lecture
 
 ### Index
 
-1. [Wearher table With TableView](https://github.com/tootoomaa/MyStudyRoom/blob/master/Make12Apps/note/01. weatherTable.md)
+1. [Wearher table With TableView](https://github.com/tootoomaa/MyStudyRoom/blob/master/Make12Apps/note/01_weatherTable.md)
 
