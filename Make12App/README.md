@@ -19,5 +19,5 @@ Self Study with Inflearn Lecture
 
 ### Index
 
-1. [Wearher table With TableView](https://github.com/tootoomaa/MyStudyRoom/blob/master/Make12Apps/note/01_weatherTable.md)
+1. [Wearher table With TableView](https://github.com/tootoomaa/MyStudyRoom/tree/master/Make12App/note/01_weatherTable.md)
 

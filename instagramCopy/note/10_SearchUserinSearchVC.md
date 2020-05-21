@@ -1,123 +1,121 @@
-# UserProfile 내 ProfileImage추가
+# SearchVC 화면 구현
 
 ## 구현 화면
 
--   UserProfile화면내 가입시 사용자가 등록한 프로필 사진을 보여줌
+-   SearchVC 접속 시 해당 화면에 인스타그램 Clone 앱에 저장된 사용자들의 정보를 Firebase에서 가져와 보여주는 화면
+-   화면 UI 먼저 작성 후 데이터 연동 예정
 
-![200513_UserProfileImageAdd](../image/200513_UserProfileImageAdd.png)
+![200521_SearchVC_MainUI](../image/200521_SearchVC_MainUI.png)
 
 ## 소스코드
 
-- extention.swift
-  - 사용자의 프로필 이미지를 Firebase 에서 받아서 추가하는 기능 구현
-    1. UserProfileView를 띄울때마다 이미지를 불러오는 것을 방지하기 위해서 imageCache 변수를 생성하고, Firebase에서 받아온 이미지 임시 저장
-    2. 
+- SearchUserCell.swift 와 SearchVC.swift의 관계
+
+![200521_SearchVC_MCVModel](../image/200521_SearchVC_MCVModel.png)
+
+- SearchUserCell.swift
+  - 테이블뷰를 만들때 각 셀의 속성을 정의하는 UITableViewCell 
 
 ```swift
-// 이미지를 페이지가 로딩될때마다 불러오는 것을 방지하기 위한 이미지 저장 변수
-var imageCache = [String:UIImage]()
-extension UIImageView {
-		// 전달인자를 통해 Url이 담긴 string 변수 받음
-    func loadImage(with urlString: String) {
-  			// 이미지가 이미 imageCache에 저장되어 있는 경우 재로드 방지
-        if let cachedImage = imageCache[urlString] {
-            self.image = cachedImage
-            return
-        }
-        // 이미지가 케쉬 영역에 존제하지 않는 경우 아래 코드 실행
-	      // 함수의 파라미터로 받은 String값을 URL함수를 통해 url주소로 변경
-        guard let url = URL(string :urlString) else { return }
-      	// Url을 통해 접속하여 데이터 다운로드
-        URLSession.shared.dataTask(with: url) { (data, response, error ) in
-        // 에러처리    
-				if let error = error {
-                print("Failed to load image with error", error.localizedDescription)
-            }
-            
-            // 이미지 데이터
-            guard let imageData = data else {return}
-            // 이미지 데이터를 통해서 이미지 생성
-            let photoImage = UIImage(data: imageData)
-            
-            // 불러온 이미지를 케쉬 이미지 변수에 저장
-            imageCache[url.absoluteString] = photoImage
-						// 큐에 작업을 넣어두고 끝날때까지 기다림                                               
-            DispatchQueue.main.sync {
-                self.image = photoImage
-            }
-        }.resume()
+import UIKit
+
+class SearchUserCell: UITableViewCell {
+    
+    //MARK: - Properties 
+    let profileImageView: UIImageView = {
+        let iv = UIImageView()
+        iv.contentMode = .scaleAspectFill
+        iv.clipsToBounds = true
+        iv.backgroundColor = .lightGray
+        return iv
+    }()
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
+        
+        // add profile image View
+        addSubview(profileImageView)
+        profileImageView.anchor(top: nil, left: leftAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 48, height: 48)
+        profileImageView.centerYAnchor.constraint(equalTo : self.centerYAnchor).isActive = true
+        profileImageView.layer.cornerRadius = 48 / 2
+        profileImageView.clipsToBounds = true
+        // 테스트용 임시 저장
+        self.textLabel?.text = "Username"
+        self.detailTextLabel?.text = "Full Name"
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        textLabel?.frame = CGRect(x: 68, y: (textLabel?.frame.origin.y)! - 2 , width: (textLabel?.frame.width)!, height: (textLabel?.frame.height)!)
+        textLabel?.font = UIFont.boldSystemFont(ofSize: 12)
+        
+        detailTextLabel?.frame = CGRect(x: 68, y: detailTextLabel!.frame.origin.y , width: self.frame.width - 108, height: detailTextLabel!.frame.height)
+        detailTextLabel?.font = UIFont.systemFont(ofSize: 12)
+        detailTextLabel?.textColor = .systemGray
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
+
 ```
 
-- UserProfileHeader.swfit 
+- SearchVC.swift
 
 ```swift
-// 해당 swift파일 내에 user변수
-// didSet 메소드를 통해서 user의 변경사항이 있을경우 안에 정의된 사항을 실행
-// 해당 user는 ProfileView의 collectionView내에 header파일이 만들어 질때 생성됨
-// Firebase 로 부터 사용자의 데이터를 딕셔너리 형태로 받아옴
-var user: User? {
-  didSet {
-    let fullname = user?.name
-    nameLabel.text = fullname
-		// header를 생성할때 UserProfileImage가 같이 생성됨으로 이곳에 생성
-    guard let profileImageUrl = user?.profileImageUrl else { return }
-    profileImageView.loadImage(with: profileImageUrl)
+import UIKit
+
+private let reuseIdentifier = "SearchUserCell"
+
+class SearchVC: UITableViewController {
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+
+    //register cell classes
+    tableView.register(SearchUserCell.self, forCellReuseIdentifier: reuseIdentifier)
+    configureNavController()
+
+    // separator insets
+    tableView.separatorInset = UIEdgeInsets(top: 0, left: 64, bottom: 0, right: 0)
+
+  }
+
+  // MARK: - Table view data source
+
+  override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return 60
+  }
+
+  override func numberOfSections(in tableView: UITableView) -> Int {
+    // #warning Incomplete implementation, return the number of sections
+    return 1
+  }
+
+  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    // #warning Incomplete implementation, return the number of rows
+    return 5
+  }
+	// SearchUserCell과 연결 되는 부분
+  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! SearchUserCell
+		// 해당 코드에는 cell에 대한 상세한 부분이 없음
+    return cell
+  }
+
+  func configureNavController() {
+    navigationItem.title = "Explore"
   }
 }
 ```
 
-- UserProfileVC.swift 내 Collection View 내에 Header부분
 
-```swift
-override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-      // Header 정의
-      let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerIdentifier, for: indexPath) as! UserProfileHeader
-      let currentUid = Auth.auth().currentUser?.uid
-        Database.database().reference().child("users").child(currentUid!).observeSingleEvent(of: .value) { (snapshot) in
-          guard let dictionanry = snapshot.value as? Dictionary<String, AnyObject> else { return }
-          let uid = snapshot.key
-                                                                                                          					// 여기서 user의 내용이 변경됨
-          let user = User(uid: uid, dictionary: dictionanry)
-          self.navigationItem.title = user.username
-          header.user = user
-      }
-      return header
-  }
-```
+
+### 같이 보기
+
+- [Wearher table With TableView](https://github.com/tootoomaa/MyStudyRoom/tree/master/Make12App/note/01_weatherTable.md)
 
 
 
-## Important Thing
-
-### DispatchQueue
-
-- 정의
-  - App의 main쓰레드나 background 쓰레드 에서 task 들의 실행을 관리하는 오브젝트
-    - serially : 순차적으로 실행
-    - concurrently : 병렬적으로 실행
-    - sync : 큐에 넣은 작업이 끝날때까지 기다림
-    - async : 큐에 작업을 추가하기만 할뿐 완료 여부는 보장하지 않음
-- 기능적 부분
-  - Serial - Sync
-  - Serial - Async
-  - Concurrent - Sync
-  - Concurrent - Async
-
-- 소스코드 일부분
-
-```swift
-DispatchQueue.main.sync {
-  self.image = photoImage
-}
-// 해당코드에서는 Sync가 사용되었으며
-// 이는 self.image = photoImage가 끝날때까지 기다렸다가 나머지 코드를 실행함
-```
-
-
-
-## Reference
-
-- [swift. GCD 기초 정리하기 1](https://devmjun.github.io/archive/1-GCD)
--  [iOS ) GCD - Dispatch Queue사용법 (1)](https://zeddios.tistory.com/516) 
