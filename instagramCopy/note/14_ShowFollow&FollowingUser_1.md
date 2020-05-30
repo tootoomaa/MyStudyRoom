@@ -186,7 +186,29 @@ class FollowCell: UITableViewCell {
 
 
 
+## Important Thing
 
+- Ladel에 Action 연결 부분
+
+  ```swift
+  lazy var followingLabel: UILabel = {
+    let label = UILabel()
+    label.numberOfLines = 0
+    label.textAlignment = .center
+  
+    // 제스쳐 엑션 연결 부분
+    let followingTap = UITapGestureRecognizer(target: self, action: #selector(handleFolloweringTapped))
+    
+    followingTap.numberOfTouchesRequired = 1
+    label.isUserInteractionEnabled = true
+    label.addGestureRecognizer(followingTap)
+  
+    return label
+  }() 
+  // 액션 함수 정의 부분은 버튼이랑 동일
+  ```
+
+  
 
 
 
