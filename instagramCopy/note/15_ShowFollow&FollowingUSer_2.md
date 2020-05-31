@@ -80,3 +80,4 @@ FireBase 데이터 인출 부분 로그
 - Firebase observe 함수관련
   1. observe : DB에 변화가 있을 경우 즉시 갱신
   2. observeSingleEvent : DB에서 한번만 가져옴
+

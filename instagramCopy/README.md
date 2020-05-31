@@ -33,5 +33,7 @@ Self Study with Udemy
 12. [Follow&Following Button Build](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/12_Follow&Following.md)
 13. [Code Refactor Using Protocol Recap (Delegate)](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/13_CodeRefactorUsingProtocolRecap.md)
 14. [Follow, Following User Check Page Build - 1](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/14_ShowFollow&FollowingUser_1.md)
-15. [Follow, Following User Check Page Build - 2](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/14_ShowFollow&FollowingUser_2.md)
+15. [Follow, Following User Check Page Build - 2](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/15_ShowFollow&FollowingUser_2.md)
+16. [Follow, Following User Check Page Build - 3](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/16_ShowFollow&FollowingUser_3.md)
+17. [Posts Func (Select Image View Build - 1)](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/17_Posts_SelectImageVC.md)
 
