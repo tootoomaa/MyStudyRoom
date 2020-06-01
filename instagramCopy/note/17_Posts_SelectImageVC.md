@@ -157,24 +157,3 @@ func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewC
   return true // 띄우기 false 안띄우기
 }
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

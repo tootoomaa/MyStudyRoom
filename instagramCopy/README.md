@@ -35,5 +35,7 @@ Self Study with Udemy
 14. [Follow, Following User Check Page Build - 1](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/14_ShowFollow&FollowingUser_1.md)
 15. [Follow, Following User Check Page Build - 2](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/15_ShowFollow&FollowingUser_2.md)
 16. [Follow, Following User Check Page Build - 3](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/16_ShowFollow&FollowingUser_3.md)
-17. [Posts Func (Select Image View Build - 1)](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/17_Posts_SelectImageVC.md)
+17. [Posts Func (Select Image View Build 1 with View Build)](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/17_Posts_SelectImageVC.md)
+18. [Posts Func (Select Image View Build 2 with PhotoKit)](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/18_Posts_SelectImageVC-Photokit.md)
+19. [Posts Func (Select Image View Build 3 with Data Upload at Firebase)](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/19_Posts_SelectImageVC-DataUpload.md)
 
