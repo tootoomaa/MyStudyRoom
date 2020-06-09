@@ -38,4 +38,6 @@ Self Study with Udemy
 17. [Posts Func (Select Image View Build 1 with View Build)](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/17_Posts_SelectImageVC.md)
 18. [Posts Func (Select Image View Build 2 with PhotoKit)](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/18_Posts_SelectImageVC-Photokit.md)
 19. [Posts Func (Select Image View Build 3 with Data Upload at Firebase)](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/19_Posts_SelectImageVC-DataUpload.md)
+20. [PostDataStructure & SavePosting Index Data](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/20_Posts_PostDataStructure&SavePostingData.md)
+21. [Show Posting Data With CollectionView](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/21_showPostingDataWithcollectionView.md)
 
