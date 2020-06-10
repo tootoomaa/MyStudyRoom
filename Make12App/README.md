@@ -20,4 +20,5 @@ Self Study with Inflearn Lecture
 ### Index
 
 1. [Wearher table With TableView](https://github.com/tootoomaa/MyStudyRoom/tree/master/Make12App/note/01_weatherTable.md)
+2. [Select Car with UIPickerView](https://github.com/tootoomaa/MyStudyRoom/tree/master/Make12App/note/02_pickerView.md)
 

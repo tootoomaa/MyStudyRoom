@@ -78,7 +78,7 @@ func fetchPosts() {
 
 
 
-## Important Thing.
+## Important Thing..
 
 ### UICollectionViewFlowLayout
 

@@ -40,4 +40,5 @@ Self Study with Udemy
 19. [Posts Func (Select Image View Build 3 with Data Upload at Firebase)](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/19_Posts_SelectImageVC-DataUpload.md)
 20. [PostDataStructure & SavePosting Index Data](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/20_Posts_PostDataStructure&SavePostingData.md)
 21. [Show Posting Data With CollectionView](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/21_showPostingDataWithcollectionView.md)
+22. [Feed View Main UI Build](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/22_FeedMainUI.md)
 
