@@ -41,4 +41,6 @@ Self Study with Udemy
 20. [PostDataStructure & SavePosting Index Data](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/20_Posts_PostDataStructure&SavePostingData.md)
 21. [Show Posting Data With CollectionView](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/21_showPostingDataWithcollectionView.md)
 22. [Feed View Main UI Build](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/22_FeedMainUI.md)
+23. [Feed Main UI Function ( Username Tab )](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/23_FeedViewFunction_UsernameTab.md)
+24. [Updating User Feed](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/24_UpdatingUserFeeds.md)
 

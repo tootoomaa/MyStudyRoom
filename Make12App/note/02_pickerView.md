@@ -61,7 +61,7 @@
 
 ### SorceCode 사용
 
-<img src="/Users/kimkwangsoo/Document/dev/MyStudyRoom/Make12App/image/200610_sourceCode_MainUI.gif" alt="200610_sourceCode_MainUI" style="zoom:67%;" />
+<img src="../image/200610_sourceCode_MainUI.gif" alt="200610_sourceCode_MainUI" style="zoom:67%;" />
 
 #### 소스코드 :point_right: [링크](../sourceCode/SelectCar_Code)
 
