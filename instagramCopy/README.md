@@ -44,4 +44,6 @@ Self Study with Udemy
 23. [Feed Main UI Function ( Username Tab )](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/23_FeedViewFunction_UsernameTab.md)
 24. [Updating User Feed](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/24_UpdatingUserFeeds.md)
 25. [Like Function & Data Structure](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/25_LikeFunction.md)
+26. [Comment Fuction](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/26_CommentFunction.md)
+27. [Notification Function](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/27_NotificationFunction.md)
 
