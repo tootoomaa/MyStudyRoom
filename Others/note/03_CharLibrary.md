@@ -22,7 +22,6 @@ target 'TodoList' do
 
   # Pods for TodoList
   pod 'Charts' 						# 추가
-  pod 'TinyConstraints'		# 추가
 
 end
 ```
@@ -91,122 +90,219 @@ class ViewController: UIViewController {
 ```swift
 import UIKit
 import Charts
+import TinyConstraints
 
-class StatisticVC: UIViewController, ChartViewDelegate, IAxisValueFormatter {
+class StatisticVC: UIViewController, ChartViewDelegate {
   
-  // MARK: - init
-
-  override func viewDidLoad() {
-    super.viewDidLoad()
+  // MARK: - Properties
   
+  var numbers: [Int] = []
+  var axisXStringArray: [String] = []
+  var monthArray: [Double] = []
+  
+  let segCon: UISegmentedControl = {
+    let sc = UISegmentedControl(items: ["Day","Month","Year"])
+    sc.backgroundColor = UIColor.white
+    sc.tintColor = UIColor.white
+    sc.addTarget(self, action: #selector(segconChanged(_:)), for: .valueChanged)
+    return sc
+  }()
+  
+  let displayDurationLabel:UILabel = {
+    let label = UILabel()
+    label.font = .systemFont(ofSize: 20)
+    label.backgroundColor = .white
+    label.textAlignment = .center
+    return label
+  }()
+  
+  let defaultCharView:UIView = {
+    let view = UIView()
+    view.backgroundColor = .systemGray4
+    return view
+  }()
+  
+  let cal = Calendar(identifier: .gregorian)
+  let now = Date()
+  
+  //cal.veryShortMonthSymbols
+  
+  var displayToggleOption: Int? {
+    didSet {
+      var text:String = ""
+      
+      let year = cal.component(.year, from: now)
+      let month = cal.dateComponents([.month], from: now)
+      let weekOfMonth = cal.dateComponents([.weekOfMonth], from: now)
+      
+      switch displayToggleOption {
+      case 0: text = "\(year)년" + " \(month.month!)월" + " \(weekOfMonth.weekOfMonth!)주차"
+      case 1: text = "\(year)년" + " \(month.month!)월"
+      case 2: text = "\(year-3)년 ~ \(year)년"
+      default: text = ""
+      }
+      
+      displayDurationLabel.text = text
+    }
+  }
+  
+  //MARK: - BuildUI
+  private func configureMainUI() {
+    
     view.backgroundColor = .white
+    
     navigationItem.title = "Statistic"
     
-    // 초기 셋팅
-    dayArary = calculateDayString()
+    let guide = view.safeAreaLayoutGuide
+    [segCon,displayDurationLabel,defaultCharView].forEach {
+      view.addSubview($0)
+      $0.translatesAutoresizingMaskIntoConstraints = false
+      $0.leadingAnchor.constraint(equalTo: guide.leadingAnchor).isActive = true
+      $0.trailingAnchor.constraint(equalTo: guide.trailingAnchor).isActive = true
+      
+    }
     
-    numbers = UserDefaults.standard.array(forKey: "dayStatic") as! [Int]
+    NSLayoutConstraint.activate([
+      segCon.topAnchor.constraint(equalTo: guide.topAnchor ),
+      segCon.heightAnchor.constraint(equalToConstant: 35),
+      
+      displayDurationLabel.topAnchor.constraint(equalTo: segCon.bottomAnchor),
+      displayDurationLabel.heightAnchor.constraint(equalToConstant: 60),
+      
+      defaultCharView.topAnchor.constraint(equalTo: displayDurationLabel.bottomAnchor),
+      defaultCharView.heightAnchor.constraint(equalToConstant: view.frame.size.width)
+      
+    ])
+  }
+  
+  //MARK: - init
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    // 오토 레이아웃
+    configureMainUI()
+    
+    // segment "Day" 설정
     segCon.selectedSegmentIndex = 0
+    
+    // 날짜 데이터 생성
+    axisXStringArray = calculateDayString(segmentIndex: segCon.selectedSegmentIndex)
+    
+    // 상단 일,월,년 텍스트 디스플레이
+    displayToggleOption = segCon.selectedSegmentIndex
+    
+    // 차트 셋팅
     setupCharView(selectedSegmentIndex: segCon.selectedSegmentIndex)
     
   }
-  // 오늘부터 역으로 일주일의 "요일" String값 얻는 함수
-  func calculateDayString() -> [String] {
-    let dayStringArray: [String] = ["일요일","월요일","화요일","수요일","목요일","금요일","토요일"]
-    var resultArray:[String] = []
-    let cal = Calendar(identifier: .gregorian)
-    let now = Date()
-    let comps = cal.dateComponents([.weekday], from: now)
-    
-    for index in 0..<7 {
-      resultArray.append(dayStringArray[(comps.weekday! + index - 1 )%7])
-    }
-
-    return resultArray.reversed()
-  }
   
-  // x축의 표시될 label String값을 전달
-  func stringForValue(_ value: Double, axis: AxisBase?) -> String {
-    return dayArary[Int(value)]
-  }
-  
+  // segment togle action
   @objc func segconChanged(_ segcon:UISegmentedControl) {
-    configureStaticView(selectedSegmentIndex: segcon.selectedSegmentIndex)
-  }
-  
-  func configureStaticView(selectedSegmentIndex number:Int) {
-    // top : displayDurationLabel Setting
-    setDisplayDurationLabel(selectedSegmentIndex: number)
     
-    // mid : deafaultCharView Setting
-    setupCharView(selectedSegmentIndex: number)
+    // Month label
+    displayToggleOption = segCon.selectedSegmentIndex
+    
+    // chart Setting
+    setupCharView(selectedSegmentIndex: segcon.selectedSegmentIndex)
     
   }
   
- 	// 실제 차트 관련 내용
+  func calculateDayString(segmentIndex number:Int) -> [String] {
+    
+    var resultArray:[String] = []
+    
+    let cal = Calendar(identifier: .gregorian)
+    
+    switch number {
+    case 0 :
+      let now = Date()
+      let comps = cal.dateComponents([.weekday], from: now)
+      let dayStringArray = cal.weekdaySymbols // ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+      for index in 0..<7 {
+        resultArray.append(dayStringArray[(comps.weekday! + index - 1 )%7])
+      }
+    case 1:
+      resultArray = cal.veryShortMonthSymbols.map{ String($0) + "월" } // ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]
+    case 2:
+      let year = cal.component(.year, from: now)
+      for i in 0..<4 {
+        resultArray.append("\(year - 3 + i)")
+      }
+      
+    default:
+      resultArray = []
+    }
+    
+    return resultArray
+  }
+  
+
+
+  // MARK: - Setting Chart View
   func setupCharView(selectedSegmentIndex number:Int) {
-  
-    let chartView = BarChartView()   					// 인스턴스 생성
-    var barChartEntry = [BarChartDataEntry]() //BarChart 데이터 인스턴스 생성
-    var count: Int = 0 												// x 축 라벨 갯수 강제 지정
-    let staticArray = UserDefaults.standard.array(forKey: "dayStatic") as! [Int]
+    
+    let chartView = BarChartView()              // bar 차트 인스턴스 생성
+    var barChartEntry = [BarChartDataEntry]()   // bar 차트 데이터 엔트리 생성
+    var staticArray: [Int] = []                 // 실제 통계 자료
+    var count: Int = 0 // 임시
     
     chartView.delegate = self
+//        axisFormatDelegate = self
+    
+    // x축 데이터 생성
+    axisXStringArray = calculateDayString(segmentIndex: number)
     
     // [임시] 데이터 저장
-    if number == 0 {
-      count = 7 
-      for i in 0..<count {
+    if number == 0 {  // 일별
+      staticArray = UserDefaults.standard.array(forKey: "dayStatic") as! [Int]
+      for i in 0..<staticArray.count {
         let value = BarChartDataEntry(x: Double(i), y: Double(staticArray[i]))
         barChartEntry.append(value)
       }
-    } else if number == 1 {	 // 월간 데이터 출력 데이터 생성 : 미구현 임시 데이터 생성
-      count = 30
+    } else if number == 1 { // 월별
+      count = axisXStringArray.count
       for i in 0..<count {
-           let value = BarChartDataEntry(x: Double(i), y: Double((1...100).randomElement()!))
-              barChartEntry.append(value)
-         }
-    } else {		// 년간 데이터 출력 데이터 생성 : 미구현 임시 데이터 생성
-      count = 365
+        let value = BarChartDataEntry(x: Double(i), y: Double((50...100).randomElement()!))
+        barChartEntry.append(value)
+      }
+    } else {                // 년별
+      count = axisXStringArray.count
       for i in 0..<count {
-           let value = BarChartDataEntry(x: Double(i), y: Double((1...100).randomElement()!))
-              barChartEntry.append(value)
-         }
+        let value = BarChartDataEntry(x: Double(i), y: Double((80...100).randomElement()!))
+        barChartEntry.append(value)
+      }
     }
     
-    // ChartView 기본 설정
+    // Chart 기본 설정
     chartView.backgroundColor = .white
     chartView.chartDescription?.enabled = false
     chartView.dragEnabled = true
-    chartView.setScaleEnabled(true)
-    chartView.pinchZoomEnabled = false
-    chartView.maxVisibleCount = 60
+    chartView.doubleTapToZoomEnabled = true
+    chartView.drawBordersEnabled = true
+    chartView.pinchZoomEnabled = true
     
-    // x 축 설정
+    // X 축 설정
     let xAxis = chartView.xAxis
-    xAxis.labelPosition = .bottom								// x축 라벨 위치
-    xAxis.labelFont = .systemFont(ofSize: 10)		// 라벨 폰트
-    xAxis.labelCount = count 										// x축 라벨 수
-    xAxis.valueFormatter = IndexAxisValueFormatter(values: dayArary)
-    xAxis.granularity = 1
+    xAxis.labelPosition = .bottom
+    xAxis.labelFont = .systemFont(ofSize: 10)
+    xAxis.labelCount = axisXStringArray.count    // x축 라벨 수
+    xAxis.valueFormatter = IndexAxisValueFormatter(values: axisXStringArray) // x축 데이터 전달
     
-    // 왼쪽 Y축
+    
+    // 왼쪽 Y 축 설정
     let leftAxisFormatter = NumberFormatter()
-    leftAxisFormatter.minimumFractionDigits = 0
-    leftAxisFormatter.maximumFractionDigits = 0
-    //    leftAxisFormatter.negativeSuffix = " 회"
-    leftAxisFormatter.positiveSuffix = " %"
+    leftAxisFormatter.positiveSuffix = " %"  // leftAxisFormatter.negativeSuffix = " 회"
     
     let leftAxis = chartView.leftAxis
+    leftAxis.valueFormatter = DefaultAxisValueFormatter(formatter: leftAxisFormatter)
     leftAxis.labelFont = .systemFont(ofSize: 10)
     leftAxis.labelCount = 10
-    leftAxis.valueFormatter = DefaultAxisValueFormatter(formatter: leftAxisFormatter)
     leftAxis.labelPosition = .outsideChart   //.insideChart
-    leftAxis.spaceTop = 0.15
-    leftAxis.axisMinimum = 0 // FIXME: HUH?? this replaces startAtZero = YES
-    leftAxis.axisMaximum = 100
+    leftAxis.axisMinimum = 0
+    leftAxis.axisMaximum = 105
     
-    // 오른쪽 Y축
+    // 오른쪽 Y 축 설정
     let rightAxis = chartView.rightAxis
     rightAxis.enabled = false
     
@@ -217,9 +313,9 @@ class StatisticVC: UIViewController, ChartViewDelegate, IAxisValueFormatter {
     let data = BarChartData()
     data.addDataSet(bar1)
     
-    chartView.data = data	// 데이터 셋팅
+    chartView.data = data
     
-    defaultCharView.addSubview(chartView)  // 미리 오토 레이아웃으로 잡아둔 view에 추가
+    defaultCharView.addSubview(chartView)
     chartView.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
       chartView.topAnchor.constraint(equalTo: defaultCharView.topAnchor),
@@ -228,9 +324,7 @@ class StatisticVC: UIViewController, ChartViewDelegate, IAxisValueFormatter {
       chartView.bottomAnchor.constraint(equalTo: defaultCharView.bottomAnchor)
     ])
   }
-  
 }
-
 
 ```
 
