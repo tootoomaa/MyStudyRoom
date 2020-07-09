@@ -46,4 +46,6 @@ Self Study with Udemy
 25. [Like Function & Data Structure](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/25_LikeFunction.md)
 26. [Comment Fuction](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/26_CommentFunction.md)
 27. [Notification Function](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/27_NotificationFunction.md)
+28. [SearchVC Function](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/28_SearchVC.md)
+29. [Direct Messaging Function](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/29_DirectMessaging.md)
 
