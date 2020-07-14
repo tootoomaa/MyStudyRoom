@@ -20,8 +20,8 @@
 3. [ChartsLibrary](https://github.com/tootoomaa/MyStudyRoom/tree/master/Others/note/03_CharLibrary)
 4. [SwiftStyleGuide](https://github.com/tootoomaa/MyStudyRoom/tree/master/Others/note/04_SwiftStyleGuide)
 5. [Date 관련](https://github.com/tootoomaa/MyStudyRoom/tree/master/Others/note/05_Date)
-6. [HealthKit](https://github.com/tootoomaa/MyStudyRoom/tree/master/Others/note/06_healthKit)
-7. [URLSheme](https://github.com/tootoomaa/MyStudyRoom/tree/master/Others/note/07_URLSheme)
+6. [HealthKit](https://github.com/tootoomaa/MyStudyRoom/tree/master/Others/note/06_healthKit.md)
+7. [URLSheme](https://github.com/tootoomaa/MyStudyRoom/tree/master/Others/note/07_URLSheme.md)
 
  
 
