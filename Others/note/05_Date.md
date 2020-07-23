@@ -60,4 +60,5 @@ cal.timeZone													// Asia/Seoul (current)
 2. Blog
    - [날짜 다루기](https://medium.com/@Alpaca_iOSStudy/날짜-다루기-b008fa101da)
    - [왕초보를 위한 날짜와 시간 사용](https://zeddios.tistory.com/134)
+   - [[Xcode / Swift] 날짜와 시간 다루기 | Date() DateComponents()](https://macinjune.com/all-posts/web-developing/swift/xcode-swift-날짜와-시간-다루기-date-datecomponents/)
 
