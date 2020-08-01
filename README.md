@@ -25,6 +25,7 @@
 8. [UITableView](https://github.com/tootoomaa/MyStudyRoom/tree/master/Others/note/08_TableView.md)
 9. [UIRefreshControl](https://github.com/tootoomaa/MyStudyRoom/tree/master/Others/note/09_UIRefreshControl)
 10. [UserDefault with Custom Array](https://github.com/tootoomaa/MyStudyRoom/tree/master/Others/note/10_UserDefault_CustomArray)
+11. [DesignPattern](https://github.com/tootoomaa/MyStudyRoom/tree/master/Others/note/11_DesignPattern)
 
  
 
