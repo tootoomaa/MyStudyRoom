@@ -48,4 +48,5 @@ Self Study with Udemy
 27. [Notification Function](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/27_NotificationFunction.md)
 28. [SearchVC Function](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/28_SearchVC.md)
 29. [Direct Messaging Function](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/29_DirectMessaging.md)
+30. [Feeds Pagination](https://github.com/tootoomaa/MyStudyRoom/blob/master/instagramCopy/note/30_Pagination.md)
 
