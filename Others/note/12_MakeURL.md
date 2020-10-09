@@ -33,8 +33,6 @@ urlComponents.queryItems = [
 
 
 
-
-
 ### Reference
 
 - URL 구조

@@ -26,6 +26,9 @@
 9. [UIRefreshControl](https://github.com/tootoomaa/MyStudyRoom/tree/master/Others/note/09_UIRefreshControl)
 10. [UserDefault with Custom Array](https://github.com/tootoomaa/MyStudyRoom/tree/master/Others/note/10_UserDefault_CustomArray)
 11. [DesignPattern](https://github.com/tootoomaa/MyStudyRoom/tree/master/Others/note/11_DesignPattern)
+12. [Safe Make URL](https://github.com/tootoomaa/MyStudyRoom/tree/master/Others/note/12_MakeURL)
+13. [Pass Data Between TabBarVCs](https://github.com/tootoomaa/MyStudyRoom/tree/master/Others/note/13_PassDataBetweenTabBarVC)
+14. [MemoryLeak](https://github.com/tootoomaa/MyStudyRoom/tree/master/Others/note/14_MemoyLeak)
+15. [UINavigationBarAppearance](https://github.com/tootoomaa/MyStudyRoom/tree/master/Others/note/15_UINavigationBarAppearance)
 
- 
 
