@@ -2,7 +2,13 @@
 
 # Subject
 
-## subject 종류
+## subject 
+
+1. Subject란 
+   - 실시간으로 Observable에 값을 추가하고 Subscibe를 하는 역할
+   - Observable이자 Observer를 Subject라고 함
+   - 이벤트를 외부에 전달해줄 경우에도 사용가능(Delegate 대신 사용 하기도 함)
+2. Subject의 종류
 
 ![subjects](../image/subjects.png)
 
@@ -240,7 +246,7 @@
     */
     ```
 
-- ㅁㅇㄴㄹ
+- 여러개의 값을 추가해야 할 때
 
   - ```swift
     let relay = BehaviorRelay(value: ["Item 1"])
@@ -261,12 +267,10 @@
     */
     ```
 
-  - 
-
-
+### ~Subject와 ~Relay의 차이점
 
 ```
-~Subject와 ~Relay의 차이점
+
 ~Subject는 .completed, .error의 이벤트가 발생하면 subscribe가 종료되는 반면,
 ~Relay는 .completed, .error를 발생하지 않고 Dispose되기 전까지 계속 작동하기 때문에 UI Event에서 사용하기 적절합니다.
 ```
