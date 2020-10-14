@@ -24,6 +24,7 @@ class PhotosCollectionViewController: UICollectionViewController {
     super.viewDidLoad()
     
     populatePhotos()
+    
   }
   
   override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -67,7 +68,7 @@ class PhotosCollectionViewController: UICollectionViewController {
   
   private func populatePhotos() {
     PHPhotoLibrary.requestAuthorization { [ weak self ]status in
-      if status == .authorized {
+      if status == .limited || status == .authorized {
         //access photo from phot library
         let assets = PHAsset.fetchAssets(with: PHAssetMediaType.image, options: nil)
         assets.enumerateObjects { (object, count, stop) in
