@@ -25,6 +25,8 @@
 		C789AF8A25354D4800572141 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C789AF8C25354D4800572141 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C789AF8D25354D4800572141 /* HelloRxSwift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HelloRxSwift.entitlements; sourceTree = "<group>"; };
+		C7A38DD025386ECC004B5CB5 /* 9_CombiningOperators.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 9_CombiningOperators.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		C7E1C59E25381A5B001C7EBA /* 7_TransformingOperators.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 7_TransformingOperators.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		C7F1683C2535640300B21B81 /* 2_Observable_Dispose.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 2_Observable_Dispose.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		C7F1683F2535760600B21B81 /* 3_Subject.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 3_Subject.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		FF8808942FDC4616682257D0 /* Pods-HelloRxSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloRxSwift.release.xcconfig"; path = "Target Support Files/Pods-HelloRxSwift/Pods-HelloRxSwift.release.xcconfig"; sourceTree = "<group>"; };
@@ -72,6 +74,8 @@
 		C789AF8225354D4600572141 /* HelloRxSwift */ = {
 			isa = PBXGroup;
 			children = (
+				C7A38DD025386ECC004B5CB5 /* 9_CombiningOperators.playground */,
+				C7E1C59E25381A5B001C7EBA /* 7_TransformingOperators.playground */,
 				C727F5962536A51F00B6F045 /* 5_Operator.playground */,
 				C7F1683F2535760600B21B81 /* 3_Subject.playground */,
 				C7F1683C2535640300B21B81 /* 2_Observable_Dispose.playground */,

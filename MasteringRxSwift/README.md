@@ -23,4 +23,8 @@ Self Study with Udemy Lecture
 3. [Subject](https://github.com/tootoomaa/MyStudyRoom/tree/master/MasteringRxSwift/note/3_subject.md)
 4. [CameraFilter With RxSwift](https://github.com/tootoomaa/MyStudyRoom/tree/master/MasteringRxSwift/note/4_CameraFilter.md)
 5. [Operator](https://github.com/tootoomaa/MyStudyRoom/tree/master/MasteringRxSwift/note/5_Operator.md)
+6. [Todo List App With RxSwift](https://github.com/tootoomaa/MyStudyRoom/tree/master/MasteringRxSwift/note/6_TodoListApp.md)
+7. [Transforming Operator](https://github.com/tootoomaa/MyStudyRoom/tree/master/MasteringRxSwift/note/7_transformingOpertaion.md)
+8. [GoodNews App With RxSwift](https://github.com/tootoomaa/MyStudyRoom/tree/master/MasteringRxSwift/note/8_GoodNewsApp.md)
+9. [Combining Operators ](https://github.com/tootoomaa/MyStudyRoom/tree/master/MasteringRxSwift/note/9_CombiningOperators.md)
 
