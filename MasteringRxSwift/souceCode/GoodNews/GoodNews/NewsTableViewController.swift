@@ -19,7 +19,7 @@ class NewsTableViewController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     self.navigationController?.navigationBar.prefersLargeTitles = true
-    
+    configureNavigationController()
     populateNews()
     
   }
@@ -39,6 +39,19 @@ class NewsTableViewController: UITableViewController {
     cell.contentLabel.text = articles[indexPath.row].description
     
     return cell
+  }
+  
+  private func configureNavigationController() {
+    
+    let naviBackGroundColor = UIColor(displayP3Red: 47/255, green: 54/255, blue: 64/255, alpha: 1.0)
+    let appearance = UINavigationBarAppearance()
+    appearance.backgroundColor = naviBackGroundColor
+    appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+    appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+    
+    navigationController?.navigationBar.standardAppearance = appearance
+    navigationController?.navigationBar.compactAppearance = appearance
+    navigationController?.navigationBar.scrollEdgeAppearance = appearance
   }
   
   private func populateNews() {
