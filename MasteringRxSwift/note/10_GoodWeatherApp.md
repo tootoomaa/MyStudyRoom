@@ -2,13 +2,17 @@
 
 ## 구현 화면
 
+- 날씨 API를 통해 특정 도시의 날씨의 온도와 습도를 받아오는  App
+- RxSwift 및 RxCocoa를 사용하여 구현
 
-
-
+![GoodWeatherApp](../image/GoodWeatherApp.gif)
 
 ## 소스코드
 
+### 구현 과정
 
+1. RxSwift를 통한데이터 받아오기
+   - 
 
 
 

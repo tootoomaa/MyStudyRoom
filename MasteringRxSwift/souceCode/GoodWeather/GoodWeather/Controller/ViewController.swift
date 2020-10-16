@@ -33,20 +33,6 @@ class ViewController: UIViewController {
           }
         }
       }).disposed(by: disposeBag)
-    
-    // everytiem search when User type city Name
-//    self.cityNameTextField.rx.value
-//      .subscribe(onNext: { city in
-//
-//        if let city = city {
-//          if city.isEmpty {
-//            self.displayWeather(nil)
-//          } else {
-//            self.fetchWeather(by: city)
-//          }
-//        }
-//
-//      }).disposed(by: disposeBag)
   }
   
   private func fetchWeather(by city: String) {
@@ -66,16 +52,6 @@ class ViewController: UIViewController {
     search.map { "\($0.main.humidity)💦"}
       .drive(self.humidityLabel.rx.text)
       .disposed(by: disposeBag)
-    
-    // [----- Basic ------]
-//      .subscribe(onNext:{ result in
-//
-//        print(result)
-//
-//        let weather = result.main
-//        self.displayWeather(weather)
-//
-//      }).disposed(by: disposeBag)
   }
   
   private func displayWeather(_ weather: Weather?) {
