@@ -26,5 +26,8 @@ Self Study with Udemy Lecture
 6. [Todo List App With RxSwift](https://github.com/tootoomaa/MyStudyRoom/tree/master/MasteringRxSwift/note/6_TodoListApp.md)
 7. [Transforming Operator](https://github.com/tootoomaa/MyStudyRoom/tree/master/MasteringRxSwift/note/7_transformingOpertaion.md)
 8. [GoodNews App With RxSwift](https://github.com/tootoomaa/MyStudyRoom/tree/master/MasteringRxSwift/note/8_GoodNewsApp.md)
-9. [Combining Operators ](https://github.com/tootoomaa/MyStudyRoom/tree/master/MasteringRxSwift/note/9_CombiningOperators.md)
+9. [Combining Operators](https://github.com/tootoomaa/MyStudyRoom/tree/master/MasteringRxSwift/note/9_CombiningOperators.md)
+10. [GoodWeater App](https://github.com/tootoomaa/MyStudyRoom/tree/master/MasteringRxSwift/note/10_GoodWeatherApp.md)
+11. [Managing Errors](https://github.com/tootoomaa/MyStudyRoom/tree/master/MasteringRxSwift/note/11_ManaginErrors.md)
+12. [GoodNews App with MVVM](https://github.com/tootoomaa/MyStudyRoom/tree/master/MasteringRxSwift/note/12_GoodNewsAppMVVM.md)
 

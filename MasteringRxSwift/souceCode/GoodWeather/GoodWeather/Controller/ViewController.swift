@@ -26,12 +26,9 @@ class ViewController: UIViewController {
       .subscribe(onNext: { city in
         
         if let city = city {
-          if city.isEmpty {
-            self.displayWeather(nil)
-          } else {
-            self.fetchWeather(by: city)
-          }
+          self.fetchWeather(by: city)
         }
+        
       }).disposed(by: disposeBag)
   }
   
@@ -43,8 +40,16 @@ class ViewController: UIViewController {
     
     let search = URLRequest.load(resource: resource)
       .observeOn(MainScheduler.instance)
+      .retry(3)
+      .catchError { error -> Observable<Observable<WeatherResult>.E> in
+        print("Error", error.localizedDescription)
+        return Observable.just(WeatherResult.empty)
+      }.asDriver(onErrorJustReturn: WeatherResult.empty)
+
+    /*
+    let search = URLRequest.load(resource: resource)
       .asDriver(onErrorJustReturn: WeatherResult.empty)
-    
+    */
     search.map { "\($0.main.temp)℉" }
       .drive(self.temperatureLabel.rx.text)
       .disposed(by: disposeBag)
