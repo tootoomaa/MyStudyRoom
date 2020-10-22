@@ -38,12 +38,13 @@ extension Order {
     }
     
     return Resource<[Order]>(url: url)
+    
   }()
   
   static func create(vm: AddCoffeeOrderViewModel) -> Resource<Order?> {
     
     let order = Order(vm)
-    guard let url = URL(string: "https://guarded-retreat-82533.herokuapp.com/orders") else {
+    guard let url = URL(string: "https://guarded-retreat-82533.herokuapp.com") else {
       fatalError("URL is Incorrenct")
     }
     

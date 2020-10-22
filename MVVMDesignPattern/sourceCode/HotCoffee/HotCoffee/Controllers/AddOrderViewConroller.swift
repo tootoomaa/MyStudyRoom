@@ -8,8 +8,16 @@
 import Foundation
 import UIKit
 
+protocol AddCoffeeOrderDelegate {
+  func addCoffeeOrderViewControllerDidSave(order: Order, controller: UIViewController)
+  func addCoffeeOrderViewControllerDidClose(controller: UIViewController)
+}
+
+
 class AddOrderViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+  var delegate: AddCoffeeOrderDelegate?
+  
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var firstNameTextField: UITextField!
   @IBOutlet weak var lastNameTextField: UITextField!
@@ -62,31 +70,41 @@ class AddOrderViewController: UIViewController, UITableViewDelegate, UITableView
   
   // MARK: - Button Action
   @IBAction func tapCloseButton() {
-    dismiss(animated: true, completion: nil)
+    
+    if let delegate = self.delegate {
+      delegate.addCoffeeOrderViewControllerDidClose(controller: self)
+    }
+    
   }
   
   @IBAction func tapSaveButton() {
-    let name = self.firstNameTextField.text
-    let email = self.lastNameTextField.text
+    guard let name = self.firstNameTextField.text else { return }
+    guard let email = self.lastNameTextField.text else { return }
     
-    let selectedSize = self.coffeeSizeSegmentedControll.titleForSegment(at: self.coffeeSizeSegmentedControll.selectedSegmentIndex)
+    guard let selectedSize = self.coffeeSizeSegmentedControll.titleForSegment(at: self.coffeeSizeSegmentedControll.selectedSegmentIndex) else { return }
     
-    guard let indexPath = self.tableView.indexPathForSelectedRow else {
-      fatalError("Error in sengmented selection")
-    }
+    guard let indexPath = self.tableView.indexPathForSelectedRow else { return }
     
-    self.vm.selectedType = name
+    self.vm.name = name
     self.vm.email = email
     
     self.vm.selectedType = self.vm.types[indexPath.row]
     self.vm.selectedSize = selectedSize
     
+    print(self.vm)
+    
     WebService().load(resource: Order.create(vm: self.vm)) { result in
       switch result {
       case .success(let order):
-        print(order)
+        
+        if let order = order, let delegate = self.delegate {
+          DispatchQueue.main.async {
+            delegate.addCoffeeOrderViewControllerDidSave(order: order, controller: self)
+          }
+        }
+        
       case .failure(let error):
-        print("Error", error.localizedDescription)      
+        print("Error", error.localizedDescription)
       }
     }
     

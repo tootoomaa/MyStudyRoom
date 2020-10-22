@@ -32,5 +32,4 @@
 13. [Pass Data Between TabBarVCs](https://github.com/tootoomaa/MyStudyRoom/tree/master/Others/note/13_PassDataBetweenTabBarVC)
 14. [MemoryLeak](https://github.com/tootoomaa/MyStudyRoom/tree/master/Others/note/14_MemoyLeak)
 15. [UINavigationBarAppearance](https://github.com/tootoomaa/MyStudyRoom/tree/master/Others/note/15_UINavigationBarAppearance)
-
-
+16. [Alamofire](https://github.com/tootoomaa/MyStudyRoom/tree/master/Others/note/16_Alamofire)
