@@ -22,8 +22,9 @@
           ```
 
      2. tableView Cell 을 그릴 때 마지막으로 화면에 그려지는 cell 반환 함수
+        
         - ```swift
-         var indexPathsForVisibleRows: [IndexPath]? { get }
+          var indexPathsForVisibleRows: [IndexPath]? { get }
           ```
 
    - 소스코드 예시

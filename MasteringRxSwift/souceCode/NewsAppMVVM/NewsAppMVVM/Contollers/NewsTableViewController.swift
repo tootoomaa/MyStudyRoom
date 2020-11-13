@@ -18,8 +18,33 @@ class NewsTableViewController: UITableViewController {
   // MARK: - Life Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    loadDate<ArticleResponse: Decodable>(url: URL(string: "https://newsapi.org/v2/top-headlines?country=us&apiKey=aab00f244cdd43558a60ae6c73002474")!, completion: { decodeDate in
+      
+      print(decodeDate)
+      
+    })
+    
     configureNavigationBar()
     populateNews()
+  }
+  
+  func loadDate<T: Decodable>(url: URL, completion: @escaping (T) -> Void) {
+
+    URLSession.shared.dataTask(with: url) { (date, response, error) in
+
+      if let error = error {
+        print("Error", error.localizedDescription)
+        return
+      }
+
+      guard let date = date else { return }
+
+      if let decodeDate = try? JSONDecoder().decode(T.self, from: date) {
+        completion(decodeDate)
+      }
+    }.resume()
+    
   }
   
   private func configureNavigationBar() {

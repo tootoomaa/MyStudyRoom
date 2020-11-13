@@ -111,9 +111,11 @@
 - HealthKit 데이터를 읽고 쓰는 별도의 사용자 정의 메시지가 필요
   
   - ![privacy](../image/07_HealthKit/privacy.png)
+  
 - 아래 예는 SpeedySloth 앱이 연소 된 에너지, 자전거 거리, 도보 또는 달리기 거리 및 심박수 샘플을 읽고 공유 할 수있는 권한을 요청
+
   - ```swift
-let allTypes = Set([HKObjectType.workoutType(),
+    let allTypes = Set([HKObjectType.workoutType(),
                         HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!,
                         HKObjectType.quantityType(forIdentifier: .distanceCycling)!,
                         HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning)!,
@@ -196,4 +198,3 @@ let allTypes = Set([HKObjectType.workoutType(),
   - [Setting Up HealthKit](https://developer.apple.com/documentation/healthkit/setting_up_healthkit)
   - [Authorizin Access to Health Data](https://developer.apple.com/documentation/healthkit/authorizing_access_to_health_data)
   - [HealthStroe](https://developer.apple.com/documentation/healthkit/hkhealthstore)
-  - 
