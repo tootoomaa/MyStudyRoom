@@ -8,10 +8,11 @@
 import Foundation
 import UIKit
 
-class WeatherListTableViewController: UITableViewController {
+class WeatherListTableViewController: UITableViewController, AddWeatherDelegate {
+  // MARK: - Properties
+  private var weatherListVM = WeatherListViewModel()
   
-  var weatherViewModel = WeatherViewModel()
-  
+  // MARK: - Life cycle
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -32,6 +33,41 @@ class WeatherListTableViewController: UITableViewController {
     navigationController?.navigationBar.scrollEdgeAppearance = appearance
   }
   
+  func addWeatherDidSave(vm: WeatherViewModel) {
+    
+    weatherListVM.addWeatherViewModel(vm: vm)
+    tableView.reloadData()
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+    if segue.identifier == "AddWeatherCityVC" {
+      
+      prepareSegueForAddWeatherCityVC(segue: segue)
+      
+    } else if segue.identifier == "SettingTableViewVC" {
+
+      prepareSegueForSettingsTableVC(segue: segue)
+      
+    }
+  }
+  
+  private func prepareSegueForAddWeatherCityVC(segue: UIStoryboardSegue) {
+    
+    guard let nav = segue.destination as? UINavigationController else {
+      fatalError("NavigationContoller not found")
+    }
+    
+    guard let addWeatherVC = nav.viewControllers.first as? AddWeatherCityViewController else {
+      fatalError("AddWeatherVC not Fount")
+    }
+    
+    addWeatherVC.delegate = self
+  }
+  
+  private func prepareSegueForSettingsTableVC(segue: UIStoryboardSegue) {
+    
+  }
   
   // MARK: - UITableView
   override func numberOfSections(in tableView: UITableView) -> Int {
@@ -39,17 +75,17 @@ class WeatherListTableViewController: UITableViewController {
   }
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return weatherViewModel.myWeatherList.count
+    return weatherListVM.numberOfRows(section)
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
     let cell = tableView.dequeueReusableCell(withIdentifier: "WeatherCell", for: indexPath) as! WeatherCell
     
-    let weather = weatherViewModel.myWeatherList[indexPath.row]
+    let weatherVM = self.weatherListVM.modelAt(indexPath.row)
     
-    cell.cityNameLabel.text = weather.name
-    cell.temparatureLabel.text = "\(weather.temperature)"
+    cell.cityNameLabel.text = weatherVM.name
+    cell.temparatureLabel.text = weatherVM.currentTemperature.temperature.formatAsDegree
     
     return cell
     

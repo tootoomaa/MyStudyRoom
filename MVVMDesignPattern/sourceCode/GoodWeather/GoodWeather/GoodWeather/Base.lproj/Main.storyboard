@@ -58,6 +58,42 @@
             </objects>
             <point key="canvasLocation" x="5539.130434782609" y="28.794642857142854"/>
         </scene>
+        <!--Settings-->
+        <scene sceneID="qLN-bK-1bW">
+            <objects>
+                <tableViewController id="VoT-bW-xw9" customClass="SettingsTableViewController" customModule="GoodWeather" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jxk-3w-WTe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingsCell" id="CIr-Fz-rpm">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CIr-Fz-rpm" id="edk-gr-DO0">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="VoT-bW-xw9" id="Cya-AU-hnM"/>
+                            <outlet property="delegate" destination="VoT-bW-xw9" id="d7j-Hh-VNX"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Settings" id="6zt-dD-mfd">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="63Y-is-GmG">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="close" destination="VoT-bW-xw9" id="NYm-ZH-eEo"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KpU-Nn-uf6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4535" y="-724"/>
+        </scene>
         <!--GoodWeather-->
         <scene sceneID="maI-zP-rca">
             <objects>
@@ -108,11 +144,14 @@
                     <navigationItem key="navigationItem" title="GoodWeather" id="kMD-eY-ufC">
                         <barButtonItem key="leftBarButtonItem" title="Setting" id="TCz-Nm-FAz">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="WlL-Kp-mfV" kind="presentation" identifier="SettingTableViewVC" modalPresentationStyle="fullScreen" id="Zxm-Tf-MKM"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="vFe-kr-ln6">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="Ghc-Ek-1Hn" kind="presentation" modalPresentationStyle="fullScreen" id="40Q-tO-eN1"/>
+                                <segue destination="Ghc-Ek-1Hn" kind="presentation" identifier="AddWeatherCityVC" modalPresentationStyle="fullScreen" id="40Q-tO-eN1"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -158,6 +197,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vng-DU-KWc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2686.9565217391305" y="24.776785714285712"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gNS-vz-qmT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WlL-Kp-mfV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="DmU-bA-6HV">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="VoT-bW-xw9" kind="relationship" relationship="rootViewController" id="15K-Jm-CCj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zaS-Ot-nS1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3625" y="-724"/>
         </scene>
     </scenes>
     <resources>
