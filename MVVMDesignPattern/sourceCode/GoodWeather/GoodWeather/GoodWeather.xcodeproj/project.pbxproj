@@ -20,6 +20,9 @@
 		C7627B5725601EB900793594 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7627B5625601EB900793594 /* Double+Extension.swift */; };
 		C7627B5B256021D600793594 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7627B5A256021D600793594 /* SettingsTableViewController.swift */; };
 		C7627B5E2560240100793594 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7627B5D2560240100793594 /* SettingsViewModel.swift */; };
+		C7627B62256103A800793594 /* BindingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7627B61256103A800793594 /* BindingTextField.swift */; };
+		C7627B66256106D700793594 /* AddCityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7627B65256106D700793594 /* AddCityViewModel.swift */; };
+		C7627B6925610BDD00793594 /* WeatherDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7627B6825610BDD00793594 /* WeatherDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		C7627B5625601EB900793594 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		C7627B5A256021D600793594 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		C7627B5D2560240100793594 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		C7627B61256103A800793594 /* BindingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingTextField.swift; sourceTree = "<group>"; };
+		C7627B65256106D700793594 /* AddCityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityViewModel.swift; sourceTree = "<group>"; };
+		C7627B6825610BDD00793594 /* WeatherDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +76,7 @@
 		C7627B1F255EA69500793594 /* GoodWeather */ = {
 			isa = PBXGroup;
 			children = (
+				C7627B602561039700793594 /* CustomController */,
 				C7627B5525601EAA00793594 /* Extension */,
 				C7627B36255EA97B00793594 /* Controller */,
 				C7627B4C255ED23800793594 /* ViewModel */,
@@ -91,6 +98,7 @@
 				C7627B37255EA98B00793594 /* WeatherListTalbeViewController.swift */,
 				C7627B3B255EA9B800793594 /* AddWeatherCityViewController.swift */,
 				C7627B5A256021D600793594 /* SettingsTableViewController.swift */,
+				C7627B6825610BDD00793594 /* WeatherDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -116,6 +124,7 @@
 			children = (
 				C7627B4D255ED24200793594 /* WeatherListViewModel.swift */,
 				C7627B5D2560240100793594 /* SettingsViewModel.swift */,
+				C7627B65256106D700793594 /* AddCityViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -126,6 +135,14 @@
 				C7627B5625601EB900793594 /* Double+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		C7627B602561039700793594 /* CustomController */ = {
+			isa = PBXGroup;
+			children = (
+				C7627B61256103A800793594 /* BindingTextField.swift */,
+			);
+			path = CustomController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7627B3C255EA9B800793594 /* AddWeatherCityViewController.swift in Sources */,
+				C7627B6925610BDD00793594 /* WeatherDetailViewController.swift in Sources */,
 				C7627B4A255ECE9D00793594 /* Webservice.swift in Sources */,
 				C7627B21255EA69500793594 /* AppDelegate.swift in Sources */,
 				C7627B41255EAD8600793594 /* WeatherCell.swift in Sources */,
@@ -206,8 +224,10 @@
 				C7627B5E2560240100793594 /* SettingsViewModel.swift in Sources */,
 				C7627B38255EA98B00793594 /* WeatherListTalbeViewController.swift in Sources */,
 				C7627B4E255ED24200793594 /* WeatherListViewModel.swift in Sources */,
+				C7627B62256103A800793594 /* BindingTextField.swift in Sources */,
 				C7627B23255EA69500793594 /* SceneDelegate.swift in Sources */,
 				C7627B5B256021D600793594 /* SettingsTableViewController.swift in Sources */,
+				C7627B66256106D700793594 /* AddCityViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,11 +14,31 @@ protocol AddWeatherDelegate {
 
 class AddWeatherCityViewController: UIViewController {
   
+  var addCityVM = AddCityViewModel()
+  
   var delegate: AddWeatherDelegate?
   
-  @IBOutlet weak var cityNameTextField: UITextField!
+  @IBOutlet weak var cityNameTextField: BindingTextField! {
+    didSet {
+      cityNameTextField.bind { self.addCityVM.city = $0 }
+    }
+  }
+  
+  @IBOutlet weak var stateTextField: BindingTextField! {
+    didSet {
+      stateTextField.bind { self.addCityVM.state = $0 }
+    }
+  }
+  
+  @IBOutlet weak var zipCodeTextFidel: BindingTextField! {
+    didSet {
+      zipCodeTextFidel.bind { self.addCityVM.zipCode = $0 }
+    }
+  }
   
   @IBAction func saveCityButtonPressed() {
+    
+    print(self.addCityVM)
     
     guard let city = cityNameTextField.text else { return }
     

@@ -33,12 +33,6 @@ class WeatherListTableViewController: UITableViewController, AddWeatherDelegate 
     navigationController?.navigationBar.scrollEdgeAppearance = appearance
   }
   
-  func addWeatherDidSave(vm: WeatherViewModel) {
-    
-    weatherListVM.addWeatherViewModel(vm: vm)
-    tableView.reloadData()
-  }
-  
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     
     if segue.identifier == "AddWeatherCityVC" {
@@ -49,9 +43,14 @@ class WeatherListTableViewController: UITableViewController, AddWeatherDelegate 
 
       prepareSegueForSettingsTableVC(segue: segue)
       
+    } else if segue.identifier == "WeatherDetailVC" {
+      
+      prepareSegueForWeatherDetailVC(segue: segue)
+      
     }
   }
   
+  // MARK: - AddWeatherCityViewController
   private func prepareSegueForAddWeatherCityVC(segue: UIStoryboardSegue) {
     
     guard let nav = segue.destination as? UINavigationController else {
@@ -65,8 +64,35 @@ class WeatherListTableViewController: UITableViewController, AddWeatherDelegate 
     addWeatherVC.delegate = self
   }
   
+  func addWeatherDidSave(vm: WeatherViewModel) {
+    
+    weatherListVM.addWeatherViewModel(vm: vm)
+    tableView.reloadData()
+  }
+  
+  // MARK: - SettingsTableViewController
   private func prepareSegueForSettingsTableVC(segue: UIStoryboardSegue) {
     
+    guard let nav = segue.destination as? UINavigationController else {
+      fatalError("NavigationContoller not found")
+    }
+    
+    guard let settingsTableVC = nav.viewControllers.first as? SettingsTableViewController else {
+      fatalError("SettingsTableViewController not Fount")
+    }
+    
+    settingsTableVC.delegate = self
+  }
+  
+  
+  private func prepareSegueForWeatherDetailVC(segue: UIStoryboardSegue) {
+    
+    guard let weatherDetailVC = segue.destination as? WeatherDetailViewController,
+          let indexPath = self.tableView.indexPathForSelectedRow else {
+      return
+    }
+    
+    weatherDetailVC.weatherVM = weatherListVM.modelAt(indexPath.row)
   }
   
   // MARK: - UITableView
@@ -94,4 +120,15 @@ class WeatherListTableViewController: UITableViewController, AddWeatherDelegate 
   override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return 100
   }
+}
+
+extension WeatherListTableViewController: SettingsDelegate {
+  
+  func settingsDone(vm: SettingsViewModel) {
+    
+    self.weatherListVM.updateUnit(to: vm.selectedUnit)
+    self.tableView.reloadData()
+    
+  }
+  
 }

@@ -8,8 +8,14 @@
 import Foundation
 import UIKit
 
+protocol SettingsDelegate {
+  func settingsDone(vm: SettingsViewModel)
+}
+
 class SettingsTableViewController: UITableViewController {
   // MARK: - Properties
+  var delegate: SettingsDelegate?
+  
   private var settingsVM = SettingsViewModel()
   
   // MARK: - Life Cycle
@@ -34,6 +40,10 @@ class SettingsTableViewController: UITableViewController {
   
   @IBAction func close() {
     
+    if let delegate = delegate {
+      delegate.settingsDone(vm: self.settingsVM)
+    }
+    
     self.dismiss(animated: true, completion: nil)
     
   }
@@ -55,14 +65,28 @@ class SettingsTableViewController: UITableViewController {
     
     cell.textLabel?.text = settingsItem.displayName
     
+    if settingsItem == settingsVM.selectedUnit {
+      cell.accessoryType = .checkmark
+      cell.isSelected = true
+    }
+    
     return cell
     
   }
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
+    //unchecked All checkMark
+    tableView.visibleCells.forEach {
+      $0.accessoryType = .none
+    }
+    
     if let cell = tableView.cellForRow(at: indexPath) {
       cell.accessoryType = .checkmark
+      
+      let unit = Unit.allCases[indexPath.row]
+      self.settingsVM.selectedUnit = unit
+      
     }
     
   }
