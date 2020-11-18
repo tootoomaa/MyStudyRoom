@@ -11,10 +11,14 @@ import UIKit
 class WeatherListTableViewController: UITableViewController, AddWeatherDelegate {
   // MARK: - Properties
   private var weatherListVM = WeatherListViewModel()
+  private var dataSource: WeatherDataSource?
   
   // MARK: - Life cycle
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    self.dataSource = WeatherDataSource(weatherListVM)
+    self.tableView.dataSource = self.dataSource
     
     configureNavigationController()
     
@@ -96,27 +100,6 @@ class WeatherListTableViewController: UITableViewController, AddWeatherDelegate 
   }
   
   // MARK: - UITableView
-  override func numberOfSections(in tableView: UITableView) -> Int {
-    return 1
-  }
-  
-  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return weatherListVM.numberOfRows(section)
-  }
-  
-  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    
-    let cell = tableView.dequeueReusableCell(withIdentifier: "WeatherCell", for: indexPath) as! WeatherCell
-    
-    let weatherVM = self.weatherListVM.modelAt(indexPath.row)
-    
-    cell.cityNameLabel.text = weatherVM.name
-    cell.temparatureLabel.text = weatherVM.currentTemperature.temperature.formatAsDegree
-    
-    return cell
-    
-  }
-  
   override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return 100
   }

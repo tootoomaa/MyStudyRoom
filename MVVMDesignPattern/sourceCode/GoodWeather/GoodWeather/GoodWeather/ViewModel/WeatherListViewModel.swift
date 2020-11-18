@@ -7,12 +7,17 @@
 
 import Foundation
 
+// MARK: - WeatherListViewModel
+class WeatherListViewModel {
+  // set ReadOnly(set)
+  private(set) var weatherViewModels = [WeatherViewModel]()
+  
+}
 
-struct WeatherListViewModel {
+extension WeatherListViewModel {
   
-  private var weatherViewModels = [WeatherViewModel]()
   
-  mutating func addWeatherViewModel(vm: WeatherViewModel) {
+  func addWeatherViewModel(vm: WeatherViewModel) {
     self.weatherViewModels.append(vm)
   }
   
@@ -24,32 +29,32 @@ struct WeatherListViewModel {
     return self.weatherViewModels[index]
   }
   
-  private mutating func toCelsius() {
+  private func toCelsius() {
     
     weatherViewModels = weatherViewModels.map { vm in
       
-      var weatherViewModel = vm
-      weatherViewModel.currentTemperature.temperature =
-          (weatherViewModel.currentTemperature.temperature - 32) * 5/9
+      let weatherViewModel = vm
+      weatherViewModel.currentTemperature.temperature.value =
+        (weatherViewModel.currentTemperature.temperature.value - 32) * 5/9
       return weatherViewModel
       
     }
     
   }
 
-  private mutating func toFahrenheit() {
+  private func toFahrenheit() {
     
     weatherViewModels = weatherViewModels.map { vm in
       
-      var weatherViewModel = vm
-      weatherViewModel.currentTemperature.temperature =
-          (weatherViewModel.currentTemperature.temperature * 9/5 ) + 32
+      let weatherViewModel = vm
+      weatherViewModel.currentTemperature.temperature.value =
+        (weatherViewModel.currentTemperature.temperature.value * 9/5 ) + 32
       return weatherViewModel
       
     }
   }
   
-  mutating func updateUnit(to unit: Unit) {
+  func updateUnit(to unit: Unit) {
     
     switch unit {
     case .celsius:
@@ -61,10 +66,43 @@ struct WeatherListViewModel {
   }
 }
 
+// MARK: - Binding for Dynamic
+class Dynamic<T>: Decodable where T: Decodable {
+  
+  typealias Listener = (T) -> ()
+  var listener: Listener?
+  
+  var value: T {
+    didSet {
+      listener?(value)
+    }
+  }
+  
+  func bind(listener: @escaping Listener) {
+    self.listener = listener
+    self.listener?(self.value)
+  }
+  
+  init(_ value: T) {
+    self.value = value
+  }
+  
+  private enum CodingKeys: CodingKey {
+    case value
+  }
+}
+
+// MARK: - WeatherViewModel
 struct WeatherViewModel: Decodable {
   
-  let name : String
+  let name : Dynamic<String>
   var currentTemperature: TemperatureViewModel
+  
+  init(from decoder: Decoder) throws {
+    let container = try decoder.container(keyedBy: CodingKeys.self)
+    name = Dynamic(try container.decode(String.self, forKey: .name))
+    currentTemperature = try container.decode(TemperatureViewModel.self, forKey: .currentTemperature)
+  }
   
   enum CodingKeys: String, CodingKey {
     case name
@@ -74,9 +112,18 @@ struct WeatherViewModel: Decodable {
 
 struct TemperatureViewModel: Decodable {
   
-  var temperature: Double
-  let temperatureMin: Double
-  let temperatureMax: Double
+  var temperature: Dynamic<Double>
+  let temperatureMin: Dynamic<Double>
+  let temperatureMax: Dynamic<Double>
+  
+  init(from decoder: Decoder) throws {
+    let container = try decoder.container(keyedBy: CordingKeys.self)
+    
+    temperature = Dynamic(try container.decode(Double.self, forKey: .temperature))
+    temperatureMin = Dynamic(try container.decode(Double.self, forKey: .temperatureMin))
+    temperatureMax = Dynamic(try container.decode(Double.self, forKey: .temperatureMax))
+    
+  }
   
   enum CordingKeys: String, CodingKey {
     case temperature = "temp"
