@@ -65,8 +65,49 @@ extension WeatherListViewModel {
     
   }
 }
+class myObservable<T> {
+  
+  typealias Listener = (T) -> Void
+  
+  var value: T {
+    didSet {
+      listener?(value)
+    }
+  }
+  private var listener: Listener?
+  
+  init(_ value: T) {
+    self.value = value
+  }
+  
+  func bind(listenr: @escaping Listener) {
+    if let listener = listener {
+      listener(value)
+    }
+  }
+}
 
 // MARK: - Binding for Dynamic
+class Observable<T> {
+
+    var value: T {
+        didSet {
+            listener?(value)
+        }
+    }
+
+    private var listener: ((T) -> Void)?
+
+    init(_ value: T) {
+        self.value = value
+    }
+
+    func bind(_ closure: @escaping (T) -> Void) {
+        closure(value)
+        listener = closure
+    }
+}
+
 class Dynamic<T>: Decodable where T: Decodable {
   
   typealias Listener = (T) -> ()
@@ -108,6 +149,12 @@ struct WeatherViewModel: Decodable {
     case name
     case currentTemperature = "main"
   }
+}
+
+struct Test {
+  let a: String
+  let b: String
+
 }
 
 struct TemperatureViewModel: Decodable {

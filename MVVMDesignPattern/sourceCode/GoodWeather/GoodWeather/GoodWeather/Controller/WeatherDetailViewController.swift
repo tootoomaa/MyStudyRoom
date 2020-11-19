@@ -21,6 +21,7 @@ class WeatherDetailViewController: UIViewController {
     super.viewDidLoad()
 
     self.setupVMBinding()
+    
   }
   
   private func setupVMBinding() {

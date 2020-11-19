@@ -33,3 +33,5 @@
 14. [MemoryLeak](https://github.com/tootoomaa/MyStudyRoom/tree/master/Others/note/14_MemoyLeak.md)
 15. [UINavigationBarAppearance](https://github.com/tootoomaa/MyStudyRoom/tree/master/Others/note/15_UINavigationBarAppearance.md)
 16. [Alamofire](https://github.com/tootoomaa/MyStudyRoom/tree/master/Others/note/16_Alamofire.md)
+17. [Dependency Injection](https://github.com/tootoomaa/MyStudyRoom/tree/master/Others/note/17_DependencyInjection.md)
+18. [Data Binding in MVVM](https://github.com/tootoomaa/MyStudyRoom/tree/master/Others/note/18_DataBindingInMVVM.md)
