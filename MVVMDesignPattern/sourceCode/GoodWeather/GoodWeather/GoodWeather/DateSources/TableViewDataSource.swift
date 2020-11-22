@@ -20,7 +20,6 @@ class TableViewDataSource<CellType, ViewModel>: NSObject, UITableViewDataSource 
     self.configureCell = configureCell
   }
   
-  
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return self.items.count
   }
@@ -36,4 +35,7 @@ class TableViewDataSource<CellType, ViewModel>: NSObject, UITableViewDataSource 
     return cell
   }
   
+  func updateItems(_ items: [ViewModel]) {
+    self.items = items
+  }
 }

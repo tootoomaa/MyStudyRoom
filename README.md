@@ -19,7 +19,7 @@
 
 1. [MVC Model](https://github.com/tootoomaa/MyStudyRoom/tree/master/Others/note/01_MVPModel.md)
 2. [CoreData](https://github.com/tootoomaa/MyStudyRoom/tree/master/Others/note/02_CoreData.md)
-3. [ChartsLibrary](https://github.com/tootoomaa/MyStudyRoom/tree/master/Others/note/03_CharLibrary.md)
+3. [ChartsLibrary](https://github.com/tootoomaa/MyStudyRoom/tree/master/Others/note/03_ChartLibrary.md)
 4. [SwiftStyleGuide](https://github.com/tootoomaa/MyStudyRoom/tree/master/Others/note/04_SwiftStyleGuide.md)
 5. [Date 관련](https://github.com/tootoomaa/MyStudyRoom/tree/master/Others/note/05_Date.md)
 6. [HealthKit](https://github.com/tootoomaa/MyStudyRoom/tree/master/Others/note/06_healthKit.md)
@@ -36,3 +36,6 @@
 17. [Dependency Injection](https://github.com/tootoomaa/MyStudyRoom/tree/master/Others/note/17_DependencyInjection.md)
 18. [Data Binding in MVVM](https://github.com/tootoomaa/MyStudyRoom/tree/master/Others/note/18_DataBindingInMVVM.md)
 19. [UITableView pagenation](https://github.com/tootoomaa/MyStudyRoom/tree/master/Others/note/19_UITableViewPaginaion.md)
+20. [MVP Design Pattern](https://github.com/tootoomaa/MyStudyRoom/tree/master/Others/note/20_MVPDesignPattern.md)
+21. [SOLID](https://github.com/tootoomaa/MyStudyRoom/tree/master/Others/note/21_SOLID.md)
+
