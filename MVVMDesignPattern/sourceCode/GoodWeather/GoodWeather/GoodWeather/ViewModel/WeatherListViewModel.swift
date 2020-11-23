@@ -16,7 +16,6 @@ class WeatherListViewModel {
 
 extension WeatherListViewModel {
   
-  
   func addWeatherViewModel(vm: WeatherViewModel) {
     self.weatherViewModels.append(vm)
   }
@@ -35,7 +34,7 @@ extension WeatherListViewModel {
       
       let weatherViewModel = vm
       weatherViewModel.currentTemperature.temperature.value =
-        (weatherViewModel.currentTemperature.temperature.value - 32) * 5/9
+        (weatherViewModel.currentTemperature.temperature.value - 32) * 0.55
       return weatherViewModel
       
     }
@@ -65,49 +64,8 @@ extension WeatherListViewModel {
     
   }
 }
-class myObservable<T> {
-  
-  typealias Listener = (T) -> Void
-  
-  var value: T {
-    didSet {
-      listener?(value)
-    }
-  }
-  private var listener: Listener?
-  
-  init(_ value: T) {
-    self.value = value
-  }
-  
-  func bind(listenr: @escaping Listener) {
-    if let listener = listener {
-      listener(value)
-    }
-  }
-}
 
 // MARK: - Binding for Dynamic
-class Observable<T> {
-
-    var value: T {
-        didSet {
-            listener?(value)
-        }
-    }
-
-    private var listener: ((T) -> Void)?
-
-    init(_ value: T) {
-        self.value = value
-    }
-
-    func bind(_ closure: @escaping (T) -> Void) {
-        closure(value)
-        listener = closure
-    }
-}
-
 class Dynamic<T>: Decodable where T: Decodable {
   
   typealias Listener = (T) -> ()
@@ -139,6 +97,11 @@ struct WeatherViewModel: Decodable {
   let name : Dynamic<String>
   var currentTemperature: TemperatureViewModel
   
+  init(_ name: String, _ currentTemperature: TemperatureViewModel) {
+    self.name = Dynamic(name)
+    self.currentTemperature = currentTemperature
+  }
+  
   init(from decoder: Decoder) throws {
     let container = try decoder.container(keyedBy: CodingKeys.self)
     name = Dynamic(try container.decode(String.self, forKey: .name))
@@ -151,17 +114,17 @@ struct WeatherViewModel: Decodable {
   }
 }
 
-struct Test {
-  let a: String
-  let b: String
-
-}
-
 struct TemperatureViewModel: Decodable {
   
   var temperature: Dynamic<Double>
   let temperatureMin: Dynamic<Double>
   let temperatureMax: Dynamic<Double>
+  
+  init(_ temperature: Double, _ temperatureMin: Double, _ temperatureMax: Double) {
+    self.temperature = Dynamic(temperature)
+    self.temperatureMax = Dynamic(temperatureMax)
+    self.temperatureMin = Dynamic(temperatureMin)
+  }
   
   init(from decoder: Decoder) throws {
     let container = try decoder.container(keyedBy: CordingKeys.self)

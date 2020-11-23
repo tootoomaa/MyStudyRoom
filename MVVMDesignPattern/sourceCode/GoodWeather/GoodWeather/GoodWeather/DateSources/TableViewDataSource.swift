@@ -10,11 +10,13 @@ import UIKit
 
 class TableViewDataSource<CellType, ViewModel>: NSObject, UITableViewDataSource where CellType: UITableViewCell {
   
+  typealias configureCellType = (CellType, ViewModel) -> ()
+  
   let cellIdentifier: String
   var items: [ViewModel]
-  let configureCell: (CellType, ViewModel) -> ()
+  let configureCell: configureCellType
   
-  init(cellIdentifier: String, items: [ViewModel], configureCell: @escaping (CellType, ViewModel) -> ()) {
+  init(cellIdentifier: String, items: [ViewModel], configureCell: @escaping configureCellType) {
     self.cellIdentifier = cellIdentifier
     self.items = items
     self.configureCell = configureCell

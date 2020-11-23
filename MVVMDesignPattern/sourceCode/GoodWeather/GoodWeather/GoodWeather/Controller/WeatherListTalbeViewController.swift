@@ -20,11 +20,12 @@ class WeatherListTableViewController: UITableViewController, AddWeatherDelegate 
     
     self.dataSource = TableViewDataSource(cellIdentifier: "WeatherCell", items: self.weatherListVM.weatherViewModels, configureCell: { (cell, vm) in
       
-      
       vm.name.bind { cell.cityNameLabel.text = $0 }
-      vm.currentTemperature.temperature.bind { cell.temparatureLabel.text = $0.formatAsDegree }
-      
+      vm.currentTemperature.temperature.bind {
+        cell.temparatureLabel.text = $0.formatAsDegree
+      }
     })
+    
     self.tableView.dataSource = self.dataSource
     
     configureNavigationController()

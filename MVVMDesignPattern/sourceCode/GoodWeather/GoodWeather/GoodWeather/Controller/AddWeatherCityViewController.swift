@@ -55,6 +55,7 @@ class AddWeatherCityViewController: UIViewController {
       if let weatherVM = result {
         if let delegate = self?.delegate {
           delegate.addWeatherDidSave(vm: weatherVM)
+//          print(weatherVM.currentTemperature.temperature.value)
           self?.dismiss(animated: true, completion: nil)
         } else {
           fatalError(" Fail to get Delegate")
