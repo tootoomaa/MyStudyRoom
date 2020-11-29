@@ -10,30 +10,21 @@ import XCTest
 
 class UnitTestAppTests: XCTestCase {
     
-    static var classInstanceCounter = 0
-    
-    override class func setUp() {
-        super.setUp()
+    override func setUp() {
+        print("setup")
     }
     
-    override func setUpWithError() throws {
-        print("=========SetUp With Error============")
-        UnitTestAppTests.classInstanceCounter += 1
+    override func tearDown() {
+        print("tearDown")
     }
     
-    func testExample1() throws {
-        print("Accessing class level infomation. Running From Instance # \(UnitTestAppTests.classInstanceCounter)")
+    func testViewController_AlwaysRetturnTrue_isTrue() throws {
+        
+        let value = ViewController().alwaysReturnTure()
+        
+        XCTAssertTrue(!value)
+        
     }
-    
-    func testExample2() throws {
-        print("Accessing class level infomation. Running From Instance # \(UnitTestAppTests.classInstanceCounter)")
-    }
-    
-    override func tearDownWithError() throws {
-        print("=========tear Down Error============")
-    }
-    
-    override class func tearDown() {
-        super.tearDown()
-    }
+
 }
+
