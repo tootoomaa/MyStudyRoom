@@ -36,4 +36,10 @@ Self Study with Udemy Lecture
 
 1. [Introduce](https://www.notion.so/Introduction-6ffb490e744a4240b21b0021d3c2f69b)
 2. [Test That User First name is Valid](https://www.notion.so/Test-That-User-First-name-is-Valid-bd15186da0ca45ffb6df63ecf381a865)
+3. [Test Code in Isolation](https://www.notion.so/Test-Code-in-Isolation-faeb0378133e477aa2ba4134b254ee8b)
+
+**Test Code in Isolation**
+
+1. [Introduce](https://www.notion.so/Introduce-a067ae586d0041bf8e6aa401f35769b3)
+2. [How to Unit Test URL Request](https://www.notion.so/How-to-Unit-Test-URL-Request-fd2fef2454fd4d888b991f40e0354810)
 
