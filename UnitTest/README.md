@@ -41,5 +41,5 @@ Self Study with Udemy Lecture
 **Test Code in Isolation**
 
 1. [Introduce](https://www.notion.so/Introduce-a067ae586d0041bf8e6aa401f35769b3)
-2. [How to Unit Test URL Request](https://www.notion.so/How-to-Unit-Test-URL-Request-fd2fef2454fd4d888b991f40e0354810)
+2. [How to Unit Test URL Request (Async)](https://www.notion.so/How-to-Unit-Test-URL-Request-fd2fef2454fd4d888b991f40e0354810)
 
