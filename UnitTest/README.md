@@ -43,3 +43,9 @@ Self Study with Udemy Lecture
 1. [Introduce](https://www.notion.so/Introduce-a067ae586d0041bf8e6aa401f35769b3)
 2. [How to Unit Test URL Request (Async)](https://www.notion.so/How-to-Unit-Test-URL-Request-fd2fef2454fd4d888b991f40e0354810)
 
+**TDD. Implementing Presenter Class in MVP Application**
+
+1. [Introduce](https://www.notion.so/Introduce-64be44cfcf7840e88e8c0d9adb6fa948)
+2. [Signup Presenter Class Unit Test - 1](https://www.notion.so/Signup-Presenter-Class-Unit-Test-4f8eaf9abce748bcb273b8f0fd77cf62)
+3. [Signup Presenter Class Unit Test - 2](https://www.notion.so/Signup-Presenter-Class-Unit-Test-2-28896a99d54d40c99d4426581e4e20a6)
+

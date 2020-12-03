@@ -7,10 +7,10 @@
 
 import Foundation
 
-class SignupWebService {
+class SignupWebService: SignupWebServiceProtocol {
     
-    private var urlString: String
-    private var urlSession: URLSession
+    var urlString: String
+    var urlSession: URLSession
     
     init(urlString: String, urlSession: URLSession = .shared) {
         self.urlString = urlString
