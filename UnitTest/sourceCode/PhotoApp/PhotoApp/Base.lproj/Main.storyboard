@@ -61,11 +61,11 @@
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="2hb-Xe-w4e" id="8an-v6-jxX"/>
-                        <outlet property="firstNameTextField" destination="vAp-Ej-W1O" id="Eg1-6p-03t"/>
+                        <outlet property="firstNameTextField" destination="vAp-Ej-W1O" id="a3r-1A-oIb"/>
                         <outlet property="lastNameTextField" destination="th6-zR-SFU" id="mB2-Je-MZ2"/>
                         <outlet property="passwordTextField" destination="F4Y-No-MOj" id="d33-Sy-k1V"/>
                         <outlet property="repeatPasswordTextField" destination="MnY-fZ-oeO" id="plE-bT-mZ5"/>
-                        <outlet property="signpButton" destination="r8w-16-Rlf" id="29Y-XC-agf"/>
+                        <outlet property="signupButton" destination="r8w-16-Rlf" id="kDW-gG-23w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

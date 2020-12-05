@@ -31,7 +31,7 @@ class SignupViewControllerTests: XCTestCase {
         let emailTextField = try XCTUnwrap(sut.emailTextField, "The emailTextField is not connected to an IBOutlet")
         let passwordTextField = try XCTUnwrap(sut.passwordTextField, "The passwordTextField is not connected to an IBOulet")
         let repeatPasswordTextField = try XCTUnwrap(sut.repeatPasswordTextField, "The RepeatPasswordTextField is not connected to an UIBOutlet")
-        
+
         XCTAssertEqual(firstNameTextField.text, "", "FirstNameTextField was not empty when the view controller inittially loaded")
         XCTAssertEqual(lastNameTextField.text, "", "lastNameTextField was not empty when the view controller inittially loaded")
         XCTAssertEqual(emailTextField.text, "", "emailTextField was not empty when the view controller inittially loaded")
@@ -41,7 +41,7 @@ class SignupViewControllerTests: XCTestCase {
     
     func testViewController_WhenCreated_HasSignupButtonAndAction() throws {
         // Arrange
-        let signupButton: UIButton = try XCTUnwrap(sut.signpButton, "Signup button dose not have a referencing outlet")
+        let signupButton: UIButton = try XCTUnwrap(sut.signupButton, "Signup button dose not have a referencing outlet")
         
         // Act
         let signupButtonActions = try XCTUnwrap(signupButton.actions(forTarget: sut, forControlEvent: .touchUpInside))
@@ -49,5 +49,26 @@ class SignupViewControllerTests: XCTestCase {
         // Assert
         XCTAssertEqual(signupButtonActions.count, 1, "Signup button dose not have any actions assigned to it")
         XCTAssertEqual(signupButtonActions.first, "signupButtonTapped:", "There is no action with a name signupbuttonTapped assigned to singup button")
+    }
+    
+    func testViewController_WhenSignupButtonTapped_InvokesSignupProcess() {
+        
+        // Arrange
+        let mockSignupModuleValidator = MockSignupModelValidator()
+        let signupWebService = MockSignupWebService()
+        let mockSignupViewDelegate = MockSignupViewDelegate()
+        
+        let mockSignupPresenter = MockSignupPresenter(formModelValidator: mockSignupModuleValidator,
+                                                      webservice: signupWebService,
+                                                      delegate: mockSignupViewDelegate)
+        
+        sut.signupPresenter = mockSignupPresenter
+        
+        // Act
+        sut.signupButton.sendActions(for: .touchUpInside)
+        
+        // Assert
+        XCTAssertTrue(mockSignupPresenter.processUserSignupCalled, "The processUserSignup() method was not called on a Presenter object when the signup button was tapped in a SignupViewController")
+        
     }
 }
