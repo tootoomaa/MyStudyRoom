@@ -54,3 +54,8 @@ Self Study with Udemy Lecture
 1. [Introduce](https://www.notion.so/Introduce-a0dc5be3a25a4e92b9b8f2cfb9cb39b8)
 2. [View Controller Unit Test](https://www.notion.so/View-Controller-Unit-Test-1-2f74a1a3a979463798add05111479039)
 
+**ETC**
+
+1. [How to Load ViewController in StroyBoard, XIB, Codebase](https://www.notion.so/How-to-Load-ViewController-in-StroyBoard-XIB-Codebase-7b4aef7ae8bb4b2ea8ed1561df84fc6e)
+2. [Throws Error Handling Example](https://www.notion.so/Throws-Error-Handling-Example-e83df0d81bf5479c85023d5a43baab05)
+3. [Unit Test UITextFiedl with Attributeds](https://www.notion.so/Unit-Test-UITextFiedl-with-Attributeds-a9d050111ed14618ae4782ea3e81d7f4)
