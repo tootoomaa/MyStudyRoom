@@ -59,3 +59,12 @@ Self Study with Udemy Lecture
 1. [How to Load ViewController in StroyBoard, XIB, Codebase](https://www.notion.so/How-to-Load-ViewController-in-StroyBoard-XIB-Codebase-7b4aef7ae8bb4b2ea8ed1561df84fc6e)
 2. [Throws Error Handling Example](https://www.notion.so/Throws-Error-Handling-Example-e83df0d81bf5479c85023d5a43baab05)
 3. [Unit Test UITextFiedl with Attributeds](https://www.notion.so/Unit-Test-UITextFiedl-with-Attributeds-a9d050111ed14618ae4782ea3e81d7f4)
+4. [Testing Navigation. Push to Navigation Stack.](https://www.notion.so/Testing-Navigation-Push-to-Navigation-Stack-9db96f2595cc4f7f9ecb6c9682fa86ad)
+
+**UI Test**
+
+1. [Introduce](https://www.notion.so/Introduce-570ea3c6a47c456f97fd470121a38816)
+2. [Accessing UI Element](https://www.notion.so/Accessing-UI-Element-9cfb931ddb13426e93ca8db434258fc8)
+3. [UI Test Setting in Project](https://www.notion.so/UI-Test-Setting-in-Project-1c9090ca486b42b7916eefb148ea982e)
+4. [UI Test Basic with UITextFields](https://www.notion.so/UI-Test-Basic-with-UITextFields-47472ae6b47d48c88a7ef6e9331b40d5)
+
