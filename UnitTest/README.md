@@ -67,4 +67,5 @@ Self Study with Udemy Lecture
 2. [Accessing UI Element](https://www.notion.so/Accessing-UI-Element-9cfb931ddb13426e93ca8db434258fc8)
 3. [UI Test Setting in Project](https://www.notion.so/UI-Test-Setting-in-Project-1c9090ca486b42b7916eefb148ea982e)
 4. [UI Test Basic with UITextFields](https://www.notion.so/UI-Test-Basic-with-UITextFields-47472ae6b47d48c88a7ef6e9331b40d5)
+5. [UIAlertController Test](https://www.notion.so/UIAlertController-Test-6de005e4071d45bb86cda398500d81cd)
 

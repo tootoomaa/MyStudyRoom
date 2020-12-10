@@ -28,7 +28,16 @@ class WeatherDetailViewController: UIViewController {
     
     if let weatherVM = weatherVM {
       
-      weatherVM.name.bind { self.cityNameLabel.text = $0 }
+        DispatchQueue.main.asyncAfter(deadline: .now()+2) {
+            weatherVM.name.value = "서울"
+        }
+        
+        weatherVM.name.bind(listener: { name in
+            self.cityNameLabel.text = name
+        })
+        
+//      weatherVM.name.bind { self.cityNameLabel.text = $0 }
+        
       weatherVM.currentTemperature.temperature.bind {
         self.currentTemperatureLabel.text = $0.formatAsDegree
       }
