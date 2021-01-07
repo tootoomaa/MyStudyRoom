@@ -29,6 +29,9 @@
 		C7A484F9258E452800982AD4 /* TaskModifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A484F8258E452800982AD4 /* TaskModifyViewController.swift */; };
 		C7A48504258E507300982AD4 /* TaskModifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A48503258E507300982AD4 /* TaskModifyView.swift */; };
 		C7A48513258F349C00982AD4 /* TaskModifyViewControllerReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A48512258F349C00982AD4 /* TaskModifyViewControllerReactor.swift */; };
+		C7A4851C2590B89300982AD4 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A4851B2590B89300982AD4 /* WebViewController.swift */; };
+		C7A485232590CA0400982AD4 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7A485222590CA0400982AD4 /* WebKit.framework */; };
+		C7A485272590CFF000982AD4 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A485262590CFF000982AD4 /* Reachability.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +65,9 @@
 		C7A484F8258E452800982AD4 /* TaskModifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModifyViewController.swift; sourceTree = "<group>"; };
 		C7A48503258E507300982AD4 /* TaskModifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModifyView.swift; sourceTree = "<group>"; };
 		C7A48512258F349C00982AD4 /* TaskModifyViewControllerReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModifyViewControllerReactor.swift; sourceTree = "<group>"; };
+		C7A4851B2590B89300982AD4 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		C7A485222590CA0400982AD4 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		C7A485262590CFF000982AD4 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7A485232590CA0400982AD4 /* WebKit.framework in Frameworks */,
 				C7A48490258DD2A600982AD4 /* RxCocoa in Frameworks */,
 				C7A4848E258DD2A600982AD4 /* RxRelay in Frameworks */,
 				C7A48480258DD20700982AD4 /* Then in Frameworks */,
@@ -94,6 +101,7 @@
 				C7A48467258DD1AF00982AD4 /* MyRxTodoApp */,
 				C7A4849C258E01F700982AD4 /* MyRxTodoAppTests */,
 				C7A48466258DD1AF00982AD4 /* Products */,
+				C7A485212590CA0400982AD4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,6 +117,7 @@
 		C7A48467258DD1AF00982AD4 /* MyRxTodoApp */ = {
 			isa = PBXGroup;
 			children = (
+				C7A4851A2590B88600982AD4 /* WebViewVC */,
 				C7A4850E258F342B00982AD4 /* TaskModify */,
 				C7A4850D258F342500982AD4 /* TaskList */,
 				C7A484EF258E40CC00982AD4 /* Extension */,
@@ -216,6 +225,23 @@
 				C7A48503258E507300982AD4 /* TaskModifyView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		C7A4851A2590B88600982AD4 /* WebViewVC */ = {
+			isa = PBXGroup;
+			children = (
+				C7A4851B2590B89300982AD4 /* WebViewController.swift */,
+				C7A485262590CFF000982AD4 /* Reachability.swift */,
+			);
+			path = WebViewVC;
+			sourceTree = "<group>";
+		};
+		C7A485212590CA0400982AD4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C7A485222590CA0400982AD4 /* WebKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,6 +359,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7A485272590CFF000982AD4 /* Reachability.swift in Sources */,
 				C7A484EC258E1C1400982AD4 /* TaskTableViewCell.swift in Sources */,
 				C7A484D5258E0E6900982AD4 /* UserDefaultsService.swift in Sources */,
 				C7A48513258F349C00982AD4 /* TaskModifyViewControllerReactor.swift in Sources */,
@@ -344,6 +371,7 @@
 				C7A4846B258DD1AF00982AD4 /* SceneDelegate.swift in Sources */,
 				C7A484F1258E40D800982AD4 /* UIViewController+RX.swift in Sources */,
 				C7A484E6258E151200982AD4 /* TaskListViewControllerReactor.swift in Sources */,
+				C7A4851C2590B89300982AD4 /* WebViewController.swift in Sources */,
 				C7A484C5258E076C00982AD4 /* Task.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -19,12 +19,13 @@ class TaskListViewController: UIViewController, View {
   }
   
   let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: nil)
+  let newButton = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: nil, action: nil)
   let editButton = UIBarButtonItem(barButtonSystemItem: .edit, target: nil, action: nil)
   
   // MARK: - Initialization
   init(reactor: TaskListViewControllerReactor) {
     super.init(nibName: nil, bundle: nil)
-    self.navigationItem.leftBarButtonItem = editButton
+    self.navigationItem.leftBarButtonItems = [editButton, newButton]
     self.navigationItem.rightBarButtonItem = addButton
     self.reactor = reactor
   }
@@ -53,11 +54,30 @@ class TaskListViewController: UIViewController, View {
       .map { Reactor.Action.loadTask }
       .bind(to: reactor.action)
       .disposed(by: self.disposeBag)
-      
+    
     addButton.rx.tap
       .map { Reactor.Action.tapAddButton }
       .bind(to: reactor.action)
       .disposed(by: disposeBag)
+    
+    newButton.rx.tap
+      .subscribe(onNext: {
+        
+        let backbuttonImage = UIImage(systemName: "arrowshape.turn.up.left.fill")
+        let naviBar = self.navigationController?.navigationBar
+        naviBar?.topItem?.title = ""
+        naviBar?.backIndicatorImage = backbuttonImage
+        naviBar?.backIndicatorTransitionMaskImage = backbuttonImage
+        
+        naviBar?.tintColor = .black
+//        let backButtonItem = UIBarButtonItem(image: backbuttonImage, style: .plain, target: self, action: nil)
+//        backButtonItem.tintColor = .black
+//        self.navigationItem.backBarButtonItem = backButtonItem
+        
+        let webViewController = WebViewController()
+        self.navigationController?.pushViewController(webViewController, animated: true)
+        
+      }).disposed(by: disposeBag)
     
 //    editButton.rx.tap
 //      .map { Reactor.Action.tapEditButton }
@@ -66,12 +86,14 @@ class TaskListViewController: UIViewController, View {
     
     // reactor
     reactor.state.map { $0.tasks }
+      .distinctUntilChanged()
+      .debug()
       .bind(to: tableView.rx.items(
                 cellIdentifier: TaskTableViewCell.identifier,
                 cellType: TaskTableViewCell.self)) { row, task, cell in
-        
+
         cell.textLabel?.text = task
-        
+
       }.disposed(by: disposeBag)
     
     reactor.state.map { $0.taskAddVCMode }
@@ -80,11 +102,13 @@ class TaskListViewController: UIViewController, View {
         guard let `self` = self,
               let isEditing = isEditing else { return }
         
-        let tasks = self.reactor?.initialState.tasks
+        guard let tasks = self.reactor?.currentState.tasks else { return }
         let userDefaultsService = UserDefaultsService()
-        let taskModifyViewControllerReactor = TaskModifyViewControllerReactor(userDefaultsService, tasks ?? [])
-        let taskModifyVC = TaskModifyViewController(taskModifyViewControllerReactor, isEditing)
+        let taskModifyVCReactor = TaskModifyViewControllerReactor(userDefaultsService, tasks)
+        let taskModifyVC = TaskModifyViewController(taskModifyVCReactor, isEditing)
+        
         let naviVC = UINavigationController(rootViewController: taskModifyVC)
+        naviVC.modalPresentationStyle = .overFullScreen
         self.present(naviVC, animated: true)
         
       }).disposed(by: disposeBag)

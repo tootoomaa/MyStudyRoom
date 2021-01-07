@@ -82,6 +82,15 @@ class TaskModifyViewController: UIViewController, View {
       .bind(to: self.doneButton.rx.isEnabled)
       .disposed(by: disposeBag)
     
+    reactor.state.map { $0.isDismiss }
+      .observeOn(MainScheduler.asyncInstance)
+      .distinctUntilChanged()
+      .subscribe(onNext: {
+        guard $0 == true else { return }
+        self.dismiss(animated: $0, completion: nil)
+        
+      }).disposed(by: disposeBag)
+    
   }
   
 }

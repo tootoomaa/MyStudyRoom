@@ -30,24 +30,30 @@ class TaskModifyViewControllerReactor: Reactor {
   
   enum Mutation {
     case userDefailtsSaveName
-    case saveTaskName(String)
+    case appandTask(String)
     case doneButtonEnableChecker(Bool)
+    case dismiss
   }
   
   struct State {
     var isEnableDoneButton: Bool = false
     var saveTaskName: String = ""
+    var isDismiss: Bool = false
   }
   
   func mutate(action: Action) -> Observable<Mutation> {
     switch action {
     case .done:
-      return Observable.just(Mutation.userDefailtsSaveName)
+      return Observable.concat([
+        Observable.just(Mutation.userDefailtsSaveName),
+        Observable.just(Mutation.dismiss)
+      ])
+      
     case .textFieldEditting(let isEditting):
       return Observable.just(Mutation.doneButtonEnableChecker(isEditting))
       
     case .saveTaskName(let taskName):
-      return Observable.just(Mutation.saveTaskName(taskName))
+      return Observable.just(Mutation.appandTask(taskName))
     }
   }
   
@@ -62,8 +68,11 @@ class TaskModifyViewControllerReactor: Reactor {
     case .doneButtonEnableChecker(let isEnable):
       newstate.isEnableDoneButton = !isEnable
       
-    case .saveTaskName(let taskName):
+    case .appandTask(let taskName):
       newstate.saveTaskName = taskName
+      
+    case .dismiss:
+      newstate.isDismiss.toggle()
     }
     
     return newstate
