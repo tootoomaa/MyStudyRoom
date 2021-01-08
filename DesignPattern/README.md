@@ -21,4 +21,6 @@ DesignPattern with Udemy
 - Solid Principle
   1. [Single Responsibility Principle](https://www.notion.so/Single-Responsibility-Principle-4fb972ea6958497596dea735e3faf7b0)
   2. [Open-Closed Principle](https://www.notion.so/Open-Closed-Principle-076d0cccfa9f4c4384d24313ae51e2cd)
+  3. [Liskov Substitution Principle](https://www.notion.so/Liskov-Substitution-Principle-02f0137695fa486c8dd4918cc9a10999)
+  4. [Interface Segregation Principle](https://www.notion.so/Interface-Segregation-Principle-d1c808b72dcf4e3e9bd9b16e7a093957)
 
