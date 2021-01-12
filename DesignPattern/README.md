@@ -28,4 +28,5 @@ DesignPattern with Udemy
   1. Creational
      - [Builder](https://www.notion.so/Builder-0ecd527938f441fca29ef16d1eb73ed0)
      - [Factory](https://www.notion.so/Factory-9e737cb5cf954f6195cafe3c873896b7)
+     - [Prototype](https://www.notion.so/Prototype-e163188b1a954aac85f69e30fb5c5038)
 
