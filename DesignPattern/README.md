@@ -33,4 +33,5 @@ DesignPattern with Udemy
   2. Structural
      - [Adapter](https://www.notion.so/Adapter-bdb5fa30a1454f42b0b8b4ea8ce20374)
      - [Bridge](https://www.notion.so/Bridge-6c79a57a5da64dd28a43ffabe5b0abce)
+     - [Composite](https://www.notion.so/Composite-8f217e31b39a4c72bdb6cbdacf2a23a9)
 
