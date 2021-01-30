@@ -52,8 +52,8 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         PlayerDetail(player: players[0])
         PlayerDetail(player: players[0]).previewDevice("iPhone SE (2nd generation)")
-        PlayerDetail(player: players[0]).previewDevice("iPhone 8 Plus")
-        PlayerDetail(player: players[0]).previewDevice("iPhone 12 Pro Max")
+//        PlayerDetail(player: players[0]).previewDevice("iPhone 8 Plus")
+//        PlayerDetail(player: players[0]).previewDevice("iPhone 12 Pro Max")
         
     }
 }
