@@ -10,6 +10,11 @@ import SwiftUI
 struct StatText: View {
     var statName: String
     var statValue: String
+//
+//    init(_ menu: String, _ value: String) {
+//        self.menu = menu
+//        self.value = value
+//    }
 
     var body: some View {
         HStack() {

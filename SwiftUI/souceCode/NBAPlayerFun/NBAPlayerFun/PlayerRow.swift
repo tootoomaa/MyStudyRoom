@@ -34,9 +34,11 @@ struct PlayerRow: View {
 struct PlayerRow_Previews: PreviewProvider {
     
     static var previews: some View {
-        Group {
-            PlayerRow(player: players[0]).previewDevice("iPhone 8")
-            PlayerRow(player: players[0]).previewDevice("iPhone 11 Max Pro")
-        }
+        PlayerRow(player: players[0]).previewDevice("iPhone 8")
+            .frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
+//        Group {
+//
+//            PlayerRow(player: players[0]).previewDevice("iPhone 11 Max Pro")
+//        }
     }
 }
