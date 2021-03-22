@@ -15,6 +15,7 @@ struct CreateHypedEventView: View {
     
     var body: some View {
         Form {
+            
             Section {
                 CreateHypedEventSectionView("keyboard", .blue, "title")
                 TextField("Family Vacation", text: $hypedEvent.title)
@@ -32,13 +33,39 @@ struct CreateHypedEventView: View {
                 })
             }
             
-            Button(action: {
-                showImagePicker.toggle()
-            }, label: {
-                Text("Pick Image")
-            })
-            .sheet(isPresented: $showImagePicker, content: {
-                ImagePicker()
+            Section {
+                if hypedEvent.imageData == nil {
+                    HStack {
+                        CreateHypedEventSectionView("camera", .purple, "Image")
+                        Spacer()
+                        Button(action: {
+                            showImagePicker = true
+                        }, label: {
+                            Text("Pick Image")
+                        })
+                    }
+                    Image("wwdc")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                    
+                } else {
+                    HStack {
+                        CreateHypedEventSectionView("camera", .purple, "Image")
+                        Spacer()
+                        Button(action: {
+                            hypedEvent.imageData = nil
+                        }, label: {
+                            Text("remove Image")
+                                .foregroundColor(.red)
+                        })
+                    }
+                    hypedEvent.image()!
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                }
+                
+            }.sheet(isPresented: $showImagePicker, content: {
+                ImagePicker(imageData: $hypedEvent.imageData)
             })
             
             Section {

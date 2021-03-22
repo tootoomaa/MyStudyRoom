@@ -11,6 +11,7 @@ import UIKit
 struct ImagePicker: UIViewControllerRepresentable {
     
     @Environment(\.presentationMode) var presentationMode
+    @Binding var imageData: Data?
     
     func makeCoordinator() -> Coordinator {
         Coordinator(parent: self)
@@ -35,10 +36,14 @@ struct ImagePicker: UIViewControllerRepresentable {
         
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
             
+            print("ImagePicker")
             if let image = info[.originalImage] as? UIImage {
                 // do Something with Image
-                
+                parent.imageData = image.pngData()
+                print(image.pngData())
             }
+            print("ImagePicker")
+            parent.presentationMode.wrappedValue.dismiss()
         }
     }
 }
