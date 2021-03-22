@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,10 @@
 		B609A4C5260331790077691D /* CreateHypedEventSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B609A4C4260331790077691D /* CreateHypedEventSectionView.swift */; };
 		B609A4C9260339340077691D /* CreateHypedEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B609A4C8260339340077691D /* CreateHypedEventView.swift */; };
 		B609A4CD26033EF70077691D /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B609A4CC26033EF70077691D /* ImagePicker.swift */; };
+		C71F973F2607189300FDA831 /* HypedEventTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71F973E2607189300FDA831 /* HypedEventTitleView.swift */; };
+		C71F9743260724A700FDA831 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = C71F9742260724A700FDA831 /* SwiftDate */; };
+		C71F97472607294200FDA831 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71F97462607294200FDA831 /* DataController.swift */; };
+		C71F974F260737D500FDA831 /* UIColor_Hex_Swift in Frameworks */ = {isa = PBXBuildFile; productRef = C71F974E260737D500FDA831 /* UIColor_Hex_Swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,8 @@
 		B609A4C4260331790077691D /* CreateHypedEventSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateHypedEventSectionView.swift; sourceTree = "<group>"; };
 		B609A4C8260339340077691D /* CreateHypedEventView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateHypedEventView.swift; sourceTree = "<group>"; };
 		B609A4CC26033EF70077691D /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		C71F973E2607189300FDA831 /* HypedEventTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypedEventTitleView.swift; sourceTree = "<group>"; };
+		C71F97462607294200FDA831 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +43,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C71F974F260737D500FDA831 /* UIColor_Hex_Swift in Frameworks */,
+				C71F9743260724A700FDA831 /* SwiftDate in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,7 +71,8 @@
 			isa = PBXGroup;
 			children = (
 				B609A49D260320400077691D /* UpcommingAppApp.swift */,
-				B609A4B526032A170077691D /* View */,
+				B609A49F260320400077691D /* HypedListTabView.swift */,
+				B609A4B526032A170077691D /* Views */,
 				B609A4BA26032A7E0077691D /* Model */,
 				B609A4A1260320400077691D /* Assets.xcassets */,
 				B609A4A6260320400077691D /* Info.plist */,
@@ -80,22 +89,23 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		B609A4B526032A170077691D /* View */ = {
+		B609A4B526032A170077691D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B609A49F260320400077691D /* HypedListTabView.swift */,
 				B609A4B2260322710077691D /* UpcommingView.swift */,
 				B609A4C8260339340077691D /* CreateHypedEventView.swift */,
 				B609A4C4260331790077691D /* CreateHypedEventSectionView.swift */,
 				B609A4CC26033EF70077691D /* ImagePicker.swift */,
+				C71F973E2607189300FDA831 /* HypedEventTitleView.swift */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		B609A4BA26032A7E0077691D /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				B609A4BB26032A8F0077691D /* HypedEvent.swift */,
+				C71F97462607294200FDA831 /* DataController.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -116,6 +126,10 @@
 			dependencies = (
 			);
 			name = UpcommingApp;
+			packageProductDependencies = (
+				C71F9742260724A700FDA831 /* SwiftDate */,
+				C71F974E260737D500FDA831 /* UIColor_Hex_Swift */,
+			);
 			productName = UpcommingApp;
 			productReference = B609A49A260320400077691D /* UpcommingApp.app */;
 			productType = "com.apple.product-type.application";
@@ -143,6 +157,10 @@
 				Base,
 			);
 			mainGroup = B609A491260320400077691D;
+			packageReferences = (
+				C71F9741260724A700FDA831 /* XCRemoteSwiftPackageReference "SwiftDate" */,
+				C71F974D260737D500FDA831 /* XCRemoteSwiftPackageReference "UIColor-Hex-Swift" */,
+			);
 			productRefGroup = B609A49B260320400077691D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -173,7 +191,9 @@
 				B609A4A0260320400077691D /* HypedListTabView.swift in Sources */,
 				B609A4C9260339340077691D /* CreateHypedEventView.swift in Sources */,
 				B609A4CD26033EF70077691D /* ImagePicker.swift in Sources */,
+				C71F97472607294200FDA831 /* DataController.swift in Sources */,
 				B609A49E260320400077691D /* UpcommingAppApp.swift in Sources */,
+				C71F973F2607189300FDA831 /* HypedEventTitleView.swift in Sources */,
 				B609A4C5260331790077691D /* CreateHypedEventSectionView.swift in Sources */,
 				B609A4B3260322710077691D /* UpcommingView.swift in Sources */,
 			);
@@ -364,6 +384,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C71F9741260724A700FDA831 /* XCRemoteSwiftPackageReference "SwiftDate" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/malcommac/SwiftDate.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.3.1;
+			};
+		};
+		C71F974D260737D500FDA831 /* XCRemoteSwiftPackageReference "UIColor-Hex-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/yeahdongcn/UIColor-Hex-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C71F9742260724A700FDA831 /* SwiftDate */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C71F9741260724A700FDA831 /* XCRemoteSwiftPackageReference "SwiftDate" */;
+			productName = SwiftDate;
+		};
+		C71F974E260737D500FDA831 /* UIColor_Hex_Swift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C71F974D260737D500FDA831 /* XCRemoteSwiftPackageReference "UIColor-Hex-Swift" */;
+			productName = UIColor_Hex_Swift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B609A492260320400077691D /* Project object */;
 }

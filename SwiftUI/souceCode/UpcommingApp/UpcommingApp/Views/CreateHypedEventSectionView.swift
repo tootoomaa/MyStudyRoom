@@ -22,6 +22,7 @@ struct CreateHypedEventSectionView: View {
     var body: some View {
         Label {
                 Text(title)
+                    .foregroundColor(.black)
         } icon: {
             Image(systemName: imageName)
                 .padding(4)
