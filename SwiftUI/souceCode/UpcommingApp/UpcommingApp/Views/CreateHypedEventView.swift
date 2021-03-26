@@ -40,7 +40,7 @@ struct CreateHypedEventView: View {
                     CreateHypedEventSectionView("camera", .purple, "Image")
                 })
                 .sheet(isPresented: $showImagePicker, content: {
-                    ImagePicker()
+                    ImagePicker(imageData: $hypedEvent.imageData)
                 })
                 
                 Section {

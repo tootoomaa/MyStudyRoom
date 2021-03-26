@@ -19,8 +19,6 @@ class HypedEvent: Identifiable, ObservableObject, Codable {
     var color = Color.purple
     @Published var imageData: Data?
     
-<<<<<<< HEAD
-=======
     enum CodingKeys: String, CodingKey {
         case id
         case date
@@ -59,7 +57,6 @@ class HypedEvent: Identifiable, ObservableObject, Codable {
         
     }
     
->>>>>>> dc6b87744fbac6dcd113e069a0b0acd9da5bab62
     func image() -> Image? {
         if let data = imageData {
             if let uiImage = UIImage(data: data) {
@@ -68,8 +65,6 @@ class HypedEvent: Identifiable, ObservableObject, Codable {
         }
         return nil
     }
-<<<<<<< HEAD
-=======
     
     func dataAsString() -> String {
         let formatter = DateFormatter()
@@ -111,5 +106,4 @@ var testHypedEvent2: HypedEvent {
     hypedEvent.date = Date() + 4.days + 1.years
     
     return hypedEvent
->>>>>>> dc6b87744fbac6dcd113e069a0b0acd9da5bab62
 }
