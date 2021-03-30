@@ -15,58 +15,72 @@ struct CreateHypedEventView: View {
     @State var showImagePicker: Bool = false
     
     var body: some View {
-        NavigationView {
-            Form {
-                Section {
-                    CreateHypedEventSectionView("keyboard", .blue, "title")
-                    TextField("Family Vacation", text: $hypedEvent.title)
-                        .autocapitalization(.words)
+        Form {
+            Section {
+                CreateHypedEventSectionView("keyboard", "Title", .blue)
+                TextField("Family Vacation", text: $hypedEvent.title)
+                    .autocapitalization(.words)
+                    .disableAutocorrection(true)
+            }
+            
+            Section {
+                CreateHypedEventSectionView("calendar", "Date", .red)
+                DatePicker("Date",
+                           selection: $hypedEvent.date,
+                           displayedComponents: showTime ? [.date, .hourAndMinute] : [.date])
+                    .datePickerStyle(GraphicalDatePickerStyle())
+                Toggle(isOn: $showTime) {
+                    CreateHypedEventSectionView("clock.fill", "Time", .blue)
                 }
-                
-                Section {
-                    CreateHypedEventSectionView("calendar", .green, "Date")
-                    DatePicker("Date",
-                               selection: $hypedEvent.date,
-                               displayedComponents: showTime ?  [.date,.hourAndMinute] : [.date])
-                        .datePickerStyle(GraphicalDatePickerStyle())
-                    Toggle(isOn: $showTime, label: {
-                        CreateHypedEventSectionView("clock.fill", .blue, "Time")
-                    })
-                }
-                
-                Button(action: {
-                    showImagePicker.toggle()
-                }, label: {
-                    CreateHypedEventSectionView("camera", .purple, "Image")
-                })
-                .sheet(isPresented: $showImagePicker, content: {
-                    ImagePicker()
-                })
-                
-                Section {
+            }
+            
+            Section {
+                if hypedEvent.image() == nil {
                     HStack {
-                        CreateHypedEventSectionView("paintpalette", .red, "Color")
-                        ColorPicker("", selection: $hypedEvent.color)
+                        CreateHypedEventSectionView("camera", "Photo", .orange)
+                        Spacer()
+                        Button(action: {
+                            showImagePicker = true
+                        }) {
+                            Text("Pick Image")
+                        }
                     }
+                } else {
+                    HStack {
+                        CreateHypedEventSectionView("camera", "Photo", .orange)
+                        Spacer()
+                        Button(action: {
+                            hypedEvent.imageData = nil
+                        }) {
+                            Text("remove Image")
+                                .foregroundColor(.red)
+                        }.buttonStyle(BorderlessButtonStyle())
+                    }
+                    Button(action: {
+                        showImagePicker = true
+                    }) {
+                        hypedEvent.image()!
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                    }.buttonStyle(BorderlessButtonStyle())
+                    
                 }
+            }.sheet(isPresented: $showImagePicker) {
+                ImagePicker(imageData: $hypedEvent.imageData)
+            }
+            
+            Section {
+                CreateHypedEventSectionView("paintpalette", "Color", .red)
+                ColorPicker("Color", selection: $hypedEvent.color)
+            }
+            
+            Section {
+                TextField("WebSide", text: $hypedEvent.url)
+                    .keyboardType(.URL)
+                    .autocapitalization(.none)
+                    .disableAutocorrection(true)
+            }
                 
-                Section {
-                    CreateHypedEventSectionView("link", .orange, "URL")
-                    TextField("Website", text: $hypedEvent.title)
-                        .keyboardType(.URL)
-                }
-            }.navigationBarItems(leading: Button(action: {
-                presentationMode.wrappedValue.dismiss()
-            }, label: {
-                Text("Cancel")
-            }), trailing: Button(action: {
-                DataController.shared.hypedEvents.append(hypedEvent)
-                DataController.shared.saveData()
-                presentationMode.wrappedValue.dismiss()
-            }, label: {
-                Text("Done")
-            }))
-            .navigationTitle("Create")
         }
     }
 }

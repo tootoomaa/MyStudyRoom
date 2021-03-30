@@ -13,7 +13,7 @@ struct CreateHypedEventSectionView: View {
     let color: Color
     let imageName: String
     
-    init(_ image: String, _ color: Color, _ title: String) {
+    init(_ image: String, _ title: String, _ color: Color) {
         self.title = title
         self.color = color
         self.imageName = image
@@ -35,6 +35,6 @@ struct CreateHypedEventSectionView: View {
 
 struct CreateHypedEventSectionView_Previews: PreviewProvider {
     static var previews: some View {
-        CreateHypedEventSectionView("keyboard", .blue, "Title")
+        CreateHypedEventSectionView("keyboard", "Title", .blue)
     }
 }

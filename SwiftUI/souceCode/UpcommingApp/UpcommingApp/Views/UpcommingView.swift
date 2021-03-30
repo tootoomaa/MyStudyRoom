@@ -49,15 +49,6 @@ struct UpcommingView: View {
 
 struct UpcommingView_Previews: PreviewProvider {
     static var previews: some View {
-        
-        Group {
-//            NavigationView {
-//                UpcommingView(hypedEvents: [testHypedEvent1,testHypedEvent2])
-//            }
-//
-//            NavigationView {
-//                UpcommingView(hypedEvents: [])
-//            }
-        }
+        UpcommingView()
     }
 }

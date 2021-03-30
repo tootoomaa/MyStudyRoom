@@ -1,0 +1,453 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B65349552611A7D1003CB7A8 /* PoketmonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65349542611A7D1003CB7A8 /* PoketmonViewModel.swift */; };
+		B65349592611AA0E003CB7A8 /* AddPocketmonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65349582611AA0E003CB7A8 /* AddPocketmonView.swift */; };
+		B6E293CC2612A83200B4D280 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E293CB2612A83200B4D280 /* UIApplication+Extension.swift */; };
+		B6EB552326115A5600AEC6D5 /* StateOperatorTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EB552226115A5600AEC6D5 /* StateOperatorTestApp.swift */; };
+		B6EB552526115A5600AEC6D5 /* PocketmonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EB552426115A5600AEC6D5 /* PocketmonView.swift */; };
+		B6EB552726115A5700AEC6D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6EB552626115A5700AEC6D5 /* Assets.xcassets */; };
+		B6EB552A26115A5700AEC6D5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6EB552926115A5700AEC6D5 /* Preview Assets.xcassets */; };
+		B6EB5534261169B100AEC6D5 /* Pocketmon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EB5533261169B100AEC6D5 /* Pocketmon.swift */; };
+		B6FAFD132612B7D6000F0A6D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FAFD122612B7D6000F0A6D /* HomeView.swift */; };
+		B6FAFD192612B83A000F0A6D /* RulerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FAFD182612B83A000F0A6D /* RulerView.swift */; };
+		B6FAFD242612BCD9000F0A6D /* OutActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FAFD232612BCD9000F0A6D /* OutActivityView.swift */; };
+		B6FAFD292612E9B8000F0A6D /* MovableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FAFD282612E9B8000F0A6D /* MovableButton.swift */; };
+		B6FAFD2D2612F5B7000F0A6D /* DateListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FAFD2C2612F5B7000F0A6D /* DateListView.swift */; };
+		B6FAFD332612F650000F0A6D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FAFD322612F650000F0A6D /* Constants.swift */; };
+		B6FAFD3B261304B4000F0A6D /* TimeUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FAFD3A261304B4000F0A6D /* TimeUtil.swift */; };
+		C7C4E5B0261352C500B0B0B8 /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C4E5AF261352C500B0B0B8 /* CircleProgressView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B65349542611A7D1003CB7A8 /* PoketmonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoketmonViewModel.swift; sourceTree = "<group>"; };
+		B65349582611AA0E003CB7A8 /* AddPocketmonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPocketmonView.swift; sourceTree = "<group>"; };
+		B6E293CB2612A83200B4D280 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		B6EB551F26115A5600AEC6D5 /* StateOperatorTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StateOperatorTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6EB552226115A5600AEC6D5 /* StateOperatorTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateOperatorTestApp.swift; sourceTree = "<group>"; };
+		B6EB552426115A5600AEC6D5 /* PocketmonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketmonView.swift; sourceTree = "<group>"; };
+		B6EB552626115A5700AEC6D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B6EB552926115A5700AEC6D5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B6EB552B26115A5700AEC6D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B6EB5533261169B100AEC6D5 /* Pocketmon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pocketmon.swift; sourceTree = "<group>"; };
+		B6FAFD122612B7D6000F0A6D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		B6FAFD182612B83A000F0A6D /* RulerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulerView.swift; sourceTree = "<group>"; };
+		B6FAFD232612BCD9000F0A6D /* OutActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutActivityView.swift; sourceTree = "<group>"; };
+		B6FAFD282612E9B8000F0A6D /* MovableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovableButton.swift; sourceTree = "<group>"; };
+		B6FAFD2C2612F5B7000F0A6D /* DateListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateListView.swift; sourceTree = "<group>"; };
+		B6FAFD322612F650000F0A6D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B6FAFD3A261304B4000F0A6D /* TimeUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeUtil.swift; sourceTree = "<group>"; };
+		C7C4E5AF261352C500B0B0B8 /* CircleProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleProgressView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B6EB551C26115A5600AEC6D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B67A2F2C26119FA800C71E82 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				C7C4E5AE261352B500B0B0B8 /* CricleProgress */,
+				B6FAFD2B2612F5A0000F0A6D /* DateList */,
+				B6FAFD272612E9A7000F0A6D /* MovableButton */,
+				B6FAFD222612BCAA000F0A6D /* OutActivity */,
+				B6FAFD0E2612B79B000F0A6D /* Pocketmon */,
+				B6FAFD162612B803000F0A6D /* Ruler */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		B6E293C52612A3CE00B4D280 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B6E293CB2612A83200B4D280 /* UIApplication+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		B6EB551626115A5600AEC6D5 = {
+			isa = PBXGroup;
+			children = (
+				B6EB552126115A5600AEC6D5 /* StateOperatorTest */,
+				B6EB552026115A5600AEC6D5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B6EB552026115A5600AEC6D5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B6EB551F26115A5600AEC6D5 /* StateOperatorTest.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B6EB552126115A5600AEC6D5 /* StateOperatorTest */ = {
+			isa = PBXGroup;
+			children = (
+				B6EB552226115A5600AEC6D5 /* StateOperatorTestApp.swift */,
+				B6FAFD122612B7D6000F0A6D /* HomeView.swift */,
+				B6FAFD312612F5EC000F0A6D /* Utility */,
+				B6E293C52612A3CE00B4D280 /* Extension */,
+				B67A2F2C26119FA800C71E82 /* Category */,
+				B6EB552626115A5700AEC6D5 /* Assets.xcassets */,
+				B6EB552B26115A5700AEC6D5 /* Info.plist */,
+				B6EB552826115A5700AEC6D5 /* Preview Content */,
+			);
+			path = StateOperatorTest;
+			sourceTree = "<group>";
+		};
+		B6EB552826115A5700AEC6D5 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				B6EB552926115A5700AEC6D5 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B6FAFD0E2612B79B000F0A6D /* Pocketmon */ = {
+			isa = PBXGroup;
+			children = (
+				B6EB552426115A5600AEC6D5 /* PocketmonView.swift */,
+				B65349582611AA0E003CB7A8 /* AddPocketmonView.swift */,
+				B65349542611A7D1003CB7A8 /* PoketmonViewModel.swift */,
+				B6EB5533261169B100AEC6D5 /* Pocketmon.swift */,
+			);
+			path = Pocketmon;
+			sourceTree = "<group>";
+		};
+		B6FAFD162612B803000F0A6D /* Ruler */ = {
+			isa = PBXGroup;
+			children = (
+				B6FAFD182612B83A000F0A6D /* RulerView.swift */,
+			);
+			path = Ruler;
+			sourceTree = "<group>";
+		};
+		B6FAFD222612BCAA000F0A6D /* OutActivity */ = {
+			isa = PBXGroup;
+			children = (
+				B6FAFD232612BCD9000F0A6D /* OutActivityView.swift */,
+			);
+			path = OutActivity;
+			sourceTree = "<group>";
+		};
+		B6FAFD272612E9A7000F0A6D /* MovableButton */ = {
+			isa = PBXGroup;
+			children = (
+				B6FAFD282612E9B8000F0A6D /* MovableButton.swift */,
+			);
+			path = MovableButton;
+			sourceTree = "<group>";
+		};
+		B6FAFD2B2612F5A0000F0A6D /* DateList */ = {
+			isa = PBXGroup;
+			children = (
+				B6FAFD2C2612F5B7000F0A6D /* DateListView.swift */,
+			);
+			path = DateList;
+			sourceTree = "<group>";
+		};
+		B6FAFD312612F5EC000F0A6D /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				B6FAFD322612F650000F0A6D /* Constants.swift */,
+				B6FAFD3A261304B4000F0A6D /* TimeUtil.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		C7C4E5AE261352B500B0B0B8 /* CricleProgress */ = {
+			isa = PBXGroup;
+			children = (
+				C7C4E5AF261352C500B0B0B8 /* CircleProgressView.swift */,
+			);
+			path = CricleProgress;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B6EB551E26115A5600AEC6D5 /* StateOperatorTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B6EB552E26115A5700AEC6D5 /* Build configuration list for PBXNativeTarget "StateOperatorTest" */;
+			buildPhases = (
+				B6EB551B26115A5600AEC6D5 /* Sources */,
+				B6EB551C26115A5600AEC6D5 /* Frameworks */,
+				B6EB551D26115A5600AEC6D5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StateOperatorTest;
+			productName = StateOperatorTest;
+			productReference = B6EB551F26115A5600AEC6D5 /* StateOperatorTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B6EB551726115A5600AEC6D5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					B6EB551E26115A5600AEC6D5 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = B6EB551A26115A5600AEC6D5 /* Build configuration list for PBXProject "StateOperatorTest" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B6EB551626115A5600AEC6D5;
+			productRefGroup = B6EB552026115A5600AEC6D5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B6EB551E26115A5600AEC6D5 /* StateOperatorTest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B6EB551D26115A5600AEC6D5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6EB552A26115A5700AEC6D5 /* Preview Assets.xcassets in Resources */,
+				B6EB552726115A5700AEC6D5 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B6EB551B26115A5600AEC6D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6FAFD292612E9B8000F0A6D /* MovableButton.swift in Sources */,
+				B6FAFD242612BCD9000F0A6D /* OutActivityView.swift in Sources */,
+				B6EB552526115A5600AEC6D5 /* PocketmonView.swift in Sources */,
+				C7C4E5B0261352C500B0B0B8 /* CircleProgressView.swift in Sources */,
+				B6FAFD132612B7D6000F0A6D /* HomeView.swift in Sources */,
+				B6FAFD2D2612F5B7000F0A6D /* DateListView.swift in Sources */,
+				B65349592611AA0E003CB7A8 /* AddPocketmonView.swift in Sources */,
+				B6EB552326115A5600AEC6D5 /* StateOperatorTestApp.swift in Sources */,
+				B6EB5534261169B100AEC6D5 /* Pocketmon.swift in Sources */,
+				B6FAFD3B261304B4000F0A6D /* TimeUtil.swift in Sources */,
+				B6E293CC2612A83200B4D280 /* UIApplication+Extension.swift in Sources */,
+				B65349552611A7D1003CB7A8 /* PoketmonViewModel.swift in Sources */,
+				B6FAFD192612B83A000F0A6D /* RulerView.swift in Sources */,
+				B6FAFD332612F650000F0A6D /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		B6EB552C26115A5700AEC6D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B6EB552D26115A5700AEC6D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B6EB552F26115A5700AEC6D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"StateOperatorTest/Preview Content\"";
+				DEVELOPMENT_TEAM = 4UA98H4AM3;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = StateOperatorTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tootooma..StateOperatorTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B6EB553026115A5700AEC6D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"StateOperatorTest/Preview Content\"";
+				DEVELOPMENT_TEAM = 4UA98H4AM3;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = StateOperatorTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tootooma..StateOperatorTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B6EB551A26115A5600AEC6D5 /* Build configuration list for PBXProject "StateOperatorTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6EB552C26115A5700AEC6D5 /* Debug */,
+				B6EB552D26115A5700AEC6D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B6EB552E26115A5700AEC6D5 /* Build configuration list for PBXNativeTarget "StateOperatorTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6EB552F26115A5700AEC6D5 /* Debug */,
+				B6EB553026115A5700AEC6D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B6EB551726115A5600AEC6D5 /* Project object */;
+}
