@@ -56,12 +56,6 @@ struct HypedEventTitleView: View {
 
 struct HypedEventTitleView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            
-//            UpcommingView(hypedEvents: [testHypedEvent1, testHypedEvent2])
-//            
-//            HypedEventTitleView(hypedEvent: testHypedEvent1)
-//                .previewLayout(.sizeThatFits)
-        }
+        HypedEventTitleView(hypedEvent: testHypedEvent1)
     }
 }

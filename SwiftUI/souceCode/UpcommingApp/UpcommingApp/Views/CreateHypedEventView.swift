@@ -36,6 +36,7 @@ struct CreateHypedEventView: View {
             
             Section {
                 if hypedEvent.image() == nil {
+
                     HStack {
                         CreateHypedEventSectionView("camera", "Photo", .orange)
                         Spacer()
