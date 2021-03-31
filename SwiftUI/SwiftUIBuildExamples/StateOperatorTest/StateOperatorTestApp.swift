@@ -11,7 +11,7 @@ import SwiftUI
 struct StateOperatorTestApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            SplashView()
         }
     }
 }

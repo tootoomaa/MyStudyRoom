@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B6107B5626145950004050D3 /* FaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6107B5526145950004050D3 /* FaceViewController.swift */; };
 		B65349552611A7D1003CB7A8 /* PoketmonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65349542611A7D1003CB7A8 /* PoketmonViewModel.swift */; };
 		B65349592611AA0E003CB7A8 /* AddPocketmonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65349582611AA0E003CB7A8 /* AddPocketmonView.swift */; };
 		B6E293CC2612A83200B4D280 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E293CB2612A83200B4D280 /* UIApplication+Extension.swift */; };
@@ -15,6 +16,15 @@
 		B6EB552726115A5700AEC6D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6EB552626115A5700AEC6D5 /* Assets.xcassets */; };
 		B6EB552A26115A5700AEC6D5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6EB552926115A5700AEC6D5 /* Preview Assets.xcassets */; };
 		B6EB5534261169B100AEC6D5 /* Pocketmon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EB5533261169B100AEC6D5 /* Pocketmon.swift */; };
+		B6F0D75C2613E5ED0040037F /* WaringJailBreakView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F0D75B2613E5ED0040037F /* WaringJailBreakView.swift */; };
+		B6F0D7602613E6120040037F /* NoNetworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F0D75F2613E6120040037F /* NoNetworkView.swift */; };
+		B6F0D7652613F3730040037F /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F0D7642613F3730040037F /* CollectionView.swift */; };
+		B6F0D76926140AA00040037F /* QGridTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F0D76826140AA00040037F /* QGridTestView.swift */; };
+		B6F0D76D26143A740040037F /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F0D76C26143A740040037F /* TimerView.swift */; };
+		B6F0D771261441290040037F /* InformationBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F0D770261441290040037F /* InformationBlurView.swift */; };
+		B6F0D776261450AD0040037F /* FaceAnchorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F0D775261450AD0040037F /* FaceAnchorView.swift */; };
+		B6F0D77A261454A00040037F /* ImageOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F0D779261454A00040037F /* ImageOverlayView.swift */; };
+		B6F59C362613E36700A0EDEE /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F59C352613E36700A0EDEE /* SplashView.swift */; };
 		B6FAFD132612B7D6000F0A6D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FAFD122612B7D6000F0A6D /* HomeView.swift */; };
 		B6FAFD192612B83A000F0A6D /* RulerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FAFD182612B83A000F0A6D /* RulerView.swift */; };
 		B6FAFD242612BCD9000F0A6D /* OutActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FAFD232612BCD9000F0A6D /* OutActivityView.swift */; };
@@ -26,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B6107B5526145950004050D3 /* FaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceViewController.swift; sourceTree = "<group>"; };
 		B65349542611A7D1003CB7A8 /* PoketmonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoketmonViewModel.swift; sourceTree = "<group>"; };
 		B65349582611AA0E003CB7A8 /* AddPocketmonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPocketmonView.swift; sourceTree = "<group>"; };
 		B6E293CB2612A83200B4D280 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
@@ -36,6 +47,15 @@
 		B6EB552926115A5700AEC6D5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B6EB552B26115A5700AEC6D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6EB5533261169B100AEC6D5 /* Pocketmon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pocketmon.swift; sourceTree = "<group>"; };
+		B6F0D75B2613E5ED0040037F /* WaringJailBreakView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaringJailBreakView.swift; sourceTree = "<group>"; };
+		B6F0D75F2613E6120040037F /* NoNetworkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoNetworkView.swift; sourceTree = "<group>"; };
+		B6F0D7642613F3730040037F /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
+		B6F0D76826140AA00040037F /* QGridTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QGridTestView.swift; sourceTree = "<group>"; };
+		B6F0D76C26143A740040037F /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		B6F0D770261441290040037F /* InformationBlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationBlurView.swift; sourceTree = "<group>"; };
+		B6F0D775261450AD0040037F /* FaceAnchorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceAnchorView.swift; sourceTree = "<group>"; };
+		B6F0D779261454A00040037F /* ImageOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageOverlayView.swift; sourceTree = "<group>"; };
+		B6F59C352613E36700A0EDEE /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		B6FAFD122612B7D6000F0A6D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		B6FAFD182612B83A000F0A6D /* RulerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulerView.swift; sourceTree = "<group>"; };
 		B6FAFD232612BCD9000F0A6D /* OutActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutActivityView.swift; sourceTree = "<group>"; };
@@ -60,12 +80,19 @@
 		B67A2F2C26119FA800C71E82 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				B6F59C352613E36700A0EDEE /* SplashView.swift */,
+				B6FAFD122612B7D6000F0A6D /* HomeView.swift */,
 				C7C4E5AE261352B500B0B0B8 /* CricleProgress */,
 				B6FAFD2B2612F5A0000F0A6D /* DateList */,
 				B6FAFD272612E9A7000F0A6D /* MovableButton */,
 				B6FAFD222612BCAA000F0A6D /* OutActivity */,
 				B6FAFD0E2612B79B000F0A6D /* Pocketmon */,
 				B6FAFD162612B803000F0A6D /* Ruler */,
+				B6F0D7632613F3600040037F /* CollectionView */,
+				B6F0D76B26143A640040037F /* TimerView */,
+				B6F0D76F2614410A0040037F /* InfomationBlurView */,
+				B6F0D774261450900040037F /* FaceAncherView */,
+				B6F0D778261454820040037F /* ImageOverlay */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -97,11 +124,11 @@
 		B6EB552126115A5600AEC6D5 /* StateOperatorTest */ = {
 			isa = PBXGroup;
 			children = (
+				B6F0D75A2613E5B50040037F /* AppStateView */,
 				B6EB552226115A5600AEC6D5 /* StateOperatorTestApp.swift */,
-				B6FAFD122612B7D6000F0A6D /* HomeView.swift */,
+				B67A2F2C26119FA800C71E82 /* Category */,
 				B6FAFD312612F5EC000F0A6D /* Utility */,
 				B6E293C52612A3CE00B4D280 /* Extension */,
-				B67A2F2C26119FA800C71E82 /* Category */,
 				B6EB552626115A5700AEC6D5 /* Assets.xcassets */,
 				B6EB552B26115A5700AEC6D5 /* Info.plist */,
 				B6EB552826115A5700AEC6D5 /* Preview Content */,
@@ -115,6 +142,57 @@
 				B6EB552926115A5700AEC6D5 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B6F0D75A2613E5B50040037F /* AppStateView */ = {
+			isa = PBXGroup;
+			children = (
+				B6F0D75B2613E5ED0040037F /* WaringJailBreakView.swift */,
+				B6F0D75F2613E6120040037F /* NoNetworkView.swift */,
+			);
+			path = AppStateView;
+			sourceTree = "<group>";
+		};
+		B6F0D7632613F3600040037F /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				B6F0D7642613F3730040037F /* CollectionView.swift */,
+				B6F0D76826140AA00040037F /* QGridTestView.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		B6F0D76B26143A640040037F /* TimerView */ = {
+			isa = PBXGroup;
+			children = (
+				B6F0D76C26143A740040037F /* TimerView.swift */,
+			);
+			path = TimerView;
+			sourceTree = "<group>";
+		};
+		B6F0D76F2614410A0040037F /* InfomationBlurView */ = {
+			isa = PBXGroup;
+			children = (
+				B6F0D770261441290040037F /* InformationBlurView.swift */,
+			);
+			path = InfomationBlurView;
+			sourceTree = "<group>";
+		};
+		B6F0D774261450900040037F /* FaceAncherView */ = {
+			isa = PBXGroup;
+			children = (
+				B6F0D775261450AD0040037F /* FaceAnchorView.swift */,
+				B6107B5526145950004050D3 /* FaceViewController.swift */,
+			);
+			path = FaceAncherView;
+			sourceTree = "<group>";
+		};
+		B6F0D778261454820040037F /* ImageOverlay */ = {
+			isa = PBXGroup;
+			children = (
+				B6F0D779261454A00040037F /* ImageOverlayView.swift */,
+			);
+			path = ImageOverlay;
 			sourceTree = "<group>";
 		};
 		B6FAFD0E2612B79B000F0A6D /* Pocketmon */ = {
@@ -246,20 +324,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6F0D77A261454A00040037F /* ImageOverlayView.swift in Sources */,
+				B6F0D7652613F3730040037F /* CollectionView.swift in Sources */,
 				B6FAFD292612E9B8000F0A6D /* MovableButton.swift in Sources */,
 				B6FAFD242612BCD9000F0A6D /* OutActivityView.swift in Sources */,
+				B6F59C362613E36700A0EDEE /* SplashView.swift in Sources */,
 				B6EB552526115A5600AEC6D5 /* PocketmonView.swift in Sources */,
+				B6F0D771261441290040037F /* InformationBlurView.swift in Sources */,
 				C7C4E5B0261352C500B0B0B8 /* CircleProgressView.swift in Sources */,
 				B6FAFD132612B7D6000F0A6D /* HomeView.swift in Sources */,
+				B6F0D76926140AA00040037F /* QGridTestView.swift in Sources */,
 				B6FAFD2D2612F5B7000F0A6D /* DateListView.swift in Sources */,
 				B65349592611AA0E003CB7A8 /* AddPocketmonView.swift in Sources */,
+				B6F0D76D26143A740040037F /* TimerView.swift in Sources */,
 				B6EB552326115A5600AEC6D5 /* StateOperatorTestApp.swift in Sources */,
 				B6EB5534261169B100AEC6D5 /* Pocketmon.swift in Sources */,
 				B6FAFD3B261304B4000F0A6D /* TimeUtil.swift in Sources */,
+				B6107B5626145950004050D3 /* FaceViewController.swift in Sources */,
 				B6E293CC2612A83200B4D280 /* UIApplication+Extension.swift in Sources */,
+				B6F0D75C2613E5ED0040037F /* WaringJailBreakView.swift in Sources */,
 				B65349552611A7D1003CB7A8 /* PoketmonViewModel.swift in Sources */,
+				B6F0D776261450AD0040037F /* FaceAnchorView.swift in Sources */,
 				B6FAFD192612B83A000F0A6D /* RulerView.swift in Sources */,
 				B6FAFD332612F650000F0A6D /* Constants.swift in Sources */,
+				B6F0D7602613E6120040037F /* NoNetworkView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
