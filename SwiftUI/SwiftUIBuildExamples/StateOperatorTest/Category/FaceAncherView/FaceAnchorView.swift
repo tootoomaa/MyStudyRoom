@@ -11,6 +11,7 @@ import ARKit
 struct FaceAnchorView: View {
     
     @State private var textToShow = "Hello AR"
+    var sceneView = ARSKView()
     
     var body: some View {
         ZStack {
@@ -34,24 +35,29 @@ struct FaceAnchorView: View {
                         Text("Tap Me")
                     }
                 }
+                NavigationLink("To FaceAnchor",
+                               destination: FaceAnchorImportView())
             }
         }
     }
 }
 
-//struct MySwiftUIView: UIViewRepresentable {
-//    typealias UIViewType: UIView
-//    
-//    func makeUIView(context: Context) -> UIViewType {
-//        // View를 원하는대로 생성하는 곳
-//        let view = FaceViewController()
-//        return view
-//    }
-//    
-//    func updateUIView(_ view: UIViewType, context: Context) {
-//        // View를 원하는대로 수정하는 곳
-//    }
-//}
+struct FaceAnchorImportView: UIViewControllerRepresentable {
+    
+    // UIViewController를 생성하고 초기화 수행하는 함수
+    func makeUIViewController(context: Context) -> some UIViewController {
+        
+        return FaceViewController()
+        
+    }
+    
+    // ViewControoler의 업데이터가 필요할때 호출됨
+    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
+        
+    }
+    
+    
+}
 
 struct FaceAnchorView_Previews: PreviewProvider {
     static var previews: some View {

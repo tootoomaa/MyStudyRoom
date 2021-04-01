@@ -17,9 +17,27 @@ class FaceViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
             
+        configureNavigationBar()
+        
         configureLayout()
         
         configureSceneView()
+    }
+    
+    private func configureNavigationBar() {
+
+        let appear = UINavigationBarAppearance()
+        appear.backgroundColor = .clear
+        appear.shadowImage = UIImage()
+        appear.backgroundImage = UIImage()
+        
+//        INavigationBar.appearance().backgroundColor = .clear
+//        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+//        UINavigationBar.appearance().shadowImage = UIImage()
+        
+        self.navigationController?.navigationBar.compactAppearance = appear
+        self.navigationController?.navigationBar.standardAppearance = appear
+        self.navigationController?.navigationBar.scrollEdgeAppearance = appear
     }
     
     private func configureLayout() {

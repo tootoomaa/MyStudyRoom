@@ -15,6 +15,7 @@ struct DateListView: View {
     let todayHealthHistory: [String] = ["수면", "혈당", "식사", "알부민"]
     
     @State private var selectedIndex = 0
+    @EnvironmentObject var provider: ServiceProvider
     
     var body: some View {
         ScrollView {
@@ -61,10 +62,13 @@ struct DateListView: View {
 //                        Text("리스트2")
 //                        Text("리스트3")
                         ForEach(0..<todayHealthHistory.count) { list in
-                            Rectangle()
-                                .background(Color.red)
-                                .frame(width: Constants.viewWitdh/3,
-                                       height: Constants.viewWitdh/3)
+                            Button("Tap Buttion") {
+                                provider.userService.login()
+                            }
+                            .foregroundColor(.blue)
+                            .frame(width: Constants.viewWitdh/3,
+                                   height: Constants.viewWitdh/6)
+                            .background(Color.gray)
                         }
                     }
                     

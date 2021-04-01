@@ -40,25 +40,6 @@ struct CollectionView: View {
     let hSpacing: CGFloat = 10
     let vSpacing: CGFloat = 10
     
-    /*
-     QGrid(Storage.people,
-               columns: 3,
-               columnsInLandscape: 4,
-               vSpacing: 50,
-               hSpacing: 20,
-               vPadding: 100,
-               hPadding: 20) { person in
-                 GridCell(person: person)
-         }
-     */
-    
-//    init(_ dataList: [T:Identifiable],
-//         columns: Int = 2,
-//         hPadding: CGFloat = 10,
-//         vPadding: CGFloat = 10,
-//         hSpacing: CGFloat = 10,
-//         vSpacing: CGFloat = 10)
-    
     var body: some View {
         
         GeometryReader { gr in
@@ -70,10 +51,17 @@ struct CollectionView: View {
                         
                         ForEach(0..<columns) { column in
                             if dataList.count > index*columns + column {
-                                Text("\(dataList[index*columns+column].name)")
-                                    .frame(width: width, height: width)
-                                    .background(Color.blue)
-                                    .cornerRadius(10)
+                                NavigationLink(
+                                    destination: Text("Destination"),
+                                    label: {
+                                        Text("\(dataList[index*columns+column].name)")
+                                            .bold()
+                                            .frame(width: width, height: width)
+                                            .foregroundColor(.red)
+                                            .font(.title)
+                                            .background(Color.blue)
+                                            .cornerRadius(10)
+                                    })
                             }
                         }
                     }

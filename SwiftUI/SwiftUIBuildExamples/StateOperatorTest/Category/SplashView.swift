@@ -11,6 +11,8 @@ struct SplashView: View {
     
     @State var isAppStartAvailable: AppState = .splashViewLoading
     
+    @StateObject var provider = ServiceProvider()
+    
     var body: some View {
         VStack {
             switch isAppStartAvailable {
@@ -22,6 +24,7 @@ struct SplashView: View {
                 WaringJailBreakView()
             case .safe:
                 HomeView()
+                    .environmentObject(provider)
             }
         }
         .onAppear {
