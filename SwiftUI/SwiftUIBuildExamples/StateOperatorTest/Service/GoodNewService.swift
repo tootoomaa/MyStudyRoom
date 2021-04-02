@@ -11,7 +11,7 @@ import Combine
 
 protocol GoodNewsServiceType {
     var articleList: ArticleResponse { get }
-    func getGoodNews()
+    func getGoodNews() -> URLSession.DataTaskPublisher
     func getGoodNewsByNomal(completion: @escaping (Result<ArticleResponse, NetworkError>) -> ())
 }
 
@@ -48,20 +48,7 @@ class GoodNewsService: BaseService, GoodNewsServiceType {
         
     }
     
-    func getGoodNews() { // -> Result<[Article], NetworkError>
-        
-        URLSession.shared.dataTaskPublisher(for: goodNewUrl)
-            .filter { (data, response) -> Bool in
-                guard let r = response as? HTTPURLResponse,
-                      200..<300 ~= r.statusCode else {
-                    return false
-                }
-                return true
-            }
-            .map(\.data)
-            .decode(type: ArticleResponse.self, decoder: JSONDecoder())
-            .replaceError(with: ArticleResponse.init(articles: []))
-            .assign(to: \.articleList, on: self)
-            .store(in: &cancelBag)
+    func getGoodNews() -> URLSession.DataTaskPublisher { // -> Result<[Article], NetworkError>
+        return URLSession.shared.dataTaskPublisher(for: goodNewUrl)
     }
 }

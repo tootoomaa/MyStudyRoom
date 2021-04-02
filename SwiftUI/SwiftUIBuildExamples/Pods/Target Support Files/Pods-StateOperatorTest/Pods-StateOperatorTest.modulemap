@@ -1,0 +1,6 @@
+framework module Pods_StateOperatorTest {
+  umbrella header "Pods-StateOperatorTest-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -9,12 +9,10 @@ import SwiftUI
 
 struct GoodNews: View {
     
-    @EnvironmentObject var provider: ServiceProvider
-    
-    @State var list: [Article] = []
+    let viewModel = GoodNewViewModel()
     
     var body: some View {
-        List(list) { article in
+        List(viewModel.articleList.articles) { article in
             VStack(alignment: .leading) {
                 Text(article.title)
                     .bold()
@@ -22,14 +20,11 @@ struct GoodNews: View {
                 Text(article.description ?? "")
             }
         }
-        .onAppear {
-            
-            self.list = provider.newsService.articleList.articles
-        }
     }
 }
 
 struct GoodNews_Previews: PreviewProvider {
+    
     static var previews: some View {
         GoodNews()
     }
