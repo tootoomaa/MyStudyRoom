@@ -29,7 +29,9 @@ class DataController: ObservableObject {
             if let data = UserDefaults.standard.data(forKey: "hypedEvents") {
                 let decoder = JSONDecoder()
                 if let decoded = try? decoder.decode([HypedEvent].self, from: data) {
-                    self.hypedEvents = decoded
+                    DispatchQueue.main.async {
+                        self.hypedEvents = decoded
+                    }
                 }
             }
         }
