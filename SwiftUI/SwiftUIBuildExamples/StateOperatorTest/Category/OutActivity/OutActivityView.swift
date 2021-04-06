@@ -76,8 +76,10 @@ struct OutActivityView: View {
 
 struct OutActivityView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
-            OutActivityView()
+        Group {
+            NavigationView {
+                OutActivityView()
+            }
         }
     }
 }
