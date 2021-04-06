@@ -11,6 +11,8 @@ struct GoodNews: View {
     
     let viewModel = GoodNewViewModel()
     
+//    @State var articleResponse = ArticleResponse(articles: [])
+    
     var body: some View {
         List(viewModel.articleList.articles) { article in
             VStack(alignment: .leading) {
@@ -19,6 +21,13 @@ struct GoodNews: View {
                     .font(.subheadline)
                 Text(article.description ?? "")
             }
+        }.onAppear {
+            print("Appear")
+//            _ = viewModel.getGoodNews()
+//                .sink { result in
+//                    print("get Data")
+//                    self.articleResponse = result
+//                }
         }
     }
 }

@@ -57,6 +57,9 @@
 		B611F73D2615ADFF004013A4 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		B611F7422615AE42004013A4 /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
 		B611F74726168E8C004013A4 /* GoodNewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodNewViewModel.swift; sourceTree = "<group>"; };
+		B62FDC9D261A90C000000092 /* CombindOperator.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = CombindOperator.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		B6452FE5261A93D4005322A1 /* SubjectBasic.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = SubjectBasic.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		B6452FE9261A9AA0005322A1 /* CombineCancellable.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = CombineCancellable.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		B65349542611A7D1003CB7A8 /* PoketmonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoketmonViewModel.swift; sourceTree = "<group>"; };
 		B65349582611AA0E003CB7A8 /* AddPocketmonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPocketmonView.swift; sourceTree = "<group>"; };
 		B6CB05EA2616D59B008E6AC2 /* CombineBasic.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = CombineBasic.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -133,7 +136,18 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		B67A2F2C26119FA800C71E82 /* Category */ = {
+		B6452FE4261A93C7005322A1 /* Combine */ = {
+			isa = PBXGroup;
+			children = (
+				B6CB05EA2616D59B008E6AC2 /* CombineBasic.playground */,
+				B62FDC9D261A90C000000092 /* CombindOperator.playground */,
+				B6452FE5261A93D4005322A1 /* SubjectBasic.playground */,
+				B6452FE9261A9AA0005322A1 /* CombineCancellable.playground */,
+			);
+			path = Combine;
+			sourceTree = "<group>";
+		};
+		B67A2F2C26119FA800C71E82 /* Menus */ = {
 			isa = PBXGroup;
 			children = (
 				B6F59C352613E36700A0EDEE /* SplashView.swift */,
@@ -152,14 +166,7 @@
 				B6F0D778261454820040037F /* ImageOverlay */,
 				B611F7312615AC9E004013A4 /* GoodNews */,
 			);
-			path = Category;
-			sourceTree = "<group>";
-		};
-		B6D622552616D45D00C8EE45 /* MyPlayGround */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = MyPlayGround;
+			path = Menus;
 			sourceTree = "<group>";
 		};
 		B6E293C52612A3CE00B4D280 /* Extension */ = {
@@ -174,7 +181,7 @@
 		B6EB551626115A5600AEC6D5 = {
 			isa = PBXGroup;
 			children = (
-				B6CB05EA2616D59B008E6AC2 /* CombineBasic.playground */,
+				B6452FE4261A93C7005322A1 /* Combine */,
 				B6EB552126115A5600AEC6D5 /* StateOperatorTest */,
 				B6EB552026115A5600AEC6D5 /* Products */,
 				3C6911E9C18F8D6166A62822 /* Pods */,
@@ -193,12 +200,11 @@
 		B6EB552126115A5600AEC6D5 /* StateOperatorTest */ = {
 			isa = PBXGroup;
 			children = (
-				B6D622552616D45D00C8EE45 /* MyPlayGround */,
 				B611F73C2615ADF5004013A4 /* Model */,
 				B6FF88852615633400324B06 /* Service */,
 				B6F0D75A2613E5B50040037F /* AppStateView */,
 				B6EB552226115A5600AEC6D5 /* StateOperatorTestApp.swift */,
-				B67A2F2C26119FA800C71E82 /* Category */,
+				B67A2F2C26119FA800C71E82 /* Menus */,
 				B6FAFD312612F5EC000F0A6D /* Utility */,
 				B6E293C52612A3CE00B4D280 /* Extension */,
 				B6EB552626115A5700AEC6D5 /* Assets.xcassets */,
@@ -660,7 +666,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.tootooma..StateOperatorTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tootooma.StateOperatorTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -683,7 +689,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.tootooma..StateOperatorTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tootooma.StateOperatorTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
