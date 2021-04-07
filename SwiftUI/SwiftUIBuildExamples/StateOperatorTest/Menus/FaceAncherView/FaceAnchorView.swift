@@ -55,8 +55,6 @@ struct FaceAnchorImportView: UIViewControllerRepresentable {
     func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
         
     }
-    
-    
 }
 
 struct FaceAnchorView_Previews: PreviewProvider {

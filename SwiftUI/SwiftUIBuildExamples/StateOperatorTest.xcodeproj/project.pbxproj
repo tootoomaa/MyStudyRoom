@@ -16,6 +16,10 @@
 		B611F74826168E8C004013A4 /* GoodNewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B611F74726168E8C004013A4 /* GoodNewViewModel.swift */; };
 		B65349552611A7D1003CB7A8 /* PoketmonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65349542611A7D1003CB7A8 /* PoketmonViewModel.swift */; };
 		B65349592611AA0E003CB7A8 /* AddPocketmonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65349582611AA0E003CB7A8 /* AddPocketmonView.swift */; };
+		B69CF36D261C1F4500F1D673 /* ScaledFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69CF36C261C1F4500F1D673 /* ScaledFont.swift */; };
+		B69CF376261D298100F1D673 /* NewGoodNewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69CF375261D298100F1D673 /* NewGoodNewsView.swift */; };
+		B69CF37A261D29D600F1D673 /* NewGoodNewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69CF379261D29D600F1D673 /* NewGoodNewsViewModel.swift */; };
+		B69CF37E261D3BE500F1D673 /* RxGoodNewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69CF37D261D3BE500F1D673 /* RxGoodNewsView.swift */; };
 		B6E293CC2612A83200B4D280 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E293CB2612A83200B4D280 /* UIApplication+Extension.swift */; };
 		B6EB552326115A5600AEC6D5 /* StateOperatorTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EB552226115A5600AEC6D5 /* StateOperatorTestApp.swift */; };
 		B6EB552526115A5600AEC6D5 /* PocketmonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EB552426115A5600AEC6D5 /* PocketmonView.swift */; };
@@ -62,6 +66,10 @@
 		B6452FE9261A9AA0005322A1 /* CombineCancellable.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = CombineCancellable.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		B65349542611A7D1003CB7A8 /* PoketmonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoketmonViewModel.swift; sourceTree = "<group>"; };
 		B65349582611AA0E003CB7A8 /* AddPocketmonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPocketmonView.swift; sourceTree = "<group>"; };
+		B69CF36C261C1F4500F1D673 /* ScaledFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaledFont.swift; sourceTree = "<group>"; };
+		B69CF375261D298100F1D673 /* NewGoodNewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGoodNewsView.swift; sourceTree = "<group>"; };
+		B69CF379261D29D600F1D673 /* NewGoodNewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGoodNewsViewModel.swift; sourceTree = "<group>"; };
+		B69CF37D261D3BE500F1D673 /* RxGoodNewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxGoodNewsView.swift; sourceTree = "<group>"; };
 		B6CB05EA2616D59B008E6AC2 /* CombineBasic.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = CombineBasic.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		B6E293CB2612A83200B4D280 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		B6EB551F26115A5600AEC6D5 /* StateOperatorTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StateOperatorTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,8 +173,27 @@
 				B6F0D774261450900040037F /* FaceAncherView */,
 				B6F0D778261454820040037F /* ImageOverlay */,
 				B611F7312615AC9E004013A4 /* GoodNews */,
+				B69CF374261D296C00F1D673 /* NewGoodNews */,
+				B69CF37C261D3BC800F1D673 /* RxGoodNews */,
 			);
 			path = Menus;
+			sourceTree = "<group>";
+		};
+		B69CF374261D296C00F1D673 /* NewGoodNews */ = {
+			isa = PBXGroup;
+			children = (
+				B69CF375261D298100F1D673 /* NewGoodNewsView.swift */,
+				B69CF379261D29D600F1D673 /* NewGoodNewsViewModel.swift */,
+			);
+			path = NewGoodNews;
+			sourceTree = "<group>";
+		};
+		B69CF37C261D3BC800F1D673 /* RxGoodNews */ = {
+			isa = PBXGroup;
+			children = (
+				B69CF37D261D3BE500F1D673 /* RxGoodNewsView.swift */,
+			);
+			path = RxGoodNews;
 			sourceTree = "<group>";
 		};
 		B6E293C52612A3CE00B4D280 /* Extension */ = {
@@ -321,6 +348,7 @@
 			children = (
 				B6FAFD322612F650000F0A6D /* Constants.swift */,
 				B6FAFD3A261304B4000F0A6D /* TimeUtil.swift */,
+				B69CF36C261C1F4500F1D673 /* ScaledFont.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -500,11 +528,13 @@
 				B6FF889A26157E0500324B06 /* InterfacingWithUIKitView.swift in Sources */,
 				B6FF88A22615A38900324B06 /* Landmark.swift in Sources */,
 				B6F59C362613E36700A0EDEE /* SplashView.swift in Sources */,
+				B69CF37A261D29D600F1D673 /* NewGoodNewsViewModel.swift in Sources */,
 				B6EB552526115A5600AEC6D5 /* PocketmonView.swift in Sources */,
 				B6F0D771261441290040037F /* InformationBlurView.swift in Sources */,
 				C7C4E5B0261352C500B0B0B8 /* CircleProgressView.swift in Sources */,
 				B6FAFD132612B7D6000F0A6D /* HomeView.swift in Sources */,
 				B611F7392615ADB5004013A4 /* GoodNewService.swift in Sources */,
+				B69CF376261D298100F1D673 /* NewGoodNewsView.swift in Sources */,
 				B6F0D76926140AA00040037F /* QGridTestView.swift in Sources */,
 				B611F73E2615ADFF004013A4 /* Article.swift in Sources */,
 				B6FAFD2D2612F5B7000F0A6D /* DateListView.swift in Sources */,
@@ -523,6 +553,8 @@
 				B611F74826168E8C004013A4 /* GoodNewViewModel.swift in Sources */,
 				B6FF888B2615639800324B06 /* BaseService.swift in Sources */,
 				B6F0D776261450AD0040037F /* FaceAnchorView.swift in Sources */,
+				B69CF36D261C1F4500F1D673 /* ScaledFont.swift in Sources */,
+				B69CF37E261D3BE500F1D673 /* RxGoodNewsView.swift in Sources */,
 				B6FF88872615634A00324B06 /* ServiceProvider.swift in Sources */,
 				B6FAFD192612B83A000F0A6D /* RulerView.swift in Sources */,
 				B6FAFD332612F650000F0A6D /* Constants.swift in Sources */,

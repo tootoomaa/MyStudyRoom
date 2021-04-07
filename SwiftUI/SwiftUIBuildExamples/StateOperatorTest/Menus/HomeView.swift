@@ -18,8 +18,9 @@ enum MenuType: String, CaseIterable {
     case timer
     case infomationBlur
     case imageOverlay
-    case appleTutorial
     case goodNews
+    case newGoodNews
+    case rxGoodNews
     
     func getView() -> some View {
         switch self {
@@ -33,8 +34,9 @@ enum MenuType: String, CaseIterable {
         case .timer:            return AnyView(TimerView())
         case .infomationBlur:   return AnyView(InformationBlurView())
         case .imageOverlay:     return AnyView(ImageOverlayView())
-        case .appleTutorial:    return AnyView(AppleTutorialMainView())
         case .goodNews:         return AnyView(GoodNews())
+        case .newGoodNews:      return AnyView(NewGoodNewsView())
+        case .rxGoodNews:       return AnyView(RxGoodNewsView())
         }
     }
 }
