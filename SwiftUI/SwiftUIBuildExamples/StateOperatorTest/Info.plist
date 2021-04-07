@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSHealthShareUsageDescription</key>
+	<string>심박수 실시간 체크를 위해서 건강 정보를 실시간으로 업데이트하고자 합니다.</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>심박수 실시간 체크를 위해서 건강 정보를 실시간으로 업데이트하고자 합니다.</string>
+	<key>NSHealthClinicalHealthRecordsShareUsageDescription</key>
+	<string>심박수 실시간 체크를 위해서 건강정보에 접근하고자 합니다.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

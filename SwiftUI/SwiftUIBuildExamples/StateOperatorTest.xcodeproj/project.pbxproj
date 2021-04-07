@@ -20,6 +20,10 @@
 		B69CF376261D298100F1D673 /* NewGoodNewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69CF375261D298100F1D673 /* NewGoodNewsView.swift */; };
 		B69CF37A261D29D600F1D673 /* NewGoodNewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69CF379261D29D600F1D673 /* NewGoodNewsViewModel.swift */; };
 		B69CF37E261D3BE500F1D673 /* RxGoodNewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69CF37D261D3BE500F1D673 /* RxGoodNewsView.swift */; };
+		B6A2D42B261D452A003C3883 /* HeartBeatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A2D42A261D452A003C3883 /* HeartBeatView.swift */; };
+		B6A2D42F261D455F003C3883 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A2D42E261D455F003C3883 /* HealthKit.framework */; };
+		B6A2D432261D458A003C3883 /* HeartBeatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A2D431261D458A003C3883 /* HeartBeatViewModel.swift */; };
+		B6A2D437261D9105003C3883 /* PrancerciseWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A2D436261D9105003C3883 /* PrancerciseWorkout.swift */; };
 		B6E293CC2612A83200B4D280 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E293CB2612A83200B4D280 /* UIApplication+Extension.swift */; };
 		B6EB552326115A5600AEC6D5 /* StateOperatorTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EB552226115A5600AEC6D5 /* StateOperatorTestApp.swift */; };
 		B6EB552526115A5600AEC6D5 /* PocketmonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EB552426115A5600AEC6D5 /* PocketmonView.swift */; };
@@ -70,6 +74,11 @@
 		B69CF375261D298100F1D673 /* NewGoodNewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGoodNewsView.swift; sourceTree = "<group>"; };
 		B69CF379261D29D600F1D673 /* NewGoodNewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGoodNewsViewModel.swift; sourceTree = "<group>"; };
 		B69CF37D261D3BE500F1D673 /* RxGoodNewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxGoodNewsView.swift; sourceTree = "<group>"; };
+		B6A2D42A261D452A003C3883 /* HeartBeatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartBeatView.swift; sourceTree = "<group>"; };
+		B6A2D42D261D455F003C3883 /* StateOperatorTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StateOperatorTest.entitlements; sourceTree = "<group>"; };
+		B6A2D42E261D455F003C3883 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		B6A2D431261D458A003C3883 /* HeartBeatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartBeatViewModel.swift; sourceTree = "<group>"; };
+		B6A2D436261D9105003C3883 /* PrancerciseWorkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrancerciseWorkout.swift; sourceTree = "<group>"; };
 		B6CB05EA2616D59B008E6AC2 /* CombineBasic.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = CombineBasic.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		B6E293CB2612A83200B4D280 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		B6EB551F26115A5600AEC6D5 /* StateOperatorTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StateOperatorTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +121,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C8B84152697E53A3DF3CDDF /* Pods_StateOperatorTest.framework in Frameworks */,
+				B6A2D42F261D455F003C3883 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,6 +185,7 @@
 				B611F7312615AC9E004013A4 /* GoodNews */,
 				B69CF374261D296C00F1D673 /* NewGoodNews */,
 				B69CF37C261D3BC800F1D673 /* RxGoodNews */,
+				B6A2D429261D451D003C3883 /* HeartBeatView */,
 			);
 			path = Menus;
 			sourceTree = "<group>";
@@ -194,6 +205,16 @@
 				B69CF37D261D3BE500F1D673 /* RxGoodNewsView.swift */,
 			);
 			path = RxGoodNews;
+			sourceTree = "<group>";
+		};
+		B6A2D429261D451D003C3883 /* HeartBeatView */ = {
+			isa = PBXGroup;
+			children = (
+				B6A2D42A261D452A003C3883 /* HeartBeatView.swift */,
+				B6A2D431261D458A003C3883 /* HeartBeatViewModel.swift */,
+				B6A2D436261D9105003C3883 /* PrancerciseWorkout.swift */,
+			);
+			path = HeartBeatView;
 			sourceTree = "<group>";
 		};
 		B6E293C52612A3CE00B4D280 /* Extension */ = {
@@ -227,6 +248,7 @@
 		B6EB552126115A5600AEC6D5 /* StateOperatorTest */ = {
 			isa = PBXGroup;
 			children = (
+				B6A2D42D261D455F003C3883 /* StateOperatorTest.entitlements */,
 				B611F73C2615ADF5004013A4 /* Model */,
 				B6FF88852615633400324B06 /* Service */,
 				B6F0D75A2613E5B50040037F /* AppStateView */,
@@ -402,6 +424,7 @@
 		C9CA0EE51B381FEBB080773F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B6A2D42E261D455F003C3883 /* HealthKit.framework */,
 				79D34745B180A23F8750AC2D /* Pods_StateOperatorTest.framework */,
 			);
 			name = Frameworks;
@@ -544,11 +567,13 @@
 				B6EB552326115A5600AEC6D5 /* StateOperatorTestApp.swift in Sources */,
 				B6EB5534261169B100AEC6D5 /* Pocketmon.swift in Sources */,
 				B6FAFD3B261304B4000F0A6D /* TimeUtil.swift in Sources */,
+				B6A2D42B261D452A003C3883 /* HeartBeatView.swift in Sources */,
 				B6107B5626145950004050D3 /* FaceViewController.swift in Sources */,
 				B6E293CC2612A83200B4D280 /* UIApplication+Extension.swift in Sources */,
 				B6FF888E261563C500324B06 /* UserService.swift in Sources */,
 				B6FF889F26158D3400324B06 /* PageViewController.swift in Sources */,
 				B6F0D75C2613E5ED0040037F /* WaringJailBreakView.swift in Sources */,
+				B6A2D437261D9105003C3883 /* PrancerciseWorkout.swift in Sources */,
 				B65349552611A7D1003CB7A8 /* PoketmonViewModel.swift in Sources */,
 				B611F74826168E8C004013A4 /* GoodNewViewModel.swift in Sources */,
 				B6FF888B2615639800324B06 /* BaseService.swift in Sources */,
@@ -556,6 +581,7 @@
 				B69CF36D261C1F4500F1D673 /* ScaledFont.swift in Sources */,
 				B69CF37E261D3BE500F1D673 /* RxGoodNewsView.swift in Sources */,
 				B6FF88872615634A00324B06 /* ServiceProvider.swift in Sources */,
+				B6A2D432261D458A003C3883 /* HeartBeatViewModel.swift in Sources */,
 				B6FAFD192612B83A000F0A6D /* RulerView.swift in Sources */,
 				B6FAFD332612F650000F0A6D /* Constants.swift in Sources */,
 				B611F7432615AE42004013A4 /* URL+Extension.swift in Sources */,
@@ -688,6 +714,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = StateOperatorTest/StateOperatorTest.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"StateOperatorTest/Preview Content\"";
 				DEVELOPMENT_TEAM = 4UA98H4AM3;
@@ -711,6 +738,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = StateOperatorTest/StateOperatorTest.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"StateOperatorTest/Preview Content\"";
 				DEVELOPMENT_TEAM = 4UA98H4AM3;

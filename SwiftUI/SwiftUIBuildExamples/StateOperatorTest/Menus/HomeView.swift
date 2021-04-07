@@ -21,6 +21,7 @@ enum MenuType: String, CaseIterable {
     case goodNews
     case newGoodNews
     case rxGoodNews
+    case heartBeat
     
     func getView() -> some View {
         switch self {
@@ -37,6 +38,7 @@ enum MenuType: String, CaseIterable {
         case .goodNews:         return AnyView(GoodNews())
         case .newGoodNews:      return AnyView(NewGoodNewsView())
         case .rxGoodNews:       return AnyView(RxGoodNewsView())
+        case .heartBeat:        return AnyView(HeartBeatView())
         }
     }
 }
