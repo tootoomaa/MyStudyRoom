@@ -16,6 +16,8 @@
 		B611F74826168E8C004013A4 /* GoodNewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B611F74726168E8C004013A4 /* GoodNewViewModel.swift */; };
 		B65349552611A7D1003CB7A8 /* PoketmonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65349542611A7D1003CB7A8 /* PoketmonViewModel.swift */; };
 		B65349592611AA0E003CB7A8 /* AddPocketmonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65349582611AA0E003CB7A8 /* AddPocketmonView.swift */; };
+		B673EE682623CF08009DCECF /* WorkSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B673EE672623CF08009DCECF /* WorkSessionView.swift */; };
+		B673EE6B2623CFB7009DCECF /* WorkSessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B673EE6A2623CFB7009DCECF /* WorkSessionService.swift */; };
 		B69CF36D261C1F4500F1D673 /* ScaledFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69CF36C261C1F4500F1D673 /* ScaledFont.swift */; };
 		B69CF376261D298100F1D673 /* NewGoodNewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69CF375261D298100F1D673 /* NewGoodNewsView.swift */; };
 		B69CF37A261D29D600F1D673 /* NewGoodNewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69CF379261D29D600F1D673 /* NewGoodNewsViewModel.swift */; };
@@ -70,6 +72,8 @@
 		B6452FE9261A9AA0005322A1 /* CombineCancellable.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = CombineCancellable.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		B65349542611A7D1003CB7A8 /* PoketmonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoketmonViewModel.swift; sourceTree = "<group>"; };
 		B65349582611AA0E003CB7A8 /* AddPocketmonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPocketmonView.swift; sourceTree = "<group>"; };
+		B673EE672623CF08009DCECF /* WorkSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSessionView.swift; sourceTree = "<group>"; };
+		B673EE6A2623CFB7009DCECF /* WorkSessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSessionService.swift; sourceTree = "<group>"; };
 		B69CF36C261C1F4500F1D673 /* ScaledFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaledFont.swift; sourceTree = "<group>"; };
 		B69CF375261D298100F1D673 /* NewGoodNewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGoodNewsView.swift; sourceTree = "<group>"; };
 		B69CF379261D29D600F1D673 /* NewGoodNewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGoodNewsViewModel.swift; sourceTree = "<group>"; };
@@ -165,6 +169,15 @@
 			path = Combine;
 			sourceTree = "<group>";
 		};
+		B673EE662623CEEC009DCECF /* WorkSession */ = {
+			isa = PBXGroup;
+			children = (
+				B673EE672623CF08009DCECF /* WorkSessionView.swift */,
+				B673EE6A2623CFB7009DCECF /* WorkSessionService.swift */,
+			);
+			path = WorkSession;
+			sourceTree = "<group>";
+		};
 		B67A2F2C26119FA800C71E82 /* Menus */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +199,7 @@
 				B69CF374261D296C00F1D673 /* NewGoodNews */,
 				B69CF37C261D3BC800F1D673 /* RxGoodNews */,
 				B6A2D429261D451D003C3883 /* HeartBeatView */,
+				B673EE662623CEEC009DCECF /* WorkSession */,
 			);
 			path = Menus;
 			sourceTree = "<group>";
@@ -559,6 +573,7 @@
 				B611F7392615ADB5004013A4 /* GoodNewService.swift in Sources */,
 				B69CF376261D298100F1D673 /* NewGoodNewsView.swift in Sources */,
 				B6F0D76926140AA00040037F /* QGridTestView.swift in Sources */,
+				B673EE6B2623CFB7009DCECF /* WorkSessionService.swift in Sources */,
 				B611F73E2615ADFF004013A4 /* Article.swift in Sources */,
 				B6FAFD2D2612F5B7000F0A6D /* DateListView.swift in Sources */,
 				B65349592611AA0E003CB7A8 /* AddPocketmonView.swift in Sources */,
@@ -573,6 +588,7 @@
 				B6FF888E261563C500324B06 /* UserService.swift in Sources */,
 				B6FF889F26158D3400324B06 /* PageViewController.swift in Sources */,
 				B6F0D75C2613E5ED0040037F /* WaringJailBreakView.swift in Sources */,
+				B673EE682623CF08009DCECF /* WorkSessionView.swift in Sources */,
 				B6A2D437261D9105003C3883 /* PrancerciseWorkout.swift in Sources */,
 				B65349552611A7D1003CB7A8 /* PoketmonViewModel.swift in Sources */,
 				B611F74826168E8C004013A4 /* GoodNewViewModel.swift in Sources */,
