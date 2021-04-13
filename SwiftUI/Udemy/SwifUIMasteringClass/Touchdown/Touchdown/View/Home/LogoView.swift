@@ -12,7 +12,7 @@ struct LogoView: View {
         HStack(spacing: 4) {
             Text("Touch".uppercased())
                 .font(.title3)
-                .fontWeight(.bold)
+                .fontWeight(.black)
                 .foregroundColor(.black)
             
             Image("logo-dark")
@@ -22,7 +22,7 @@ struct LogoView: View {
             
             Text("Down".uppercased())
                 .font(.title3)
-                .fontWeight(.bold)
+                .fontWeight(.black)
                 .foregroundColor(.black)
             
         } //: HSTACK

@@ -12,8 +12,30 @@ struct ContentView: View {
     
     //MARK: - Body
     var body: some View {
-        FooterView()
-            .padding(.horizontal)
+        ZStack {
+            VStack(spacing: 0) {
+                NavigationBarView()
+                    .padding(.horizontal, 15)
+                    .padding(.bottom)
+                    .padding(.top, UIApplication.shared.windows.first?.safeAreaInsets.top ?? 50)
+                    .background(Color.white)
+                    .shadow(color: Color.black.opacity(0.05), radius: 5, x: 0, y: 0)
+                
+                ScrollView(.vertical, showsIndicators: false) {
+                    VStack(spacing: 0) {
+                        FeaturedTabView()
+                            .padding(.vertical)
+                        
+                        CategoryGridView()
+                        
+                        FooterView()
+                            .padding(.horizontal)
+                    } //: VSTACK
+                } //: ScrollView
+            } //: VStack
+            .background(colorBackgroud.ignoresSafeArea(.all, edges: .all))
+        } //: ZStack
+        .ignoresSafeArea(.all, edges: .all)
     }
 }
 

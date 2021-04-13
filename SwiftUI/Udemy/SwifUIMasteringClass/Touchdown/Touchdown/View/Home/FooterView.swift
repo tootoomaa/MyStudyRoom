@@ -26,7 +26,8 @@ struct FooterView: View {
                 .foregroundColor(.gray)
                 .multilineTextAlignment(.center)
                 .layoutPriority(1)
-        }
+        } //: VStack
+        .padding()
     }
 }
 
