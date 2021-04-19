@@ -12,7 +12,15 @@ struct WorkSessionView: View {
     let service = WorkSessionService()
     
     var body: some View {
-        Text("Hello, World!")
+        Image("bloodsugar-img")
+            .resizable()
+            .scaledToFit()
+            .overlay(
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(Color.gray, lineWidth: 1)
+            )
+        
+        
     }
 }
 

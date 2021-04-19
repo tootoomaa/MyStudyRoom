@@ -10,7 +10,7 @@ import SwiftUI
 struct ProductDetailView: View {
     //MARK: - Properties
     
-    let blurView = UIBlurEffect(style: .extraLight)
+    @EnvironmentObject var shop: Shop
     
     //MARK: - Body
     var body: some View {
@@ -32,18 +32,25 @@ struct ProductDetailView: View {
             //DETAIL BOTTOM PART
             VStack(alignment: .center, spacing: 0, content: {
                 //RARING + SIZES
+                RatingSizesDetailView()
+                    .padding(.top, -20)
+                    .padding(.bottom, 10)
                 
                 //DESCRIPTION
                 ScrollView(.vertical, showsIndicators: false) {
-                    Text(sampleProduct.description)
+                    Text(shop.selectedProduct?.description ?? sampleProduct.description)
                         .font(.system(.body, design: .rounded))
                         .foregroundColor(.gray)
                         .multilineTextAlignment(.leading)
                 } //: SCROLL
                 
                 //QUANTITY + FAVOURITE
+                QunatityFavouriteDetailView()
+                    .padding(.vertical, 10)
                 
                 //Add to Cart
+                AddToCartDetailView()
+                    .padding(.bottom, 20)
                 
                 Spacer()
             }) //: VStack
@@ -56,9 +63,9 @@ struct ProductDetailView: View {
         }) //: VSTACK
         .ignoresSafeArea(.all, edges: .all)
         .background(
-            Color(red: sampleProduct.red,
-                  green: sampleProduct.green,
-                  blue: sampleProduct.blue)
+            Color(red: shop.selectedProduct?.red ??  sampleProduct.red,
+                  green: shop.selectedProduct?.green ?? sampleProduct.green,
+                  blue: shop.selectedProduct?.blue ?? sampleProduct.blue)
         ).ignoresSafeArea(.all, edges: .all)
     }
 }
@@ -67,5 +74,6 @@ struct ProductDetailView: View {
 struct ProductDetailView_Previews: PreviewProvider {
     static var previews: some View {
         ProductDetailView()
+            .environmentObject(Shop())
     }
 }
