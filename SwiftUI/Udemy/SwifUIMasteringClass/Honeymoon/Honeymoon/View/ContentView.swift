@@ -115,44 +115,43 @@ struct ContentView: View {
                                             Double(self.dragState.translation.width/12) : 0 ))
                         .animation(.interpolatingSpring(stiffness: 120, damping: 120))
                         .gesture(LongPressGesture(minimumDuration: 0.01)
-                        .sequenced(before: DragGesture())
-                        .updating(self.$dragState, body: { (value, state, transaction) in
-                            switch value {
-                            case .first(true):
-                                state = .pressing
-                            case .second(true, let drag):
-                                state = .dragging(translation: drag?.translation ?? .zero)
-                            default:
-                                break
-                            }
-                        })
-                        .onChanged({ value in // 카드를 좌우로 움직이면 카드가 아래로 내려가는 에니메이션
-                            guard case .second(true, let drag?) = value else {
-                                return
-                            }
-                            
-                            if drag.translation.width < -self.dragAreaThreshold {
-                                self.cardRemovalTransition = .leadingButton
-                            }
-                            
-                            if drag.translation.width > self.dragAreaThreshold {
-                                self.cardRemovalTransition = .tailingBotton
-                            }
-                        })
-                        .onEnded({ (value) in
-                            guard case .second(true, let drag?) = value else {
-                                return
-                            }
-                            if drag.translation.width < -self.dragAreaThreshold || drag.translation.width > self.dragAreaThreshold {
-                                playSound(sound: "sound-rise", type: "mp3")
-                                self.moveCards()
-                            }
+                            .sequenced(before: DragGesture())
+                            .updating(self.$dragState, body: { (value, state, transaction) in
+                                switch value {
+                                case .first(true):
+                                    state = .pressing
+                                case .second(true, let drag):
+                                    state = .dragging(translation: drag?.translation ?? .zero)
+                                default:
+                                    break
+                                }
+                            })
+                            .onChanged({ value in // 카드를 좌우로 움직이면 카드가 아래로 내려가는 에니메이션
+                                guard case .second(true, let drag?) = value else {
+                                    return
+                                }
+                                
+                                if drag.translation.width < -self.dragAreaThreshold {
+                                    self.cardRemovalTransition = .leadingButton
+                                }
+                                
+                                if drag.translation.width > self.dragAreaThreshold {
+                                    self.cardRemovalTransition = .tailingBotton
+                                }
+                            })
+                            .onEnded({ (value) in
+                                guard case .second(true, let drag?) = value else {
+                                    return
+                                }
+                                if drag.translation.width < -self.dragAreaThreshold || drag.translation.width > self.dragAreaThreshold {
+                                    playSound(sound: "sound-rise", type: "mp3")
+                                    self.moveCards()
+                                }
                         })
                     )
                     .transition(self.cardRemovalTransition)
-                        
                 }
-            }
+            } //: ZSTACK
             .padding(.horizontal)
             
             Spacer()
