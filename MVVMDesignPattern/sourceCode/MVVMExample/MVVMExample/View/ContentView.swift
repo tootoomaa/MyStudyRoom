@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     // MARK: - Properties
+    
     @State var email: String = ""
     @State var password: String = ""
     @State var isPresentNextPage: Bool = false
@@ -37,7 +38,8 @@ struct ContentView: View {
                 }) //: Button
                 .disabled(email.isEmpty || password.isEmpty)
                 .sheet(isPresented: $isPresentNextPage, content: {
-                    LoginSuccessView(email: $email, password: $password)
+                    let user = User(email: email, password: password)
+                    LoginSuccessView(user: user)
                 })
             } // : VSTACK
             .navigationBarTitle("Login Page")

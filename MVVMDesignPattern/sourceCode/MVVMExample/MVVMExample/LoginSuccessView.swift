@@ -9,23 +9,24 @@ import SwiftUI
 
 struct LoginSuccessView: View {
     // MARK: - Properties
-    @Binding var email: String
-    @Binding var password: String
+    @State var user: User
     
     // MARK: - Body
     var body: some View {
         VStack {
-            Text("아이디 : \(email)")
+            Text("아이디 : \(user.email)")
             
-            Text("패스워드 : \(password)")
+            Text("패스워드 : \(user.password)")
         }
     }
 }
 
 // MARK: - Preview
 struct LoginSuccessView_Previews: PreviewProvider {
+    
+    static var user = User(email: "kwangsoo@Salphadex.com", password: "1234")
+    
     static var previews: some View {
-        LoginSuccessView(email: .constant("kwangsoo@Salphadtx.com"),
-                         password: .constant("testaaa"))
+        LoginSuccessView(user: user)
     }
 }

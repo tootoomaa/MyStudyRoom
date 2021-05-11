@@ -12,6 +12,7 @@
 		C708FC1B264AAE6E00F22A2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C708FC1A264AAE6E00F22A2F /* Assets.xcassets */; };
 		C708FC1E264AAE6E00F22A2F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C708FC1D264AAE6E00F22A2F /* Preview Assets.xcassets */; };
 		C7A3CC46264AB1E1004D349B /* LoginSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A3CC45264AB1E1004D349B /* LoginSuccessView.swift */; };
+		C7A3CC4A264AB9FC004D349B /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A3CC49264AB9FC004D349B /* UserModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		C708FC1D264AAE6E00F22A2F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C708FC1F264AAE6E00F22A2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C7A3CC45264AB1E1004D349B /* LoginSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSuccessView.swift; sourceTree = "<group>"; };
+		C7A3CC49264AB9FC004D349B /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,8 +56,8 @@
 		C708FC15264AAE6C00F22A2F /* MVVMExample */ = {
 			isa = PBXGroup;
 			children = (
-				C708FC16264AAE6C00F22A2F /* MVVMExampleApp.swift */,
-				C708FC18264AAE6C00F22A2F /* ContentView.swift */,
+				C7A3CC48264AB9F0004D349B /* Model */,
+				C7A3CC47264AB9EA004D349B /* View */,
 				C708FC1A264AAE6E00F22A2F /* Assets.xcassets */,
 				C708FC1F264AAE6E00F22A2F /* Info.plist */,
 				C708FC1C264AAE6E00F22A2F /* Preview Content */,
@@ -70,6 +72,23 @@
 				C708FC1D264AAE6E00F22A2F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C7A3CC47264AB9EA004D349B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C708FC16264AAE6C00F22A2F /* MVVMExampleApp.swift */,
+				C708FC18264AAE6C00F22A2F /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C7A3CC48264AB9F0004D349B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C7A3CC49264AB9FC004D349B /* UserModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +162,7 @@
 			files = (
 				C708FC19264AAE6C00F22A2F /* ContentView.swift in Sources */,
 				C708FC17264AAE6C00F22A2F /* MVVMExampleApp.swift in Sources */,
+				C7A3CC4A264AB9FC004D349B /* UserModel.swift in Sources */,
 				C7A3CC46264AB1E1004D349B /* LoginSuccessView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
