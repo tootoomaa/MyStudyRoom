@@ -10,8 +10,8 @@ import SwiftUI
 struct ContentView: View {
     // MARK: - Properties
     
-    @State var email: String = ""
-    @State var password: String = ""
+    @ObservedObject var loginModel = LoginViewModel()
+    
     @State var isPresentNextPage: Bool = false
     
     // MARK: - Body
@@ -19,11 +19,11 @@ struct ContentView: View {
         NavigationView {
             VStack(spacing: 30) {
 
-                TextField("아이디", text: $email)
+                TextField("아이디", text: $loginModel.email)
                 .textFieldStyle(DefaultTextFieldStyle())
                 .frame(height: 50)
                 
-                TextField("패스워드", text: $password)
+                TextField("패스워드", text: $loginModel.password)
                 .frame(height: 50)
                 
                 Button(action: {
@@ -32,14 +32,13 @@ struct ContentView: View {
                     Text("Login")
                         .frame(maxWidth: .infinity, minHeight: 50)
                         .foregroundColor(.white)
-                        .background(email.isEmpty || password.isEmpty ? Color.gray : Color.blue)
+                        .background(loginModel.isDisable ? Color.gray : Color.blue)
                         .cornerRadius(20)
                     
                 }) //: Button
-                .disabled(email.isEmpty || password.isEmpty)
+                .disabled(loginModel.isDisable)
                 .sheet(isPresented: $isPresentNextPage, content: {
-                    let user = User(email: email, password: password)
-                    LoginSuccessView(user: user)
+                    LoginSuccessView(user: loginModel.user)
                 })
             } // : VSTACK
             .navigationBarTitle("Login Page")
