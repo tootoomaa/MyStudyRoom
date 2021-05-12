@@ -8,11 +8,17 @@
 import Foundation
 import UIKit
 import ARKit
+import SwiftUI
 
-class FaceViewController: UIViewController {
+class FaceViewController: UIViewController, ObservableObject {
     
     lazy var sceneView = ARSCNView()
     let testView = UIView()
+    
+    final internal lazy var faceNode = SCNNode()
+    final private var faceDetectedTime:Date?
+    
+    @Published var test: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,15 +78,52 @@ class FaceViewController: UIViewController {
 
 extension FaceViewController: ARSCNViewDelegate {
     
+    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
+        guard let device = sceneView.device else { return nil }
+        
+        let faceGeometry = ARSCNFaceGeometry(device: device)
+        faceNode = SCNNode(geometry: faceGeometry)
+        
+        faceNode.geometry?.firstMaterial?.fillMode = .lines
+        faceNode.geometry?.firstMaterial?.transparency = 0.0
+        
+        return faceNode
+    }
+    
+    final func checkTimeDifferences() {
+        let currTime = Date()
+        guard let prevDate = faceDetectedTime else { return }
+        let elapsed = currTime.timeIntervalSince(prevDate)
+        let ms = Int((elapsed.truncatingRemainder(dividingBy: 1)) * 1000)
+        
+        guard ms > 250 else { return }
+        print("벗어난듯?")
+//        faceDetectionDelegate?.detectedFace(detected: false)
+    }
+    
+    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+        checkTimeDifferences()
+    }
+    
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
 
-        guard let faceAnchor = anchor as? ARFaceAnchor else { return }
+        guard let faceAnchor = anchor as? ARFaceAnchor,
+              let faceGeometry = node.geometry as? ARSCNFaceGeometry else {
+            print("111111111111111111111111111111111111111111")
+            return
+        }
         
-        print(faceAnchor.lookAtPoint.x*100)
-        print(faceAnchor.lookAtPoint.y*100)
+        faceGeometry.update(from: faceAnchor.geometry)
+        faceNode.transform = node.transform
+        faceDetectedTime = Date()
+        
+        print("얼굴 인식")
+//        print(faceAnchor.lookAtPoint.x*100)
+//        print(faceAnchor.lookAtPoint.y*100)
     }
     
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+        
         
         if anchor is ARFaceAnchor {
             

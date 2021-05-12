@@ -16,6 +16,7 @@ enum MenuType: String, CaseIterable {
     case circleProgress
     case collectionView
     case timer
+    case faceAnchor
     case infomationBlur
     case imageOverlay
     case goodNews
@@ -34,6 +35,7 @@ enum MenuType: String, CaseIterable {
         case .circleProgress:   return AnyView(CircleProgressView())
         case .collectionView:   return AnyView(CollectionView())
         case .timer:            return AnyView(TimerView())
+        case .faceAnchor:       return AnyView(FaceAnchorView())
         case .infomationBlur:   return AnyView(InformationBlurView())
         case .imageOverlay:     return AnyView(ImageOverlayView())
         case .goodNews:         return AnyView(GoodNews())

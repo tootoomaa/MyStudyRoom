@@ -57,6 +57,7 @@ struct InfoMationView: View {
             Color.black
                 .opacity(0.25)
             
+            
             VStack(alignment: .center) {
                 Image("wwdc")
                     .resizable()

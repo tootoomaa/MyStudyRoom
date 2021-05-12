@@ -11,6 +11,7 @@ import ARKit
 struct FaceAnchorView: View {
     
     @State private var textToShow = "Hello AR"
+    @State var text: String = ""
     var sceneView = ARSKView()
     
     var body: some View {
@@ -35,8 +36,10 @@ struct FaceAnchorView: View {
                         Text("Tap Me")
                     }
                 }
+                
+                Text(text)
                 NavigationLink("To FaceAnchor",
-                               destination: FaceAnchorImportView())
+                               destination: FaceAnchorImportView(text: $text))
             }
         }
     }
@@ -44,10 +47,20 @@ struct FaceAnchorView: View {
 
 struct FaceAnchorImportView: UIViewControllerRepresentable {
     
+    @Binding var text: String
+    @ObservedObject var vc = FaceViewController()
+    
     // UIViewController를 생성하고 초기화 수행하는 함수
     func makeUIViewController(context: Context) -> some UIViewController {
         
-        return FaceViewController()
+        _ = vc.$test
+            .subscribe(on: RunLoop.main)
+            .sink { text in
+                print("=========================")
+                self.text = text
+            }
+        
+        return vc
         
     }
     
