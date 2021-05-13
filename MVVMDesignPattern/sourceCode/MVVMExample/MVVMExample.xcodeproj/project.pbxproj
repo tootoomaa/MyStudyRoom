@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B6300203264B588D00A92C08 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6300202264B588D00A92C08 /* ViewModelType.swift */; };
+		B6300205264B5EE400A92C08 /* LoginViewModelRefactoringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6300204264B5EE400A92C08 /* LoginViewModelRefactoringTests.swift */; };
 		C708FC17264AAE6C00F22A2F /* MVVMExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C708FC16264AAE6C00F22A2F /* MVVMExampleApp.swift */; };
 		C708FC19264AAE6C00F22A2F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C708FC18264AAE6C00F22A2F /* ContentView.swift */; };
 		C708FC1B264AAE6E00F22A2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C708FC1A264AAE6E00F22A2F /* Assets.xcassets */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		B6300202264B588D00A92C08 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
+		B6300204264B5EE400A92C08 /* LoginViewModelRefactoringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelRefactoringTests.swift; sourceTree = "<group>"; };
 		C708FC13264AAE6C00F22A2F /* MVVMExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVMExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C708FC16264AAE6C00F22A2F /* MVVMExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMExampleApp.swift; sourceTree = "<group>"; };
 		C708FC18264AAE6C00F22A2F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				C7A3CC51264ABB27004D349B /* MVCExampleTests.swift */,
 				C7A3CC53264ABB27004D349B /* Info.plist */,
 				C7A3CC5F264ACE22004D349B /* LoginViewModelTests.swift */,
+				B6300204264B5EE400A92C08 /* LoginViewModelRefactoringTests.swift */,
 			);
 			path = MVVMExampleTests;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 			files = (
 				C7A3CC60264ACE22004D349B /* LoginViewModelTests.swift in Sources */,
 				C7A3CC52264ABB27004D349B /* MVCExampleTests.swift in Sources */,
+				B6300205264B5EE400A92C08 /* LoginViewModelRefactoringTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
