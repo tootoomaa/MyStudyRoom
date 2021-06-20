@@ -11,6 +11,7 @@ struct ContentView: View {
     // MARK: - Properties
     
     @ObservedObject var loginModel = LoginViewModel()
+    @State var isDisable: Bool = true
     
     @State var isPresentNextPage: Bool = false
     
@@ -19,11 +20,11 @@ struct ContentView: View {
         NavigationView {
             VStack(spacing: 30) {
 
-                TextField("아이디", text: $loginModel.email)
+                TextField("아이디", text: $loginModel.input.email)
                 .textFieldStyle(DefaultTextFieldStyle())
                 .frame(height: 50)
                 
-                TextField("패스워드", text: $loginModel.password)
+                TextField("패스워드", text: $loginModel.input.password)
                 .frame(height: 50)
                 
                 Button(action: {
@@ -32,11 +33,11 @@ struct ContentView: View {
                     Text("Login")
                         .frame(maxWidth: .infinity, minHeight: 50)
                         .foregroundColor(.white)
-                        .background(loginModel.isDisable ? Color.gray : Color.blue)
+                        .background(isDisable ? Color.gray : Color.blue)
                         .cornerRadius(20)
                     
                 }) //: Button
-                .disabled(loginModel.isDisable)
+                .disabled(isDisable)
                 .sheet(isPresented: $isPresentNextPage, content: {
                     LoginSuccessView(user: loginModel.user)
                 })
@@ -44,6 +45,11 @@ struct ContentView: View {
             .navigationBarTitle("Login Page")
         } //: Navigation View
         .padding(.horizontal, 24)
+        .onReceive(loginModel.output.$isDisable) { self.isDisable = $0 }
+        /*
+         onReceive는 ViewModel의 값을 통해서 UI를 변경할떄 사용한다.
+         ** View를 변화시키는 역활은 @State **
+         */
     }
 }
 

@@ -33,7 +33,6 @@ struct CircleProgressView: View {
                 .padding(.horizontal, 30)
                 Spacer()
             }
-            
         }
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B6300203264B588D00A92C08 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6300202264B588D00A92C08 /* ViewModelType.swift */; };
 		C708FC17264AAE6C00F22A2F /* MVVMExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C708FC16264AAE6C00F22A2F /* MVVMExampleApp.swift */; };
 		C708FC19264AAE6C00F22A2F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C708FC18264AAE6C00F22A2F /* ContentView.swift */; };
 		C708FC1B264AAE6E00F22A2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C708FC1A264AAE6E00F22A2F /* Assets.xcassets */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B6300202264B588D00A92C08 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		C708FC13264AAE6C00F22A2F /* MVVMExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVMExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C708FC16264AAE6C00F22A2F /* MVVMExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMExampleApp.swift; sourceTree = "<group>"; };
 		C708FC18264AAE6C00F22A2F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				C7A3CC49264AB9FC004D349B /* UserModel.swift */,
+				B6300202264B588D00A92C08 /* ViewModelType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 			files = (
 				C708FC19264AAE6C00F22A2F /* ContentView.swift in Sources */,
 				C708FC17264AAE6C00F22A2F /* MVVMExampleApp.swift in Sources */,
+				B6300203264B588D00A92C08 /* ViewModelType.swift in Sources */,
 				C7A3CC4A264AB9FC004D349B /* UserModel.swift in Sources */,
 				C7A3CC5C264AC5B5004D349B /* LoginViewModel.swift in Sources */,
 				C7A3CC46264AB1E1004D349B /* LoginSuccessView.swift in Sources */,

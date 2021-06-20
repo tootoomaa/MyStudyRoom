@@ -9,25 +9,39 @@ import Foundation
 import Combine
 import SwiftUI
 
-class LoginViewModel: ObservableObject {
+class LoginViewModel: ViewModelType, ObservableObject {
+    // MARK: - Properties
+    var dependency: Dependency
+    var input: Input
+    var output: Output
+    var cancelable: Set<AnyCancellable> = Set<AnyCancellable>()
     
-    var cancellable = Set<AnyCancellable>()
+    struct Dependency { } // 의존성 주입 - Ex) Network API, DataManager...
     
-    @Published var email: String = ""
-    @Published var password: String = ""
-    @Published var isDisable: Bool = false
+    class Input: ObservableObject {
+        @Published var email: String = ""
+        @Published var password: String = ""
+    }
+    
+    class Output: ObservableObject {
+        @Published var isDisable: Bool = false
+    }
     
     var user: User {
-        return User(email: email, password: password)
+        return User(email: input.email, password: input.password)
     }
     
-    init() {
+    // MARK: - Init
+    required init(dependency: Dependency = Dependency()) {
         
-        Publishers.CombineLatest($email, $password)
+        self.input = Input()
+        self.output = Output()
+        self.dependency = dependency
+        
+        // MARK: - Data Stream
+        Publishers.CombineLatest(input.$email, input.$password)
             .map{ $0.isEmpty || $1.isEmpty }
-            .sink { self.isDisable = $0 }
-            .store(in: &cancellable)
-        
+            .sink { self.output.isDisable = $0 }
+            .store(in: &cancelable)
     }
-    
 }
