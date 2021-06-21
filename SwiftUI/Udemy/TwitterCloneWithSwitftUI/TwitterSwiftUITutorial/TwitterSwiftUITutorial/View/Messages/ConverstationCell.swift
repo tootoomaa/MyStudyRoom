@@ -27,6 +27,7 @@ struct ConverstationCell: View {
                         .lineLimit(2)
                 }
                 .frame(height: 64)
+                .foregroundColor(.black)
                 .padding(.trailing)
             } //: HSTACK
             Divider()

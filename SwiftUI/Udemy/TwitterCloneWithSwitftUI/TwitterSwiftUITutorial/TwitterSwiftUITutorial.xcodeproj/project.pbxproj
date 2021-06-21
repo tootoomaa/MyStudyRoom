@@ -18,6 +18,8 @@
 		B6DF0103268027520011EA85 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DF0102268027520011EA85 /* UserCell.swift */; };
 		B6DF010626802A420011EA85 /* ConverstationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DF010526802A420011EA85 /* ConverstationsView.swift */; };
 		B6DF010926802A5D0011EA85 /* ConverstationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DF010826802A5D0011EA85 /* ConverstationCell.swift */; };
+		B6DF010B268075FA0011EA85 /* MessageInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DF010A268075FA0011EA85 /* MessageInputView.swift */; };
+		B6DF010D2680768F0011EA85 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DF010C2680768F0011EA85 /* ChatView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		B6DF0102268027520011EA85 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		B6DF010526802A420011EA85 /* ConverstationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverstationsView.swift; sourceTree = "<group>"; };
 		B6DF010826802A5D0011EA85 /* ConverstationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverstationCell.swift; sourceTree = "<group>"; };
+		B6DF010A268075FA0011EA85 /* MessageInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageInputView.swift; sourceTree = "<group>"; };
+		B6DF010C2680768F0011EA85 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +122,8 @@
 			children = (
 				B6DF010526802A420011EA85 /* ConverstationsView.swift */,
 				B6DF010826802A5D0011EA85 /* ConverstationCell.swift */,
+				B6DF010A268075FA0011EA85 /* MessageInputView.swift */,
+				B6DF010C2680768F0011EA85 /* ChatView.swift */,
 			);
 			path = Messages;
 			sourceTree = "<group>";
@@ -192,8 +198,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6DF00FF26801D310011EA85 /* SearchView.swift in Sources */,
+				B6DF010B268075FA0011EA85 /* MessageInputView.swift in Sources */,
 				B6ADCB892678484D00DEF9A9 /* ContentView.swift in Sources */,
 				B6DF00FB268015D60011EA85 /* FeedView.swift in Sources */,
+				B6DF010D2680768F0011EA85 /* ChatView.swift in Sources */,
 				B6ADCB872678484D00DEF9A9 /* TwitterSwiftUITutorialApp.swift in Sources */,
 				B6DF010626802A420011EA85 /* ConverstationsView.swift in Sources */,
 				B6DF00FD268018D40011EA85 /* TweetCell.swift in Sources */,
