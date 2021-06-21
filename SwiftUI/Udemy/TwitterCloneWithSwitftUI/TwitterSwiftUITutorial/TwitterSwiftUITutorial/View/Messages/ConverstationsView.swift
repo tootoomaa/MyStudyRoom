@@ -10,10 +10,16 @@ import SwiftUI
 struct ConverstationsView: View {
     // MARK: - Properties
     @State var isShowingNewMessageView = false
+    @State var startChat: Bool = false
     
     // MARK: - Body
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
+            
+            NavigationLink(
+                destination: ChatView(),
+                isActive: $startChat,
+                label: {})
             
             ScrollView {
                 VStack {
@@ -40,7 +46,7 @@ struct ConverstationsView: View {
                 .clipShape(Circle())
                 .padding()
                 .sheet(isPresented: $isShowingNewMessageView, content: {
-                    SearchView()
+                    NewMessageView(show: $isShowingNewMessageView, startChar: $startChat)
                 })
         } //: ZSTACK
     }

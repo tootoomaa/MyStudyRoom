@@ -16,19 +16,22 @@ struct ChatView: View {
     var body: some View {
         VStack {
             ScrollView {
-                VStack {
-                    ForEach(0..<15) { _ in
-                        Text("Chat bubble")
-                    }
+                // MARK: - Chat Message List View
+                VStack(alignment: .leading, spacing: 12) {
+                    ForEach(MOCK_MESSAGE) { message in
+                        MessageView(message: message) //: HSTACK
+                    } //: FOREACH LOOP
                 } //: VSTACK
             } //: SCROLLVIEW
             
+            // MARK: - Message Input View
             MessageInputView(messageText: $messageText)
                 .padding()
         }
     }
 }
 
+// MARK: - Preview
 struct ChatView_Previews: PreviewProvider {
     static var previews: some View {
         ChatView()

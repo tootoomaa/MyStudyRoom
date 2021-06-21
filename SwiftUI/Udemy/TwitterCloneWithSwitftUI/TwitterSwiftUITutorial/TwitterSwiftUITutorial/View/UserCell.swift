@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct UserCell: View {
+    // MARK: - Body
     var body: some View {
         HStack {
             
@@ -23,10 +24,11 @@ struct UserCell: View {
                     .font(.system(size: 14, weight: .semibold))
                 Text("Eddie Brock")
                     .font(.system(size: 14))
-            }
+            } //: VSTACK
             
             Spacer()
         } //: HSTACK
+        .foregroundColor(.black)
     }
 }
 
