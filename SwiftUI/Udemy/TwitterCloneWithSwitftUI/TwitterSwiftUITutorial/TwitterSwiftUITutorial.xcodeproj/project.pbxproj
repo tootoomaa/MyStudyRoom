@@ -70,10 +70,10 @@
 		B6ADCB852678484D00DEF9A9 /* TwitterSwiftUITutorial */ = {
 			isa = PBXGroup;
 			children = (
+				B6ADCB862678484D00DEF9A9 /* TwitterSwiftUITutorialApp.swift */,
 				B6DF00F92680159A0011EA85 /* Model */,
 				B6DF00F8268015980011EA85 /* View */,
 				B6DF00F7268015910011EA85 /* ViewModels */,
-				B6ADCB862678484D00DEF9A9 /* TwitterSwiftUITutorialApp.swift */,
 				B6ADCB8A2678485000DEF9A9 /* Assets.xcassets */,
 				B6ADCB8F2678485000DEF9A9 /* Info.plist */,
 				B6ADCB8C2678485000DEF9A9 /* Preview Content */,
