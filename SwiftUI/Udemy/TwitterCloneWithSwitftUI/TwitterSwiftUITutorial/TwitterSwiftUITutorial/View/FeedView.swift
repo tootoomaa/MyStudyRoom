@@ -10,6 +10,7 @@ import SwiftUI
 struct FeedView: View {
     // MARK: - Properties
     @State var isShowingNewTweetView = false
+    
 
     // MARK: - Body
     var body: some View {
@@ -35,7 +36,7 @@ struct FeedView: View {
             .clipShape(Circle())
             .padding()
             .fullScreenCover(isPresented: $isShowingNewTweetView) {
-                SearchView()
+                NewTweetView(isPresented: $isShowingNewTweetView)
             }
         } //: ZSTACK
     }

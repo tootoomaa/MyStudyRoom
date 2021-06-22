@@ -19,10 +19,14 @@ struct SearchView: View {
             
             VStack(alignment: .leading) {
                 ForEach(0..<10) { _ in
-                    UserCell()
-                        .padding(.leading)
-                }
-            }
+                    NavigationLink(
+                        destination: UserProfileView(),
+                        label: {
+                            UserCell()
+                        })
+                } //: FOREACH
+                .padding(.leading)
+            } //: VSTACK
         } //: SCROLLVIEW
         .navigationBarTitle("Search")
     }
