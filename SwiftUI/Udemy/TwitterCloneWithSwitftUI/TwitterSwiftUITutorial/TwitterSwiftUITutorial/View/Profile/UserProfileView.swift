@@ -8,13 +8,22 @@
 import SwiftUI
 
 struct UserProfileView: View {
+    // MARK: - Properties
+    let user: User
+    @ObservedObject var viewMode: ProfileViewModel
+    
+    // MARK: - Init
+    init(user: User) {
+        self.user = user
+        self.viewMode = ProfileViewModel(user: user)
+    }
+    
+    // MARK: - Body
     var body: some View {
         ScrollView {
             VStack {
-                ProfileHeaderView()
-                    .padding()
-                
-                FilterButtonView(selectedOption: .constant(.tweets))
+                ProfileHeaderView(viewModel: viewMode,
+                                  isFollowed: $viewMode.isFollowed)
                     .padding()
                 
                 ForEach(0..<9) { tweet in
@@ -24,14 +33,5 @@ struct UserProfileView: View {
             } //: VSTACK
             .navigationTitle("batman")
         } //: SCROLLVIEW
-    }
-}
-
-struct UserProfileView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            UserProfileView()
-                .navigationBarTitleDisplayMode(.inline)
-        }
     }
 }

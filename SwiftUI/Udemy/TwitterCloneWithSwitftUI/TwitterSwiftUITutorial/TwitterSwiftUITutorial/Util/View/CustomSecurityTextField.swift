@@ -30,7 +30,7 @@ struct CustomSecurityTextField: View {
                     .foregroundColor(.white)
                     .frame(width: 20, height: 20)
                 
-                TextField("", text: $text)
+                SecureField("", text: $text)
             }
         }
     }

@@ -9,9 +9,22 @@ import SwiftUI
 
 struct ContentView: View {
     // MARK: - Propeties
+    @EnvironmentObject var viewModel: AuthViewModel
     
-    // MARK: - View
+    
+    // MARK: - Body
     var body: some View {
+        Group {
+            if viewModel.userSession != nil {
+                MainView()
+            } else {
+                LoginView()
+            }
+        } //: Group
+    }
+    
+    // MARK: - Main View
+    fileprivate func MainView() -> some View {
         NavigationView {
             TabView {
                 FeedView()

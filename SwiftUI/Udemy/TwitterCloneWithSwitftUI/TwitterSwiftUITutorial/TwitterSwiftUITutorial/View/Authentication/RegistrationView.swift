@@ -13,21 +13,49 @@ struct RegistrationView: View {
     @State var password: String = ""
     @State var fullName: String = ""
     @State var userName: String = ""
+    @State var showImagePciker = false
+    @State var selectedUIImage: UIImage?
+    @State var image: Image?
     @Environment(\.presentationMode) var mode
+    @EnvironmentObject var viewModel: AuthViewModel
+    
+    // MARK: - Handler
+    func loadImage() {
+        guard let selectedImage = selectedUIImage else { return }
+        image = Image(uiImage: selectedImage)
+    }
     
     // MARK: - Body
     var body: some View {
         ZStack {
             VStack {
-                Image("plus_photo")
-                    .resizable()
-                    .renderingMode(.template)
-                    .foregroundColor(.white)
-                    .scaledToFill()
-                    .frame(width: 140, height: 140)
-                    .padding(.top, 88)
-                    .padding(.bottom, 16)
+                Button(action: { showImagePciker.toggle() }, label: {
+                    ZStack {
+                        if let image = image {
+                            image
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 140, height: 140)
+                                .clipShape(Circle())
+                                .padding(.top, 88)
+                                .padding(.bottom, 16)
+                        } else {
+                            Image("plus_photo")
+                                .resizable()
+                                .renderingMode(.template)
+                                .foregroundColor(.white)
+                                .scaledToFill()
+                                .frame(width: 140, height: 140)
+                                .padding(.top, 88)
+                                .padding(.bottom, 16)
+                        }
+                    } //: ZSTACK
+                }).sheet(isPresented: $showImagePciker,
+                         onDismiss: loadImage, content: {
+                            ImagePicker(image: $selectedUIImage)
+                })
                 
+                // MARK: - Input Text Field
                 VStack(spacing: 15) {
                     CustomTextField(text: $email, placeholder: Text("Email"), imageName: "envelope")
                         .padding()
@@ -35,14 +63,14 @@ struct RegistrationView: View {
                         .cornerRadius(10)
                         .padding(.horizontal)
                     
-                    CustomTextField(text: $email, placeholder: Text("Full name"), imageName: "person")
+                    CustomTextField(text: $fullName, placeholder: Text("Full name"), imageName: "person")
                         .padding()
                         .background(Color(.init(white: 1, alpha: 0.15)))
                         .cornerRadius(10)
                         .padding(.horizontal)
 
                     
-                    CustomTextField(text: $email, placeholder: Text("UserName"), imageName: "person")
+                    CustomTextField(text: $userName, placeholder: Text("UserName"), imageName: "person")
                         .padding()
                         .background(Color(.init(white: 1, alpha: 0.15)))
                         .cornerRadius(10)
@@ -56,7 +84,10 @@ struct RegistrationView: View {
                         .padding(.horizontal)
                 } //: VSTACK
                 
-                Button(action: {}, label: {
+                Button(action: {
+                    guard let image = selectedUIImage else { return }
+                    viewModel.regiterUser(email: email, password: password, username: userName, fullname: fullName, profileImage: image)
+                }, label: {
                     Text("Sign Up")
                         .font(.headline)
                         .foregroundColor(.blue)

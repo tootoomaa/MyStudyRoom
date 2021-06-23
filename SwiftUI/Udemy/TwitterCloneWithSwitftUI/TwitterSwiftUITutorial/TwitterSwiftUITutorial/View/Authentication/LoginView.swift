@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LoginView: View {
     // MARK: - Properties
+    @EnvironmentObject var viewModel: AuthViewModel
     @State var email: String = ""
     @State var password: String = ""
     
@@ -49,7 +50,9 @@ struct LoginView: View {
                         })
                     } //: HSTACK
                     
-                    Button(action: {}, label: {
+                    Button(action: {
+                        viewModel.login(withEmail: email, password: password)
+                    }, label: {
                         Text("Sign In")
                             .font(.headline)
                             .foregroundColor(.blue)
@@ -76,7 +79,7 @@ struct LoginView: View {
                     
                 } //: VSTACK
             } //: ZSTACK
-            .background(Color(#colorLiteral(red: 0.1171132252, green: 0.6298289299, blue: 0.951243937, alpha: 1)))
+            .background(Color(#colorLiteral(red: 0.189060539, green: 0.6303278804, blue: 0.9634249806, alpha: 1)))
             .ignoresSafeArea()
         } //: Navigation View
     }

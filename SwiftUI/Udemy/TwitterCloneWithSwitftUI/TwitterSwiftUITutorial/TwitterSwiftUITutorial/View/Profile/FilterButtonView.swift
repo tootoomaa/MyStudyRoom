@@ -26,12 +26,12 @@ struct FilterButtonView: View {
     @State var selectedOptionWithAnimation: TweetFilterOptions = TweetFilterOptions.tweets
     @Binding var selectedOption: TweetFilterOptions
     
-    private let underlineWidth = UIScreen.main.bounds.width / CGFloat(TweetFilterOptions.allCases.count)
+    private let underlineWidth = UIScreen.main.bounds.size.width / CGFloat(TweetFilterOptions.allCases.count)
     
     private var padding: CGFloat {
         let rawValue = CGFloat(selectedOption.rawValue)
         let count = CGFloat(TweetFilterOptions.allCases.count)
-        return ((UIScreen.main.bounds.width/count) * rawValue) + 16
+        return ((UIScreen.main.bounds.size.width/count) * rawValue) + 16
     }
     
     // MARK: - Body

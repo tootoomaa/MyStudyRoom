@@ -10,6 +10,7 @@ import SwiftUI
 struct SearchView: View {
     // MARK: - Properties
     @State var searchText = ""
+    @ObservedObject var viewModel = SearchViewModle()
     
     // MARK: - Body
     var body: some View {
@@ -18,11 +19,11 @@ struct SearchView: View {
                 .padding()
             
             VStack(alignment: .leading) {
-                ForEach(0..<10) { _ in
+                ForEach(viewModel.users) { user in
                     NavigationLink(
-                        destination: UserProfileView(),
+                        destination: UserProfileView(user: user),
                         label: {
-                            UserCell()
+                            UserCell(user: user)
                         })
                 } //: FOREACH
                 .padding(.leading)

@@ -9,6 +9,8 @@ import SwiftUI
 
 struct FeedView: View {
     // MARK: - Properties
+    @EnvironmentObject var viewModel: AuthViewModel
+    
     @State var isShowingNewTweetView = false
     
 
@@ -24,7 +26,10 @@ struct FeedView: View {
                 .padding()
             } //: SCROLLVIEW
             
-            Button(action: { isShowingNewTweetView.toggle() }, label: {
+            Button(action: {
+                viewModel.signOut()
+//                    isShowingNewTweetView.toggle()
+            }, label: {
                 Image("tweet")
                     .resizable()
                     .renderingMode(.template)
