@@ -9,8 +9,14 @@ import SwiftUI
 
 struct ChatView: View {
     // MARK: - Properties
+    let user: User
+    let viewModel: CharViewModel
     @State var messageText: String = ""
     
+    init(user: User) {
+        self.user = user
+        self.viewModel = CharViewModel(user: user)
+    }
     
     // MARK: - Body
     var body: some View {
@@ -25,15 +31,17 @@ struct ChatView: View {
             } //: SCROLLVIEW
             
             // MARK: - Message Input View
-            MessageInputView(messageText: $messageText)
+            MessageInputView(messageText: $messageText,
+                             action: (viewModel.sendMessage(messageText)))
                 .padding()
         }
     }
+    
 }
-
-// MARK: - Preview
-struct ChatView_Previews: PreviewProvider {
-    static var previews: some View {
-        ChatView()
-    }
-}
+//
+//// MARK: - Preview
+//struct ChatView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ChatView()
+//    }
+//}

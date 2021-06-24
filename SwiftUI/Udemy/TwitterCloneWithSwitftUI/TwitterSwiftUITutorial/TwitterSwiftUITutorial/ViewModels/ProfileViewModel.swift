@@ -10,8 +10,7 @@ import Firebase
 
 class ProfileViewModel: ObservableObject {
     // MARK: - Properties
-    let user: User
-    @Published var isFollowed = false
+    @Published var user: User
     @Published var userTweets = [Tweet]()
     @Published var likedTweets = [Tweet]()
     
@@ -21,8 +20,12 @@ class ProfileViewModel: ObservableObject {
         checkIfUserIsFollowed()
         fetchUserTweets()           // 사용자 트윗
         fetchLikedTweets()          // 사용자가 좋아요한 트윗
+        fetchUserStats()
     }
     
+}
+
+extension ProfileViewModel {
     // MARK: - Follow
     func follow() {
         guard let currentUid = Auth.auth().currentUser?.uid else { return }
@@ -33,7 +36,7 @@ class ProfileViewModel: ObservableObject {
         followingRef.document(self.user.id).setData([:]) { _ in
             // 팔로우 당한 사람(uid)에 팔로우한 사람(currentUid)을 리스트에 등록
             followersRef.document(currentUid).setData([:]) { _ in
-                self.isFollowed = true
+                self.user.isFollowed = true
             }
         }
     }
@@ -47,19 +50,40 @@ class ProfileViewModel: ObservableObject {
         
         followingRef.document(user.id).delete { _ in
             followersRef.document(currentUid).delete { _ in
-                self.isFollowed = false
+                self.user.isFollowed = false
             }
         }
     }
     
+    // MARK: - Fetch user stats
+    func fetchUserStats() {
+        let followersRef = COLLECTION_FOLLOWERS.document(user.id).collection("user-followers")
+        let followingRef = COLLECTION_FOLLOWING.document(user.id).collection("user-following")
+        
+        followersRef.getDocuments { snapshot, _ in
+            guard let followerCount = snapshot?.documents.count else { return }
+            
+            followingRef.getDocuments { snapshot, _ in
+                guard let followingCount = snapshot?.documents.count else { return }
+                
+                self.user.stats = UserStats(followers: followerCount, following: followingCount)
+                
+            } //: folloingRef
+        } //: followerRef
+    }
+}
+ 
+extension ProfileViewModel {
     // MARK: - Check User is Followed
     func checkIfUserIsFollowed() {
         guard let currentUid = Auth.auth().currentUser?.uid else { return }
+        guard !user.isCurrnetUser else { return }
         
         let followingRef = COLLECTION_FOLLOWING.document(currentUid).collection("user-following")
+        
         followingRef.document(user.id).getDocument { snapshot, _ in
             guard let isFollowed = snapshot?.exists else { return }
-            self.isFollowed = isFollowed
+            self.user.isFollowed = isFollowed
         }
     }
     

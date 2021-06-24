@@ -10,7 +10,9 @@ import SwiftUI
 struct MessageInputView: View {
     // MARK: - Properties
     @Binding var messageText: String
+    let viewModel: CharViewModel
     
+    var action: () -> Void
     
     // MARK: - Body
     var body: some View {
@@ -20,7 +22,9 @@ struct MessageInputView: View {
                 .foregroundColor(.gray)
                 .frame(minHeight: 30)
             
-            Button(action: {}, label: {
+            Button(action: {
+                action
+            }, label: {
                 Text("Send")
             })
         }

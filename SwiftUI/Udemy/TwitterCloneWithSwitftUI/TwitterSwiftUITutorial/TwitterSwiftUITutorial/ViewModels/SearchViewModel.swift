@@ -23,4 +23,10 @@ class SearchViewModle: ObservableObject {
         }
     }
     
+    func filteredUsers(_ query: String) -> [User] {
+        let lowercaseQuery = query.lowercased()
+        return self.users.filter({ $0.fullname.lowercased().contains(lowercaseQuery)
+                                    || $0.username.lowercased().contains(lowercaseQuery) })
+    }
+    
 }

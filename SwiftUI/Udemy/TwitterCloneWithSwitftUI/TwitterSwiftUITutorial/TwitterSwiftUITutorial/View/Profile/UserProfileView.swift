@@ -24,8 +24,7 @@ struct UserProfileView: View {
         ScrollView {
             VStack {
                 
-                ProfileHeaderView(viewModel: viewMode,
-                                  isFollowed: $viewMode.isFollowed)
+                ProfileHeaderView(viewModel: viewMode)
                     .padding()
                 
                 FilterButtonView(selectedOption: $selectedFilter)

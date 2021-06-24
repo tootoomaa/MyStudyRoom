@@ -16,19 +16,20 @@ struct ConverstationsView: View {
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
             
-            NavigationLink(
-                destination: ChatView(),
-                isActive: $startChat,
-                label: {})
+//            NavigationLink(
+//                destination: ChatView(),
+//                isActive: $startChat,
+//                label: {})
             
             ScrollView {
                 VStack {
                     ForEach(0..<10) { _ in
-                        NavigationLink(
-                            destination: ChatView(),
-                            label: {
-                                ConverstationCell()
-                            })
+                        ConverstationsView()
+//                        NavigationLink(
+//                            destination: ChatView(),
+//                            label: {
+//                                ConverstationCell()
+//                            })
                     } //: FOREACH LOOP
                 } //: VSTACK
             } //: SCROLLVIEW
