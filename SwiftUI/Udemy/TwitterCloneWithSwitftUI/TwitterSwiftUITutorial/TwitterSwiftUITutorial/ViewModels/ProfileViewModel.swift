@@ -12,11 +12,15 @@ class ProfileViewModel: ObservableObject {
     // MARK: - Properties
     let user: User
     @Published var isFollowed = false
+    @Published var userTweets = [Tweet]()
+    @Published var likedTweets = [Tweet]()
     
     // MARK: - init
     init(user: User) {
         self.user = user
         checkIfUserIsFollowed()
+        fetchUserTweets()           // 사용자 트윗
+        fetchLikedTweets()          // 사용자가 좋아요한 트윗
     }
     
     // MARK: - Follow
@@ -56,6 +60,43 @@ class ProfileViewModel: ObservableObject {
         followingRef.document(user.id).getDocument { snapshot, _ in
             guard let isFollowed = snapshot?.exists else { return }
             self.isFollowed = isFollowed
+        }
+    }
+    
+    // MARK: - Fetch user Tweets
+    func fetchUserTweets() {
+        COLLECTION_TWEETS.whereField("uid", isEqualTo: user.id).getDocuments() { snaphost, _ in
+            guard let documents = snaphost?.documents else { return }
+            self.userTweets = documents.map { Tweet(dictionary: $0.data()) }
+        }
+    }
+    
+    // MARK: - Fetch user like Tweets
+    func fetchLikedTweets() {
+        var tweets = [Tweet]()
+        
+        COLLECTION_USERS.document(user.id).collection("user-likes").getDocuments { snaphost, error in
+            guard let documents = snaphost?.documents else { return }
+            
+            let tweetIDs = documents.map{$0.documentID}
+            tweetIDs.forEach { id in
+                COLLECTION_TWEETS.document(id).getDocument { snaphost, error in
+                    guard let data = snaphost?.data() else { return }
+                    let tweet = Tweet(dictionary: data)
+                    tweets.append(tweet)
+                    
+                    guard tweets.count == tweetIDs.count else { return }
+                    self.likedTweets = tweets       // 한번에 적용
+                }
+            }
+        }
+    }
+    
+    // MARK: - filtered tweets
+    func tweets(forFilter filter: TweetFilterOptions) -> [Tweet] {
+        switch filter {
+        case .tweets:   return self.userTweets
+        case .likes:    return self.likedTweets
         }
     }
 }

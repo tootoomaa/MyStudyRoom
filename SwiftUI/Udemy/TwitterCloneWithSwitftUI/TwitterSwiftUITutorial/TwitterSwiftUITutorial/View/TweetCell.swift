@@ -6,74 +6,51 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct TweetCell: View {
+    // MARK: - Properties
+    let tweet: Tweet
+    
+    // MARK: - Body
     var body: some View {
         VStack(alignment: .leading) {
             HStack(alignment: .top, spacing: 12) {
-                Image("batman")
+                
+                // MARK: - Contents
+                KFImage(URL(string: tweet.profileImageUrl))
                     .resizable()
-                    .frame(width: 50, height: 50)
-                    .clipShape(Circle())
+                    .scaledToFill()
+                    .clipped()
+                    .frame(width: 56, height: 56)
+                    .cornerRadius(56/2)
                     .padding(.leading)
                 
                 VStack(alignment: .leading, spacing: 4) {
                     HStack {
-                        Text("Bruce Wayne")
+                        Text(tweet.fullname)
                             .font(.system(size: 14, weight: .semibold))
-                        Text("@batman -")
+                            .foregroundColor(.black)
+                        
+                        Text("@\(tweet.username) -")
                             .foregroundColor(.gray)
+                        
                         Text("27w")
                             .foregroundColor(.gray)
                     } //: HSTACK
                     
-                    Text("It's not who I am understan, but what ido that defines me")
+                    Text(tweet.caption)
+                        .foregroundColor(.black)
                 } //: VSTACK
             }// :HSTACK
             .padding(.bottom)
             .padding(.trailing)
             
-            HStack {
-                
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                    Image(systemName: "bubble.left")
-                        .font(.system(size: 16))
-                        .frame(width: 32, height: 32)
-                })
-                Spacer()
-                
-                Button(action: {}, label: {
-                    Image(systemName: "arrow.2.squarepath")
-                        .font(.system(size: 16))
-                        .frame(width: 32, height: 32)
-                })
-                Spacer()
-                
-                Button(action: {}, label: {
-                    Image(systemName: "heart")
-                        .font(.system(size: 16))
-                        .frame(width: 32, height: 32)
-                })
-                Spacer()
-                
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                    Image(systemName: "bookmark")
-                        .font(.system(size: 16))
-                        .frame(width: 32, height: 32)
-                })
-            } //: HSTACK Buttons
-            .foregroundColor(.gray)
-            .padding(.horizontal)
+            // MARK: - Bottom Buttons
+            TweetActionView(tweet: tweet)
             
             Divider()
             
         } //: VSTACK
-        .padding(.leading, -16)
-    }
-}
-
-struct TweetCell_Previews: PreviewProvider {
-    static var previews: some View {
-        TweetCell()
     }
 }

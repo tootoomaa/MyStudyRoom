@@ -9,9 +9,8 @@ import SwiftUI
 
 struct FeedView: View {
     // MARK: - Properties
-    @EnvironmentObject var viewModel: AuthViewModel
-    
     @State var isShowingNewTweetView = false
+    @ObservedObject var viewModel = FeedViewModel()
     
 
     // MARK: - Body
@@ -19,16 +18,20 @@ struct FeedView: View {
         ZStack(alignment: .bottomTrailing) {
             ScrollView {
                 VStack {
-                    ForEach(0..<19) { _ in
-                        TweetCell()
+                    ForEach(viewModel.tweets) { tweet in
+                        NavigationLink(
+                            destination: TweetDetailView(tweet: tweet),
+                            label: {
+                                TweetCell(tweet: tweet)
+                                    .padding(.leading, -16)
+                            })
                     }
                 } //: VSTACK
                 .padding()
             } //: SCROLLVIEW
             
             Button(action: {
-                viewModel.signOut()
-//                    isShowingNewTweetView.toggle()
+                isShowingNewTweetView.toggle()
             }, label: {
                 Image("tweet")
                     .resizable()

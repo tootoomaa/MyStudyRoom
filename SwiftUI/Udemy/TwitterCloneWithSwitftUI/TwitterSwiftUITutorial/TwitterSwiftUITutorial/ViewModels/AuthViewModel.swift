@@ -15,8 +15,10 @@ class AuthViewModel: ObservableObject {
     @Published var error: Error?
     @Published var user: User?
     
+    static let shared = AuthViewModel()
+    
     // MARK: - init
-    init() {
+    private init() {
         userSession = Auth.auth().currentUser
         fetchUser()
     }
@@ -40,7 +42,7 @@ class AuthViewModel: ObservableObject {
     func regiterUser(email: String, password: String, username: String, fullname: String, profileImage: UIImage) {
         
         // Profile Image Save Logic
-        guard let imageData = profileImage.jpegData(compressionQuality: 0.3) else { return }
+        guard let imageData = profileImage.jpegData(compressionQuality: 0.1) else { return }
         
         let filename = NSUUID().uuidString
         let storageRef = Storage.storage().reference().child(filename)
@@ -70,6 +72,7 @@ class AuthViewModel: ObservableObject {
                     
                     Firestore.firestore().collection("users").document(user.uid).setData(data) { _ in
                         self.userSession = user
+                        self.fetchUser()
                     }
                 } // Create User
             } // downloadURL
@@ -79,6 +82,7 @@ class AuthViewModel: ObservableObject {
     // MARK: - Sign out
     func signOut() {
         userSession = nil
+        user = nil
         try? Auth.auth().signOut()
     }
     
@@ -88,10 +92,7 @@ class AuthViewModel: ObservableObject {
         
         Firestore.firestore().collection("users").document(uid).getDocument { snapshot, _ in
             guard let data = snapshot?.data() else { return }
-            let user = User(dictionary: data)
-            
-            print("DEBUG: User Data fetch complete \(user.username)")
+            self.user = User(dictionary: data)
         }
-        
     }
 }

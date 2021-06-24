@@ -23,7 +23,7 @@ struct TwitterSwiftUITutorialApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(AuthViewModel())
+                .environmentObject(AuthViewModel.shared)
         }
     }
 }
