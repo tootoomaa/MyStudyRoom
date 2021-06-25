@@ -12,7 +12,8 @@ struct NewMessageView: View {
     @State var searchText = ""
     @Binding var show: Bool
     @Binding var startChar: Bool
-    @ObservedObject var viewModel = SearchViewModle()
+    @Binding var user: User?
+    @ObservedObject var viewModel = SearchViewModle(config: .newMessage)
     
     // MARK: - Body
     var body: some View {
@@ -21,11 +22,13 @@ struct NewMessageView: View {
                 .padding()
             
             VStack(alignment: .leading) {
-                ForEach(viewModel.users) { user in
-                    
+                ForEach(searchText.isEmpty
+                            ? viewModel.users
+                            : viewModel.filteredUsers(searchText)) { user in
                     Button(action: {
                         self.show.toggle()
                         self.startChar.toggle()
+                        self.user = user
                     }, label: {
                         UserCell(user: user)
                     })
@@ -38,8 +41,8 @@ struct NewMessageView: View {
 }
 
 // MARK: - Preview
-struct NewMessageView_Previews: PreviewProvider {
-    static var previews: some View {
-        NewMessageView(show: .constant(true), startChar: .constant(true))
-    }
-}
+//struct NewMessageView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NewMessageView(show: .constant(true), startChar: .constant(true))
+//    }
+//}

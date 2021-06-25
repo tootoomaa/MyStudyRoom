@@ -11,25 +11,28 @@ struct ConverstationsView: View {
     // MARK: - Properties
     @State var isShowingNewMessageView = false
     @State var startChat: Bool = false
+    @State var user: User?
+    @ObservedObject var viewModel = ConverstationViewModel()
     
     // MARK: - Body
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
             
-//            NavigationLink(
-//                destination: ChatView(),
-//                isActive: $startChat,
-//                label: {})
+            if let user = self.user {
+                NavigationLink(
+                    destination: ChatView(user: user),
+                    isActive: $startChat,
+                    label: {})
+            }
             
             ScrollView {
                 VStack {
-                    ForEach(0..<10) { _ in
-                        ConverstationsView()
-//                        NavigationLink(
-//                            destination: ChatView(),
-//                            label: {
-//                                ConverstationCell()
-//                            })
+                    ForEach(viewModel.recentMessages) { message in
+                        NavigationLink(
+                            destination: LazyView(ChatView(user: message.user)),
+                            label: {
+                                ConverstationCell(message: message)
+                            })
                     } //: FOREACH LOOP
                 } //: VSTACK
             } //: SCROLLVIEW
@@ -47,7 +50,7 @@ struct ConverstationsView: View {
                 .clipShape(Circle())
                 .padding()
                 .sheet(isPresented: $isShowingNewMessageView, content: {
-                    NewMessageView(show: $isShowingNewMessageView, startChar: $startChat)
+                    NewMessageView(show: $isShowingNewMessageView, startChar: $startChat, user: $user)
                 })
         } //: ZSTACK
     }

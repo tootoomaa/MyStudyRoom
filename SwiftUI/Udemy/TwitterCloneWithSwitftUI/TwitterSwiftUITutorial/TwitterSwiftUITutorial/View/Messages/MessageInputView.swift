@@ -10,8 +10,6 @@ import SwiftUI
 struct MessageInputView: View {
     // MARK: - Properties
     @Binding var messageText: String
-    let viewModel: CharViewModel
-    
     var action: () -> Void
     
     // MARK: - Body
@@ -22,17 +20,9 @@ struct MessageInputView: View {
                 .foregroundColor(.gray)
                 .frame(minHeight: 30)
             
-            Button(action: {
-                action
-            }, label: {
+            Button(action: action, label: {
                 Text("Send")
             })
         }
-    }
-}
-
-struct MessageInputView_Previews: PreviewProvider {
-    static var previews: some View {
-        MessageInputView(messageText: .constant("Message.."))
     }
 }

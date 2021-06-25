@@ -10,7 +10,7 @@ import SwiftUI
 struct SearchView: View {
     // MARK: - Properties
     @State var searchText = ""
-    @ObservedObject var viewModel = SearchViewModle()
+    @ObservedObject var viewModel = SearchViewModle(config: .search)
     
     // MARK: - Body
     var body: some View {

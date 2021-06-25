@@ -10,6 +10,7 @@ import Kingfisher
 
 struct ContentView: View {
     // MARK: - Propeties
+    @State var index: Int = 0
     @EnvironmentObject var viewModel: AuthViewModel
     
     
@@ -27,26 +28,23 @@ struct ContentView: View {
     // MARK: - Main View
     fileprivate func MainView() -> some View {
         NavigationView {
-            TabView {
+            TabView(selection: $index) {
                 FeedView()
-                    .tabItem {
-                        Image(systemName: "house")
-                        Text("Home")
-                    }
+                    .onTapGesture { self.index = 0 }
+                    .tabItem { Image(systemName: "house") }
+                    .tag(0)
                 
                 SearchView()
-                    .tabItem {
-                        Image(systemName: "magnifyingglass")
-                        Text("Search")
-                    }
+                    .onTapGesture { self.index = 1 }
+                    .tabItem { Image(systemName: "magnifyingglass") }
+                    .tag(1)
                 
                 ConverstationsView()
-                    .tabItem {
-                        Image(systemName: "envelope")
-                        Text("Message")
-                    }
+                    .onTapGesture { self.index = 2 }
+                    .tabItem { Image(systemName: "envelope") }
+                    .tag(2)
             }
-            .navigationBarTitle("Home")
+            .navigationBarTitle(viewModel.getNaviTitle(forIndex: index))
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarItems(leading: Button(action: {
                 viewModel.signOut()

@@ -17,6 +17,7 @@ class AuthViewModel: ObservableObject {
     
     static let shared = AuthViewModel()
     
+    
     // MARK: - init
     private init() {
         userSession = Auth.auth().currentUser
@@ -93,6 +94,16 @@ class AuthViewModel: ObservableObject {
         Firestore.firestore().collection("users").document(uid).getDocument { snapshot, _ in
             guard let data = snapshot?.data() else { return }
             self.user = User(dictionary: data)
+        }
+    }
+    
+    // MARK: - Selected NaviBartitle
+    func getNaviTitle(forIndex index: Int) -> String {
+        switch index {
+        case 0:     return "Home"
+        case 1:     return "Search"
+        case 2:     return "Message"
+        default:    return ""
         }
     }
 }

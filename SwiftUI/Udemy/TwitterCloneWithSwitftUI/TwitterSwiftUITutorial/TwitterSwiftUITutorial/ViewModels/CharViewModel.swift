@@ -8,14 +8,39 @@
 import SwiftUI
 import Firebase
 
-struct CharViewModel {
+class CharViewModel: ObservableObject {
+    // MARK: - Properties
     let user: User          // 메시지 받을 사람의 정보
+    @Published var message = [Message]()
     
+    // MARK: - Init
     init(user: User) {
         self.user = user
+        fetchMessage()
     }
     
     func fetchMessage() {
+        guard let uid = AuthViewModel.shared.userSession?.uid else { return }
+        
+        let query = COLLECTION_MESSAGE.document(uid).collection(user.id)
+        query.order(by: "timestamp", descending: false)
+        
+        // 업데이트 되는 사항을 자동으로 변경해줌
+        query.addSnapshotListener { snapshot, error in
+            guard let changes = snapshot?.documentChanges.filter({ $0.type == .added }) else { return }
+            
+            changes.forEach { change in
+                let messageData = change.document.data()
+                guard let fromId = messageData["fromId"] as? String else { return }
+                
+                COLLECTION_USERS.document(fromId).getDocument { snapshot, _ in
+                    guard let data = snapshot?.data() else { return }
+                    let user = User(dictionary: data)
+                    self.message.append(Message(user: user, dictionary: messageData))
+                    self.message.sort(by:{$0.timestamp.dateValue() > $1.timestamp.dateValue()})
+                }//:
+            }//: FOREACH
+        }// addSNapshotListener
         
     }
     
@@ -46,5 +71,8 @@ struct CharViewModel {
         
         currentRecentRef.document(user.id).setData(data)
         receivingRecnetRef.document(currentUid).setData(data)
+        
+        print("DEBUG: \(data)")
+        
     }
 }

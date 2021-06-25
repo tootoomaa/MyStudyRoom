@@ -35,7 +35,7 @@ struct TweetCell: View {
                         Text("@\(tweet.username) -")
                             .foregroundColor(.gray)
                         
-                        Text("27w")
+                        Text(tweet.timeStampString)
                             .foregroundColor(.gray)
                     } //: HSTACK
                     

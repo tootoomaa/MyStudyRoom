@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct ConverstationCell: View {
+    let message: Message
+    
     var body: some View {
         VStack {
             HStack(spacing: 12) {
-                Image("venom-10")
+                KFImage(URL(string: message.user.profileImageUrl))
                     .resizable()
                     .scaledToFit()
                     .clipped()
@@ -19,24 +22,22 @@ struct ConverstationCell: View {
                     .cornerRadius(28)
                 
                 VStack(alignment: .leading, spacing: 4) {
-                    Text("venom")
+                    Text(message.user.fullname)
                         .font(.system(size: 14, weight: .semibold))
                     
-                    Text("Longer message text to see what happend when i do thsit")
+                    Text(message.text)
                         .font(.system(size: 15))
                         .lineLimit(2)
                 }
                 .frame(height: 64)
                 .foregroundColor(.black)
                 .padding(.trailing)
+                
+                Spacer()
             } //: HSTACK
+            .padding(.horizontal, 10)
+            
             Divider()
         } //: VSTACK
-    }
-}
-
-struct ConverstationCell_Previews: PreviewProvider {
-    static var previews: some View {
-        ConverstationCell()
     }
 }
