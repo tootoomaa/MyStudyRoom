@@ -110,6 +110,18 @@ class Visitant: Visitor {
     }
 }
 
-let cart = Cart(name: "컵라면", price: 900, num: 2)
+//let cart = Cart(name: "컵라면", price: 900, num: 2)
 //print(cart.list())
-cart.accept(visitor: Visitant())
+//cart.accept(visitor: Visitant())
+
+let list = [Cart(name: "컵라면", price: 900, num: 2),
+            Cart(name: "우유", price: 1200, num: 2),
+            Cart(name: "계란", price: 900, num: 30)]
+
+let visitant = Visitant()
+list.forEach{$0.accept(visitor: visitant)}
+
+print("\n감사합니다.")
+print("주문건수: \(visitant.getNum())")
+print("주문합계: \(visitant.getTotal())")
+
