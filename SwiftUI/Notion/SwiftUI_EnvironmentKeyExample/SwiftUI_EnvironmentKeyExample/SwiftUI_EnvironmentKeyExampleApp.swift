@@ -12,6 +12,8 @@ struct SwiftUI_EnvironmentKeyExampleApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+//                .environment(\.myCustomValue, "AnoterString")
+                .myCustomValue("Anthoer String")
         }
     }
 }

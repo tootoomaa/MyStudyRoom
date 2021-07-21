@@ -11,6 +11,8 @@
 		C7A037E526A7C72A00EA2B6E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A037E426A7C72A00EA2B6E /* ContentView.swift */; };
 		C7A037E726A7C72C00EA2B6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7A037E626A7C72C00EA2B6E /* Assets.xcassets */; };
 		C7A037EA26A7C72C00EA2B6E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7A037E926A7C72C00EA2B6E /* Preview Assets.xcassets */; };
+		C7A037F226A7C74500EA2B6E /* MyEnvironmenyKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A037F126A7C74500EA2B6E /* MyEnvironmenyKey.swift */; };
+		C7A037F426A7C76400EA2B6E /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A037F326A7C76400EA2B6E /* View+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		C7A037E626A7C72C00EA2B6E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C7A037E926A7C72C00EA2B6E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C7A037EB26A7C72C00EA2B6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C7A037F126A7C74500EA2B6E /* MyEnvironmenyKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyEnvironmenyKey.swift; sourceTree = "<group>"; };
+		C7A037F326A7C76400EA2B6E /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,9 +58,11 @@
 			children = (
 				C7A037E226A7C72A00EA2B6E /* SwiftUI_EnvironmentKeyExampleApp.swift */,
 				C7A037E426A7C72A00EA2B6E /* ContentView.swift */,
+				C7A037F126A7C74500EA2B6E /* MyEnvironmenyKey.swift */,
+				C7A037F326A7C76400EA2B6E /* View+Extensions.swift */,
+				C7A037E826A7C72C00EA2B6E /* Preview Content */,
 				C7A037E626A7C72C00EA2B6E /* Assets.xcassets */,
 				C7A037EB26A7C72C00EA2B6E /* Info.plist */,
-				C7A037E826A7C72C00EA2B6E /* Preview Content */,
 			);
 			path = SwiftUI_EnvironmentKeyExample;
 			sourceTree = "<group>";
@@ -139,6 +145,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7A037E526A7C72A00EA2B6E /* ContentView.swift in Sources */,
+				C7A037F226A7C74500EA2B6E /* MyEnvironmenyKey.swift in Sources */,
+				C7A037F426A7C76400EA2B6E /* View+Extensions.swift in Sources */,
 				C7A037E326A7C72A00EA2B6E /* SwiftUI_EnvironmentKeyExampleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,8 +1,15 @@
 //
-//  View+Extension.swift
+//  View+Extensions.swift
 //  SwiftUI_EnvironmentKeyExample
 //
 //  Created by 김광수 on 2021/07/21.
 //
 
-import Foundation
+import SwiftUI
+
+extension View {
+    func myCustomValue(_ myCustomValue: String) -> some View {
+        print("View Extension Start")
+        return environment(\.myCustomValue, myCustomValue)
+    }
+}

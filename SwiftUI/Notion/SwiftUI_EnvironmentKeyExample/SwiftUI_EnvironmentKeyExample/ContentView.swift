@@ -8,9 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @Environment(\.myCustomValue) var customValue: String
+    var newString: String = ""
+    
+    init() {
+        print("Init: start")
+        self.newString = customValue + "+ New" // default Value
+        print("Init: Complete")
+    }
+    
     var body: some View {
-        Text("Hello, world!")
+        Text(customValue)
             .padding()
+        
+        Text(newString)
     }
 }
 
