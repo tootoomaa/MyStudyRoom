@@ -27,21 +27,25 @@ struct ContentView: View {
                 .onMove(perform: move)
                 .onDelete(perform: delete)
             }
-            .toolbar{ EditButton() }
+            .toolbar{ EditButton().accessibilityIdentifier("EditBT") }
             .navigationTitle("String Box")
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarItems(leading: plusButtonView())
+            .accessibility(identifier: "String List")
         }
         .sheet(isPresented: $isPresentAddStringView) {
             AddStringView(isPresent: $isPresentAddStringView) {
                 self.itemList.append($0)
             }
+            .navigationTitle("Add String")
         }
+        .accessibility(identifier: "ContentView")
     }
     
     private func plusButtonView() -> some View {
         Button(action: { isPresentAddStringView.toggle() },
                label: { Text("+").foregroundColor(.black) })
+            .accessibilityIdentifier("PlusBT")
     }
     
     private func delete(index: IndexSet) {

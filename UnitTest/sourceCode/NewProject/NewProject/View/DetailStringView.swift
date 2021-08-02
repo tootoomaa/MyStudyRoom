@@ -21,7 +21,7 @@ struct DetailStringView: View {
             Text("\(item.time)")
         }
         .padding(50)
-        
+        .accessibility(identifier: "DetailStringView")
     }
 }
 

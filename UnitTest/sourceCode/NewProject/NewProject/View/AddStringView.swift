@@ -15,19 +15,24 @@ struct AddStringView: View {
     var buttonAction: ((Item)->Void)
     
     var body: some View {
-        VStack(alignment: .center, spacing: 30) {
-            TextField("새로운 문자열 추가", text: $newString)
-            
-            Button(action: {
-                isPresent.toggle()
-                 buttonAction(getItem(newString))
-            }, label: {
-                Text("Save").foregroundColor(newString.isEmpty ? .gray :  .black)
-            })
-            .disabled(newString.isEmpty)
-        } // VSTACK
-        .padding(.horizontal, 30)
-        .padding(30)
+        NavigationView {
+            VStack(alignment: .center, spacing: 30) {
+                TextField("새로운 문자열 추가", text: $newString)
+                    .autocapitalization(.none)
+                
+                Button(action: {
+                    isPresent.toggle()
+                    buttonAction(getItem(newString))
+                }, label: {
+                    Text("Save").foregroundColor(newString.isEmpty ? .gray :  .black)
+                })
+                .disabled(newString.isEmpty)
+                .accessibility(identifier: "SaveBT")
+            } // VSTACK
+            .navigationTitle("Add String View")
+            .padding(.horizontal, 30)
+            .padding(30)
+        } // Navigation View
     }
     
     private func getItem(_ str: String) -> Item {
