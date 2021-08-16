@@ -13,6 +13,7 @@ class NewProjectUITests: XCTestCase {
 
     override func setUpWithError() throws {
         app = XCUIApplication()
+        app.launch()
         continueAfterFailure = false
     }
 
@@ -22,7 +23,17 @@ class NewProjectUITests: XCTestCase {
     
     func test_caseWithAuto() {
         
-                                
+        input("AAA")
+        
+        app.tables.buttons["AAA"].tap()
+        
+        let titleLabel = app.staticTexts["AAA"]
+        XCTAssertTrue(titleLabel.exists, "When user tap String, Present detail view with title.")
+        
+        let aaaCell = app.tables.children(matching: .button)
+        let aaa = aaaCell.containing(.staticText, identifier: "AAA").firstMatch
+        
+        XCTAssertTrue(aaa.exists)
     }
     
     func test_InputMultiValue() {
