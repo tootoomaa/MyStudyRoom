@@ -15,10 +15,15 @@ struct ChallengeNotificationViewSpringAnimation: View {
         VStack {
             
             Text("Success")
-                .frame(width: 300, height: 60)
+                .frame(width: 380, height: 60)
                 .foregroundColor(.white)
                 .background(Color.green.opacity(0.7))
                 .cornerRadius(20)
+                .offset(y: isShow ? -360 : -500)
+                .animation(.interpolatingSpring(mass: 1,
+                                                stiffness: 100.0,
+                                                damping: 10,
+                                                initialVelocity: 0))
             
             Button("Button") {
                 isShow.toggle()

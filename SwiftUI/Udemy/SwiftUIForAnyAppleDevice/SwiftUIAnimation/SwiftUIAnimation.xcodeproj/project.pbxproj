@@ -13,6 +13,9 @@
 		B6C0F825268953AC0026C404 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6C0F824268953AC0026C404 /* Preview Assets.xcassets */; };
 		B6C0F82D268955570026C404 /* animationExample2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C0F82C268955570026C404 /* animationExample2.swift */; };
 		B6C0F830268959410026C404 /* ChallengeNotificationViewSpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C0F82F268959410026C404 /* ChallengeNotificationViewSpringAnimation.swift */; };
+		B6C0F83226895BF40026C404 /* animationCombine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C0F83126895BF40026C404 /* animationCombine.swift */; };
+		B6C0F83426895D870026C404 /* Circles.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C0F83326895D870026C404 /* Circles.swift */; };
+		B6C0F836268968A00026C404 /* ImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C0F835268968A00026C404 /* ImageButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		B6C0F826268953AC0026C404 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6C0F82C268955570026C404 /* animationExample2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = animationExample2.swift; sourceTree = "<group>"; };
 		B6C0F82F268959410026C404 /* ChallengeNotificationViewSpringAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeNotificationViewSpringAnimation.swift; sourceTree = "<group>"; };
+		B6C0F83126895BF40026C404 /* animationCombine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = animationCombine.swift; sourceTree = "<group>"; };
+		B6C0F83326895D870026C404 /* Circles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circles.swift; sourceTree = "<group>"; };
+		B6C0F835268968A00026C404 /* ImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +85,9 @@
 				B6C0F81F268953AB0026C404 /* ContentView.swift */,
 				B6C0F82C268955570026C404 /* animationExample2.swift */,
 				B6C0F82F268959410026C404 /* ChallengeNotificationViewSpringAnimation.swift */,
+				B6C0F83126895BF40026C404 /* animationCombine.swift */,
+				B6C0F83326895D870026C404 /* Circles.swift */,
+				B6C0F835268968A00026C404 /* ImageButton.swift */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -154,6 +163,9 @@
 			files = (
 				B6C0F820268953AB0026C404 /* ContentView.swift in Sources */,
 				B6C0F830268959410026C404 /* ChallengeNotificationViewSpringAnimation.swift in Sources */,
+				B6C0F83226895BF40026C404 /* animationCombine.swift in Sources */,
+				B6C0F83426895D870026C404 /* Circles.swift in Sources */,
+				B6C0F836268968A00026C404 /* ImageButton.swift in Sources */,
 				B6C0F82D268955570026C404 /* animationExample2.swift in Sources */,
 				B6C0F81E268953AB0026C404 /* SwiftUIAnimationApp.swift in Sources */,
 			);
