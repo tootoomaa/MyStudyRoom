@@ -15,7 +15,6 @@ import Foundation
 
 protocol AnyInteractor {
     var presentor: AnyPresenter?        { get set }
-    
     func getUsers()
 }
 

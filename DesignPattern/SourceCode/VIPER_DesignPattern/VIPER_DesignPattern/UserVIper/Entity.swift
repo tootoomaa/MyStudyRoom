@@ -10,4 +10,9 @@ import Foundation
 // Model
 struct User: Codable {
     let name: String
+    let username: String
+    let email: String
+//    "name": "Leanne Graham",
+//        "username": "Bret",
+//        "email": "Sincere@april.biz",
 }

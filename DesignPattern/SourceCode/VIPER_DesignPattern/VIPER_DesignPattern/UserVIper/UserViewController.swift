@@ -83,7 +83,7 @@ extension UserViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = self.users[indexPath.row].names
+        cell.textLabel?.text = self.users[indexPath.row].name
         return cell
     }
     

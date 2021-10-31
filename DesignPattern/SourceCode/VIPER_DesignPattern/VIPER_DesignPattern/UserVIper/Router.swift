@@ -17,6 +17,7 @@ protocol AnyRouter {
     var entry: EntryPoint?  { get }
     
     static func start() -> AnyRouter
+    func showUserDetail()
 }
 
 class UserRouter: AnyRouter {
@@ -42,5 +43,10 @@ class UserRouter: AnyRouter {
         router.entry = view as? EntryPoint
         
         return router
+    }
+    
+    static func showUserDetail() {
+        
+        
     }
 }
