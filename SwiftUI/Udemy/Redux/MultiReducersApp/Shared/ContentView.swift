@@ -24,6 +24,7 @@ struct ContentView: View {
         let onIncrement: () -> Void
         let onDecrement: () -> Void
         let onAddAction: (Int) -> Void
+        let onIncrementAsync: () -> Void
     }
     
     /// View에 영향을 주는 변수들과 Store의 값을 binding
@@ -36,6 +37,8 @@ struct ContentView: View {
             store.dispatch(action: DecrementAction())
         }, onAddAction: {
             store.dispatch(action: AddAction(value: $0))
+        }, onIncrementAsync: {
+            store.dispatch(action: IncrementActionAsync())
         })
     }
     
@@ -47,9 +50,10 @@ struct ContentView: View {
             Text("\(props.counter)")
                 .padding()
             
-            Button("Increment") { props.onIncrement() }
-            Button("Decrement") { props.onDecrement() }
-            Button("Add")       { props.onAddAction(100) }
+            Button("Increment")         { props.onIncrement() }
+            Button("Decrement")         { props.onDecrement() }
+            Button("Add")               { props.onAddAction(100) }
+            Button("Increment Async")   { props.onIncrementAsync() }
             
             Spacer()
             

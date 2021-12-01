@@ -12,7 +12,10 @@ struct MultiReducersAppApp: App {
     var body: some Scene {
         WindowGroup {
             
-            let store = Store(reducer: appReducer, state: AppState())
+            let store = Store(reducer: appReducer,
+                              state: AppState(),
+                              middlewares: [logMiddleware(),
+                                            incrementMiddleware()]) // Only fire when IncrementAcion occur
             
             ContentView()
                 .environmentObject(store)

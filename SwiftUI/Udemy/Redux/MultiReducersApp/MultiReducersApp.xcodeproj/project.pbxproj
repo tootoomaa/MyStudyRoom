@@ -25,6 +25,10 @@
 		B6F72C612757021C008A1FFF /* TaskReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F72C5F2757021C008A1FFF /* TaskReducer.swift */; };
 		B6F72C6627570C04008A1FFF /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F72C6527570C04008A1FFF /* AddTaskView.swift */; };
 		B6F72C6727570C04008A1FFF /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F72C6527570C04008A1FFF /* AddTaskView.swift */; };
+		B6F72C6A275745F5008A1FFF /* LogMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F72C69275745F5008A1FFF /* LogMiddleware.swift */; };
+		B6F72C6B275745F5008A1FFF /* LogMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F72C69275745F5008A1FFF /* LogMiddleware.swift */; };
+		B6F72C6D27574932008A1FFF /* IncrementMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F72C6C27574932008A1FFF /* IncrementMiddleware.swift */; };
+		B6F72C6E27574932008A1FFF /* IncrementMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F72C6C27574932008A1FFF /* IncrementMiddleware.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +44,8 @@
 		B6F72C5C275701B9008A1FFF /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		B6F72C5F2757021C008A1FFF /* TaskReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskReducer.swift; sourceTree = "<group>"; };
 		B6F72C6527570C04008A1FFF /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
+		B6F72C69275745F5008A1FFF /* LogMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogMiddleware.swift; sourceTree = "<group>"; };
+		B6F72C6C27574932008A1FFF /* IncrementMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncrementMiddleware.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,8 +78,8 @@
 		B6F72C2E2756F9D0008A1FFF /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				B6F72C4D2756F9DC008A1FFF /* Store */,
 				B6F72C2F2756F9D0008A1FFF /* MultiReducersAppApp.swift */,
+				B6F72C4D2756F9DC008A1FFF /* Store */,
 				B6F72C302756F9D0008A1FFF /* ContentView.swift */,
 				B6F72C312756F9D2008A1FFF /* Assets.xcassets */,
 				B6F72C6527570C04008A1FFF /* AddTaskView.swift */,
@@ -101,6 +107,7 @@
 		B6F72C4D2756F9DC008A1FFF /* Store */ = {
 			isa = PBXGroup;
 			children = (
+				B6F72C68275745DD008A1FFF /* middlewares */,
 				B6F72C58275701A1008A1FFF /* Models */,
 				B6F72C4E2756F9E6008A1FFF /* reducers */,
 				B6F72C522756FA08008A1FFF /* Store.swift */,
@@ -124,6 +131,15 @@
 				B6F72C5C275701B9008A1FFF /* Task.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		B6F72C68275745DD008A1FFF /* middlewares */ = {
+			isa = PBXGroup;
+			children = (
+				B6F72C69275745F5008A1FFF /* LogMiddleware.swift */,
+				B6F72C6C27574932008A1FFF /* IncrementMiddleware.swift */,
+			);
+			path = middlewares;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +248,8 @@
 				B6F72C602757021C008A1FFF /* TaskReducer.swift in Sources */,
 				B6F72C5D275701B9008A1FFF /* Task.swift in Sources */,
 				B6F72C562756FCAA008A1FFF /* AppReducer.swift in Sources */,
+				B6F72C6A275745F5008A1FFF /* LogMiddleware.swift in Sources */,
+				B6F72C6D27574932008A1FFF /* IncrementMiddleware.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,6 +265,8 @@
 				B6F72C612757021C008A1FFF /* TaskReducer.swift in Sources */,
 				B6F72C5E275701B9008A1FFF /* Task.swift in Sources */,
 				B6F72C572756FCAA008A1FFF /* AppReducer.swift in Sources */,
+				B6F72C6B275745F5008A1FFF /* LogMiddleware.swift in Sources */,
+				B6F72C6E27574932008A1FFF /* IncrementMiddleware.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
