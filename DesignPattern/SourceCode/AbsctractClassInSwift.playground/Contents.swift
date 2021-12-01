@@ -1,18 +1,26 @@
 import UIKit
 
-class Animal {
-    func sound() {}
-}
-
-class Cat: Animal {
-    override func sound() {
-        print("miauw")
+class ConcreteAnimal {
+    func sound() {
+        fatalError("Subclasses need to implement the 'sound()' method")
     }
 }
 
-class Dog: Animal {
-    override func sound() {
-        print("woof")
-    }
-}
+class ConCat: ConcreteAnimal { }
+class ConDog: ConcreteAnimal { }
 
+let conCat = ConCat()
+conCat.sound()
+
+
+//protocol Animal {
+//    func sound()
+//}
+//
+//class Car: Animal {
+//
+//}
+//
+//class Dog: Animal {
+//
+//}
