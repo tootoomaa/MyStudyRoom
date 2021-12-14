@@ -8,19 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		B68E6DB827670F740053A749 /* ARKitVisionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68E6DB727670F740053A749 /* ARKitVisionApp.swift */; };
-		B68E6DBA27670F740053A749 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68E6DB927670F740053A749 /* ContentView.swift */; };
+		B68E6DBA27670F740053A749 /* ArWithVisionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68E6DB927670F740053A749 /* ArWithVisionView.swift */; };
 		B68E6DBC27670F780053A749 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B68E6DBB27670F780053A749 /* Assets.xcassets */; };
 		B68E6DBF27670F780053A749 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B68E6DBE27670F780053A749 /* Preview Assets.xcassets */; };
 		B68E6DCA27671ACE0053A749 /* DisplayInfomationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68E6DC927671ACE0053A749 /* DisplayInfomationView.swift */; };
+		C7BEB1A92768635A000193E1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BEB1A82768635A000193E1 /* ContentView.swift */; };
+		C7BEB1AB27686437000193E1 /* ArsessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BEB1AA27686437000193E1 /* ArsessionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B68E6DB427670F740053A749 /* ARKitVision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARKitVision.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B68E6DB727670F740053A749 /* ARKitVisionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARKitVisionApp.swift; sourceTree = "<group>"; };
-		B68E6DB927670F740053A749 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B68E6DB927670F740053A749 /* ArWithVisionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArWithVisionView.swift; sourceTree = "<group>"; };
 		B68E6DBB27670F780053A749 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B68E6DBE27670F780053A749 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B68E6DC927671ACE0053A749 /* DisplayInfomationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayInfomationView.swift; sourceTree = "<group>"; };
+		C7BEB1A82768635A000193E1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C7BEB1AA27686437000193E1 /* ArsessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArsessionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,8 +77,9 @@
 		B68E6DC727671AB40053A749 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B68E6DB927670F740053A749 /* ContentView.swift */,
-				B68E6DC927671ACE0053A749 /* DisplayInfomationView.swift */,
+				C7BEB1A82768635A000193E1 /* ContentView.swift */,
+				C7BEB1AC2768643E000193E1 /* ArWithVision */,
+				C7BEB1AA27686437000193E1 /* ArsessionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -84,6 +89,15 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		C7BEB1AC2768643E000193E1 /* ArWithVision */ = {
+			isa = PBXGroup;
+			children = (
+				B68E6DB927670F740053A749 /* ArWithVisionView.swift */,
+				B68E6DC927671ACE0053A749 /* DisplayInfomationView.swift */,
+			);
+			path = ArWithVision;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,8 +170,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B68E6DBA27670F740053A749 /* ContentView.swift in Sources */,
+				B68E6DBA27670F740053A749 /* ArWithVisionView.swift in Sources */,
 				B68E6DB827670F740053A749 /* ARKitVisionApp.swift in Sources */,
+				C7BEB1AB27686437000193E1 /* ArsessionView.swift in Sources */,
+				C7BEB1A92768635A000193E1 /* ContentView.swift in Sources */,
 				B68E6DCA27671ACE0053A749 /* DisplayInfomationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,7 +305,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ARKitVision/Preview Content\"";
-				DEVELOPMENT_TEAM = 4UA98H4AM3;
+				DEVELOPMENT_TEAM = 6397Y7FU97;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "카메라 사용 오청합니다";
@@ -319,7 +335,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ARKitVision/Preview Content\"";
-				DEVELOPMENT_TEAM = 4UA98H4AM3;
+				DEVELOPMENT_TEAM = 6397Y7FU97;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "카메라 사용 오청합니다";
