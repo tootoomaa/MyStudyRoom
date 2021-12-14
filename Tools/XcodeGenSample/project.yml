@@ -1,0 +1,20 @@
+name: XcodeGenSample
+options:
+  bundleIdPrefix: com.frontado
+  deploymentTarget:
+    iOS: 13.0
+  generateEmptyDirectories: true
+
+targets:
+  XcodeGenSample:
+    type: application
+    platform: iOS
+    sources: 
+      - path: XcodeGenSample
+
+  XcodeGenSampleTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: XcodeGenSampleTests
+
