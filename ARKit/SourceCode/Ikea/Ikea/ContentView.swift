@@ -128,6 +128,7 @@ extension ArsceenViewController {
                 let thirdColumn = transform.columns.3
                 
                 node.position = SCNVector3(thirdColumn.x, thirdColumn.y, thirdColumn.z)
+                print(node.position)
                 sceneView.scene.rootNode.addChildNode(node)
             }
         } //: AddItem
