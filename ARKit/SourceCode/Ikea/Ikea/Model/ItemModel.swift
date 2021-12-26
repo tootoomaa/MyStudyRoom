@@ -12,7 +12,7 @@ struct Item: Identifiable {
     let title: String
     
     var sceneItem: String {
-        "Models.scnassets/\(title).scn"
+        "Models.scnassets/\(title)/\(title).scn"
     }
 }
 
