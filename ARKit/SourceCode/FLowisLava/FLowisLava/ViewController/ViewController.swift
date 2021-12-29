@@ -50,14 +50,21 @@ class ViewController: UIViewController {
         let lavaNode = SCNNode(geometry: SCNPlane(width: CGFloat(planeAnchor.extent.x),
                                                   height: CGFloat(planeAnchor.extent.z)))
         
-        lavaNode.geometry?.firstMaterial?.diffuse.contents = UIImage(named: "Lava")!
+        lavaNode.geometry?.firstMaterial?.diffuse.contents = UIImage(named: "concrete")!
         lavaNode.geometry?.firstMaterial?.isDoubleSided = true
         lavaNode.position = SCNVector3(planeAnchor.center.x, planeAnchor.center.y, planeAnchor.center.z)
         lavaNode.eulerAngles = SCNVector3(90.degreesToRadians, 0, 0)
         return lavaNode
     }
+    
+    @objc func addCar(_ sender: Any) {
+        let box = SCNNode(geometry: SCNBox(width: 0.1, height: 0.1, length: 0.1, chamferRadius: 0))
+        box.geometry?.firstMaterial?.diffuse.contents = UIColor.blue
+        
+    }
 }
 
+// MARK: - ARSCNViewDelegate
 extension ViewController: ARSCNViewDelegate {
     
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
@@ -80,7 +87,10 @@ extension ViewController: ARSCNViewDelegate {
     
     func renderer(_ renderer: SCNSceneRenderer, didRemove node: SCNNode, for anchor: ARAnchor) {
         // 같은 anchor에 두가지 가 올라갈 경우
-        guard let planAnchor = anchor as? ARPlaneAnchor else { return }
+        guard anchor is ARPlaneAnchor else { return }
+        node.enumerateHierarchy { childNode, _ in
+            childNode.removeFromParentNode()
+        }
     }
     
 }
