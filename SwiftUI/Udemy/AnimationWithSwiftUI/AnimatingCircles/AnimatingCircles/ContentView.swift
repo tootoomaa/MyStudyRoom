@@ -8,9 +8,42 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    let timer = DispatchSource.makeTimerSource()
+    @State var animator: Bool = false
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        ZStack {
+            Circle()
+                .frame(width: 60, height: 60)
+                .foregroundColor(.green.opacity(0.5))
+            
+            Circle()
+                .frame(width: 60, height: 60)
+                .foregroundColor(.green.opacity(0.5))
+            
+            Circle()
+                .frame(width: 60, height: 60)
+                .foregroundColor(.green.opacity(0.5))
+            
+            Circle()
+                .frame(width: 60, height: 60)
+                .foregroundColor(.green.opacity(0.5))
+            
+            Circle()
+                .frame(width: 60, height: 60)
+                .foregroundColor(.green.opacity(0.5))
+            
+            Circle()
+                .frame(width: 60, height: 60)
+                .foregroundColor(.green.opacity(0.5))
+        }
+        .onAppear {
+            timer.schedule(deadline: .now())
+            timer.setEventHandler {
+                self.animator.toggle()
+            }
+        }
     }
 }
 
