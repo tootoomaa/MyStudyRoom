@@ -1,0 +1,384 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C7570A2B27F40CAF0040DD88 /* BaskitBall.scn in Resources */ = {isa = PBXBuildFile; fileRef = C7570A2A27F40CAF0040DD88 /* BaskitBall.scn */; };
+		C78629B027F3F4D000850F66 /* AR_HoopsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78629AF27F3F4D000850F66 /* AR_HoopsApp.swift */; };
+		C78629B227F3F4D000850F66 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78629B127F3F4D000850F66 /* ContentView.swift */; };
+		C78629B427F3F4D200850F66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C78629B327F3F4D200850F66 /* Assets.xcassets */; };
+		C78629B727F3F4D200850F66 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C78629B627F3F4D200850F66 /* Preview Assets.xcassets */; };
+		C78629BF27F3F76C00850F66 /* ARCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78629BE27F3F76C00850F66 /* ARCustomView.swift */; };
+		C7F1D6C527F424A300369B63 /* BasketBall.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7F1D6C427F424A300369B63 /* BasketBall.xcassets */; };
+		C7F1D6C727F424F000369B63 /* BasketBall.scnassets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7F1D6C627F424F000369B63 /* BasketBall.scnassets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C7570A2827F40BD20040DD88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C7570A2A27F40CAF0040DD88 /* BaskitBall.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = BaskitBall.scn; sourceTree = "<group>"; };
+		C78629AC27F3F4D000850F66 /* AR-Hoops.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AR-Hoops.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C78629AF27F3F4D000850F66 /* AR_HoopsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AR_HoopsApp.swift; sourceTree = "<group>"; };
+		C78629B127F3F4D000850F66 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C78629B327F3F4D200850F66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C78629B627F3F4D200850F66 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C78629BE27F3F76C00850F66 /* ARCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCustomView.swift; sourceTree = "<group>"; };
+		C7F1D6C427F424A300369B63 /* BasketBall.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = BasketBall.xcassets; sourceTree = "<group>"; };
+		C7F1D6C627F424F000369B63 /* BasketBall.scnassets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = BasketBall.scnassets.xcassets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C78629A927F3F4D000850F66 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C7570A2927F40C810040DD88 /* SceneKitSceens */ = {
+			isa = PBXGroup;
+			children = (
+				C7F1D6C627F424F000369B63 /* BasketBall.scnassets.xcassets */,
+				C7F1D6C427F424A300369B63 /* BasketBall.xcassets */,
+				C7570A2A27F40CAF0040DD88 /* BaskitBall.scn */,
+			);
+			path = SceneKitSceens;
+			sourceTree = "<group>";
+		};
+		C78629A327F3F4D000850F66 = {
+			isa = PBXGroup;
+			children = (
+				C78629AE27F3F4D000850F66 /* AR-Hoops */,
+				C78629AD27F3F4D000850F66 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C78629AD27F3F4D000850F66 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C78629AC27F3F4D000850F66 /* AR-Hoops.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C78629AE27F3F4D000850F66 /* AR-Hoops */ = {
+			isa = PBXGroup;
+			children = (
+				C7570A2927F40C810040DD88 /* SceneKitSceens */,
+				C7570A2827F40BD20040DD88 /* Info.plist */,
+				C78629BD27F3F6E600850F66 /* AR */,
+				C78629AF27F3F4D000850F66 /* AR_HoopsApp.swift */,
+				C78629B127F3F4D000850F66 /* ContentView.swift */,
+				C78629B327F3F4D200850F66 /* Assets.xcassets */,
+				C78629B527F3F4D200850F66 /* Preview Content */,
+			);
+			path = "AR-Hoops";
+			sourceTree = "<group>";
+		};
+		C78629B527F3F4D200850F66 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				C78629B627F3F4D200850F66 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C78629BD27F3F6E600850F66 /* AR */ = {
+			isa = PBXGroup;
+			children = (
+				C78629BE27F3F76C00850F66 /* ARCustomView.swift */,
+			);
+			path = AR;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C78629AB27F3F4D000850F66 /* AR-Hoops */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C78629BA27F3F4D200850F66 /* Build configuration list for PBXNativeTarget "AR-Hoops" */;
+			buildPhases = (
+				C78629A827F3F4D000850F66 /* Sources */,
+				C78629A927F3F4D000850F66 /* Frameworks */,
+				C78629AA27F3F4D000850F66 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "AR-Hoops";
+			productName = "AR-Hoops";
+			productReference = C78629AC27F3F4D000850F66 /* AR-Hoops.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C78629A427F3F4D000850F66 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					C78629AB27F3F4D000850F66 = {
+						CreatedOnToolsVersion = 13.2;
+					};
+				};
+			};
+			buildConfigurationList = C78629A727F3F4D000850F66 /* Build configuration list for PBXProject "AR-Hoops" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C78629A327F3F4D000850F66;
+			productRefGroup = C78629AD27F3F4D000850F66 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C78629AB27F3F4D000850F66 /* AR-Hoops */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C78629AA27F3F4D000850F66 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7F1D6C527F424A300369B63 /* BasketBall.xcassets in Resources */,
+				C7570A2B27F40CAF0040DD88 /* BaskitBall.scn in Resources */,
+				C78629B727F3F4D200850F66 /* Preview Assets.xcassets in Resources */,
+				C78629B427F3F4D200850F66 /* Assets.xcassets in Resources */,
+				C7F1D6C727F424F000369B63 /* BasketBall.scnassets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C78629A827F3F4D000850F66 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C78629B227F3F4D000850F66 /* ContentView.swift in Sources */,
+				C78629B027F3F4D000850F66 /* AR_HoopsApp.swift in Sources */,
+				C78629BF27F3F76C00850F66 /* ARCustomView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		C78629B827F3F4D200850F66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C78629B927F3F4D200850F66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C78629BB27F3F4D200850F66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"AR-Hoops/Preview Content\"";
+				DEVELOPMENT_TEAM = 52ZXCPY3WQ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "AR-Hoops/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "치료를 위한 카메라 인식";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kr.tootoomaa.AR-Hoops";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C78629BC27F3F4D200850F66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"AR-Hoops/Preview Content\"";
+				DEVELOPMENT_TEAM = 52ZXCPY3WQ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "AR-Hoops/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "치료를 위한 카메라 인식";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kr.tootoomaa.AR-Hoops";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C78629A727F3F4D000850F66 /* Build configuration list for PBXProject "AR-Hoops" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C78629B827F3F4D200850F66 /* Debug */,
+				C78629B927F3F4D200850F66 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C78629BA27F3F4D200850F66 /* Build configuration list for PBXNativeTarget "AR-Hoops" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C78629BB27F3F4D200850F66 /* Debug */,
+				C78629BC27F3F4D200850F66 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C78629A427F3F4D000850F66 /* Project object */;
+}
