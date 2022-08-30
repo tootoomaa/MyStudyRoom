@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Movie" representedClassName="Movie" syncable="YES" codeGenerationType="class">
+        <attribute name="title" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="MovieActor" representedClassName="MovieActor" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="relationship" toMany="YES" deletionRule="Nullify" destinationEntity="Movie"/>
+    </entity>
+    <elements>
+        <element name="Movie" positionX="-202.93359375" positionY="40.63671875" width="128" height="58"/>
+        <element name="MovieActor" positionX="-66.54296875" positionY="294.39453125" width="93.49609375" height="73"/>
+    </elements>
+</model>
