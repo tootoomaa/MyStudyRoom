@@ -11,7 +11,11 @@ class DataController: ObservableObject {
     
     static var shared = DataController()
     
-    @Published var hypedEvents: [HypedEvent] = []
+    @Published var hypedEvents: [HypedEvent] = [] {
+        didSet {
+            saveData()
+        }
+    }
     
     
     func saveData() {

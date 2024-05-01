@@ -13,6 +13,7 @@ struct CreateHypedEventView: View {
     @StateObject var hypedEvent = HypedEvent()
     @State var showTime: Bool = false
     @State var showImagePicker: Bool = false
+    @ObservedObject var data: DataController = DataController.shared
     
     var body: some View {
         Form {
@@ -82,12 +83,20 @@ struct CreateHypedEventView: View {
                     .disableAutocorrection(true)
             }
                 
+            Section {
+                Button {
+                    data.hypedEvents.append(self.hypedEvent)
+                    self.presentationMode.wrappedValue.dismiss()
+                } label: {
+                    Text("Save")
+                }
+            }
         }
     }
 }
 
 struct CreateHypedEventView_Previews: PreviewProvider {
     static var previews: some View {
-        CreateHypedEventView()
+        CreateHypedEventView(data: DataController.shared)
     }
 }
