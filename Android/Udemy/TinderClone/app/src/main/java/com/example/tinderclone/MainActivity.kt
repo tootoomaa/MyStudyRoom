@@ -8,11 +8,13 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.tinderclone.data.Event
 import com.example.tinderclone.swipeableCard.SwipeCards
 import com.example.tinderclone.ui.theme.TinderCloneTheme
 import com.example.tinderclone.view.ChatListScreen
@@ -52,6 +54,8 @@ class MainActivity : ComponentActivity() {
 fun SwipeAppNavigation(modifier: Modifier = Modifier) {
     val navController = rememberNavController()
     val vm = hiltViewModel<TCViewModel>()
+
+    NotificationMessage(vm = vm)
 
     NavHost(
         navController = navController,
