@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Close
@@ -46,11 +47,14 @@ import androidx.compose.ui.text.style.LineHeightStyle.Alignment.Companion.Center
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
+import com.example.tinderclone.view.BottomNavigationItem
+import com.example.tinderclone.view.BottomNavigationMenu
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import kotlinx.coroutines.launch
 
 @Composable
-fun SwipeCards() {
+fun SwipeCards(navHostController: NavHostController) {
     TransparentSystemBars()
     Box(
         modifier = Modifier
@@ -63,9 +67,10 @@ fun SwipeCards() {
                     )
                 )
             )
-//                        .systemBarsPadding()
+            .systemBarsPadding()
     ) {
-        Box {
+        Box(
+        ) {
             val states = profiles.reversed()
                 .map { it to rememberSwipeableCardState() }
             var hint by remember {
@@ -144,6 +149,10 @@ fun SwipeCards() {
                 )
             }
         }
+        BottomNavigationMenu(
+            selectedItem = BottomNavigationItem.SWIPE,
+            navController = navHostController
+        )
     }
 }
 

@@ -1,8 +1,9 @@
-
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
-    kotlin("kapt")
+    alias(libs.plugins.google.gms.google.services)
+
+    id("kotlin-kapt")
     id("com.google.dagger.hilt.android")
 }
 
@@ -63,7 +64,9 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
-//    implementation(libs.androidx.material3.android)
+    implementation(libs.firebase.storage)
+    implementation(libs.firebase.auth)
+    implementation(libs.firebase.firestore)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -72,19 +75,20 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
-    implementation ("com.google.accompanist:accompanist-systemuicontroller:0.26.1-alpha")
-    implementation ("androidx.navigation:navigation-compose:2.5.3")
-    implementation ("com.google.firebase:firebase-auth:21.3.0")
-    implementation ("com.google.firebase:firebase-bom:29.0.0")
-//    implementation ("com.google.firebase:firebase-auth-ktx")
-//    implementation ("com.google.firebase:firebase-firestore-ktx")
-//    implementation ("com.google.firebase:firebase-storage-ktx")
-    implementation ("com.google.dagger:hilt-android:2.44")
-    implementation ("androidx.hilt:hilt-navigation-compose:1.0.0")
-    implementation ("com.google.firebase:firebase-firestore:24.5.0")
-    kapt("com.google.dagger:hilt-android-compiler:2.44")
-    implementation ("io.coil-kt:coil-compose:1.3.2")
-    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1")
+    implementation("com.google.accompanist:accompanist-systemuicontroller:0.26.1-alpha")
+    implementation("androidx.navigation:navigation-compose:2.5.3")
+
+    implementation("com.google.dagger:hilt-android:2.48")
+    kapt("com.google.dagger:hilt-android-compiler:2.48")
+
+    implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
+
+    implementation("io.coil-kt:coil-compose:1.3.2")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1")
+
+
+    // https://stackoverflow.com/questions/71135167/execution-failed-for-task-appkaptdebugkotlin-a-failure-occurred-while-exe
+    kapt("org.jetbrains.kotlinx:kotlinx-metadata-jvm:0.4.2") //
 }
 
 kapt {

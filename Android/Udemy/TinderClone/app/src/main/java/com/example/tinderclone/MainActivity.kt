@@ -1,18 +1,26 @@
 package com.example.tinderclone
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.tinderclone.swipeableCard.SwipeCards
 import com.example.tinderclone.ui.theme.TinderCloneTheme
+import com.example.tinderclone.view.ChatListScreen
+import com.example.tinderclone.view.LoginScreen
+import com.example.tinderclone.view.ProfileScreen
+import com.example.tinderclone.view.SignupScreen
+import com.example.tinderclone.view.SingleChatScreen
+import dagger.hilt.android.AndroidEntryPoint
 
 sealed class DestinationScreen(val route: String) {
     object Singup: DestinationScreen(route = "signup")
@@ -26,18 +34,14 @@ sealed class DestinationScreen(val route: String) {
 }
 
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+    @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContent {
             TinderCloneTheme {
-                Scaffold(
-                    modifier = Modifier.fillMaxSize(),
-//                    color = MaterialTheme.colorScheme.background
-                ) {
-                    SwipeAppNavigation()
-                }
+                SwipeAppNavigation()
             }
         }
     }
@@ -45,15 +49,17 @@ class MainActivity : ComponentActivity() {
 
 
 @Composable
-fun SwipeAppNavigation() {
+fun SwipeAppNavigation(modifier: Modifier = Modifier) {
     val navController = rememberNavController()
+    val vm = hiltViewModel<TCViewModel>()
 
     NavHost(
         navController = navController,
-        startDestination = DestinationScreen.Swipe.route
+        startDestination = DestinationScreen.Singup.route,
+        modifier = modifier
     ) {
         composable(DestinationScreen.Singup.route) {
-            SignupScreen()
+            SignupScreen(navController, vm)
         }
 
         composable(DestinationScreen.Login.route) {
@@ -61,15 +67,15 @@ fun SwipeAppNavigation() {
         }
 
         composable(DestinationScreen.Swipe.route) {
-            SwipeCards()
+            SwipeCards(navController)
         }
 
         composable(DestinationScreen.Profile.route) {
-            ProfileScreen()
+            ProfileScreen(navController)
         }
 
         composable(DestinationScreen.ChatList.route) {
-            ChatListScreen()
+            ChatListScreen(navController)
         }
 
         composable(DestinationScreen.SingleChat.route) {
