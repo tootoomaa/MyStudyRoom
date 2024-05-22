@@ -78,7 +78,7 @@ fun SignupScreen(navController: NavController, vm: TCViewModel) {
             OutlinedTextField(value = emailState.value,
                 onValueChange = { emailState.value = it },
                 modifier = Modifier.padding(8.dp),
-                label = { Text(text = "emailemail") })
+                label = { Text(text = "email") })
 
             OutlinedTextField(value = passwordState.value,
                 onValueChange = { passwordState.value = it },
@@ -86,7 +86,14 @@ fun SignupScreen(navController: NavController, vm: TCViewModel) {
                 label = { Text(text = "password") })
 
             Button(
-                onClick = { forcus.clearFocus(force = true) },
+                onClick = {
+                    forcus.clearFocus(force = true)
+                    vm.onSignup(
+                        usernameState.value.text,
+                        emailState.value.text,
+                        passwordState.value.text
+                    )
+                },
                 modifier = Modifier.padding(8.dp)
             ) {
                 Text(text = "Sign Up")

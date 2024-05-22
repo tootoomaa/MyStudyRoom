@@ -40,6 +40,7 @@ fun CommonProgressSpinner() {
 @Composable
 fun NotificationMessage(vm: TCViewModel) {
     val notifState = vm.popupNotification.value
+    val notifMessage = notifState?.toString()
 
     if (!notifMessage.isNullOrEmpty())
         Toast.makeText(LocalContext.current, notifMessage, Toast.LENGTH_SHORT).show()
