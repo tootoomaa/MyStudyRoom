@@ -67,7 +67,7 @@ fun SwipeAppNavigation(modifier: Modifier = Modifier) {
         }
 
         composable(DestinationScreen.Login.route) {
-            LoginScreen()
+            LoginScreen(vm, navController)
         }
 
         composable(DestinationScreen.Swipe.route) {
@@ -75,7 +75,7 @@ fun SwipeAppNavigation(modifier: Modifier = Modifier) {
         }
 
         composable(DestinationScreen.Profile.route) {
-            ProfileScreen(navController)
+            ProfileScreen(navController, vm)
         }
 
         composable(DestinationScreen.ChatList.route) {

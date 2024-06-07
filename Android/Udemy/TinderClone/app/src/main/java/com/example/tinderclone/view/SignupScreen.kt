@@ -30,6 +30,7 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.example.tinderclone.CheckSignedIn
 import com.example.tinderclone.R
 import com.example.tinderclone.TCViewModel
 import com.example.tinderclone.navigateTo
@@ -40,6 +41,9 @@ import com.example.tinderclone.DestinationScreen
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SignupScreen(navController: NavController, vm: TCViewModel) {
+
+    CheckSignedIn(vm = vm, navController = navController)
+
     Box(modifier = Modifier.fillMaxSize()) {
         Column(
             modifier = Modifier
